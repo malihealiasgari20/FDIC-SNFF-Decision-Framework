@@ -1,0 +1,15 @@
+name: Verify research file checksums
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify SHA-256 manifest
+        run: sha256sum -c MANIFEST.sha256
