@@ -1,11 +1,9 @@
 name: Verify research file checksums
-
 on:
   push:
     branches: [main]
   pull_request:
   workflow_dispatch:
-
 jobs:
   integrity:
     runs-on: ubuntu-latest
