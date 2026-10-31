@@ -1,0 +1,72 @@
+1. Data checks
+  [ok] primary 55: unique ids, 55 rows
+  [ok] primary 55: no missing measured predictor
+  [ok] primary 55: failed-bank report public before the failure (30-day filing deadline passed)
+  [ok] primary 55: buyer report at least 90 days before failure
+  [ok] primary 55: latest buyer report before failure
+  [ok] primary 55: deposit and NPL changes span two quarters ending at the public report
+  [ok] primary 55: NPL in [0, 100] %
+  [ok] primary 55: buyer capital in [3, 25] %
+  [ok] primary 55: deposits in USD bn (0.01 to 1,000)
+  [ok] primary 55: relative size positive
+  [ok] primary 55: loss share, support and timing coded from the FDIC release for every row
+  [ok] primary 55: day 0 is the first session after the verified announcement (same day only for pre-open)
+  [ok] primary 55: y = 1 exactly when the reaction-day CAR[-1,+1] > 0
+  [ok] broader 90: unique ids, 90 rows
+  [ok] broader 90: no missing measured predictor
+  [ok] broader 90: failed-bank report public before the failure (30-day filing deadline passed)
+  [ok] broader 90: buyer report at least 90 days before failure
+  [ok] broader 90: latest buyer report before failure
+  [ok] broader 90: deposit and NPL changes span two quarters ending at the public report
+  [ok] broader 90: NPL in [0, 100] %
+  [ok] broader 90: buyer capital in [3, 25] %
+  [ok] broader 90: deposits in USD bn (0.01 to 1,000)
+  [ok] broader 90: relative size positive
+  [ok] broader 90: loss share, support and timing coded from the FDIC release for every row
+  [ok] broader 90: day 0 is the first session after the verified announcement (same day only for pre-open)
+  [ok] broader 90: y = 1 exactly when the reaction-day CAR[-1,+1] > 0
+  primary 55: value created 35 / not 20 (reaction-day [-1,+1], primary); release [0,+1] 39 / 16; June [-1,+1] 41 / 14
+  primary 55: loss share 40 of 55; government support narrow 1, broad 2
+  broader 90: value created 56 / not 34 (reaction-day [-1,+1], primary); release [0,+1] 64 / 26; June [-1,+1] 64 / 26
+  broader 90: loss share 66 of 90; government support narrow 1, broad 2
+  failed-bank report P: the quarter before Stage 1's Q-1 for 25 of 55 and 41 of 90
+    PA-0161 PR-120-2011: release as of 2011-03-31, assets 192.5, deposits 189.5; input report 2011-03-31, assets 192.5, deposits 189.5 (Stage 1 Q-1 2011-06-30)
+    PA-0162 PR-120-2011: release as of 2011-03-31, assets 186.3, deposits 162.1; input report 2011-03-31, assets 186.3, deposits 162.1 (Stage 1 Q-1 2011-06-30)
+    PA-0112 PR-21-2012: release as of 2011-12-31, assets 278.9, deposits None; input report 2011-12-31, assets 278.9, deposits 266.6 (Stage 1 Q-1 2011-12-31)
+    PA-0115 PR-13-2012: release as of 2011-09-30, assets 272.6, deposits None; input report 2011-09-30, assets 272.6, deposits 268.8 (Stage 1 Q-1 2011-12-31)
+    PA-0020 PR-4-2017: release as of 2016-09-30, assets 126.4, deposits None; input report 2016-09-30, assets 126.4, deposits 123.8 (Stage 1 Q-1 2016-12-31)
+    PA-0165 PR-117-2011: release as of 2011-03-31, assets 959.3, deposits 887.5; input report 2011-03-31, assets 959.3, deposits 887.5 (Stage 1 Q-1 2011-06-30)
+    PA-0439 PR-125-2009: release as of 2009-03-31, assets 1900.0, deposits 1600.0; input report 2009-03-31, assets 1855.8, deposits 1589.4 (Stage 1 Q-1 2009-06-30)
+  [ok] failed-bank report and figures match the 'as of' statement of the FDIC release (7 checked; 6 failed within 30 days of a quarter-end)
+
+2. Correlations among the measured predictors (primary 55)
+  largest |Pearson| off-diagonal: 0.74; largest |Spearman|: 0.51
+                      N_npl_pct  G_deposits_usd_bn  C_buyer_capital_pct  E_relative_size  L_deposit_change_pct  T_npl_change_pp
+N_npl_pct                  1.00              -0.26                 0.08             0.09                 -0.23             0.51
+G_deposits_usd_bn         -0.26               1.00                 0.04             0.30                 -0.10            -0.14
+C_buyer_capital_pct        0.08               0.04                 1.00            -0.00                 -0.03             0.28
+E_relative_size            0.09               0.30                -0.00             1.00                 -0.19            -0.04
+L_deposit_change_pct      -0.23              -0.10                -0.03            -0.19                  1.00             0.10
+T_npl_change_pp            0.51              -0.14                 0.28            -0.04                  0.10             1.00
+  [ok] no pair of measured predictors with |Spearman| >= 0.9
+
+3. Revised Q and K select the same transactions as the July rules (July 65-row inputs, all-row thresholds)
+  Q: July selects 14, revised selects 15; differ on 1 row(s): PA-0309 WHEATLAND BANK (NPL 52.1%)
+  [ok] Q differs only where NPL > 50%
+  K: July selects 4, revised form on the same size ratio selects 4; differ on 0
+  [ok] K identical when fed the same size ratio
+
+4. Fold safety
+  [ok] parameters fitted on the training rows ignore the other rows
+  [ok] each scored row depends only on itself and the training fit
+  [ok] S_final within [0, 1]
+
+5. Rule coverage (thresholds from all rows of each panel; descriptive)
+  primary 55, default (U without H)  L=14 T=14 Q=11 U=11 Z=1 K=5
+  primary 55, U with H, narrow       L=14 T=14 Q=11 U=0 Z=1 K=5
+  primary 55, U with H, broad        L=14 T=14 Q=11 U=1 Z=1 K=5
+  broader 90, default (U without H)  L=23 T=23 Q=19 U=16 Z=3 K=10
+  broader 90, U with H, narrow       L=23 T=23 Q=19 U=0 Z=3 K=10
+  broader 90, U with H, broad        L=23 T=23 Q=19 U=1 Z=3 K=10
+
+ALL CHECKS PASSED

@@ -1,0 +1,4 @@
+transaction_id,event_date,announcement_timing,event_date_source
+PA-0006,2023-03-26,NON_TRADING_DAY,"Silicon Valley Bank failed 2023-03-10 into a bridge bank; FDIC announced the sale to First-Citizens Bank & Trust on Sunday 2023-03-26 (event day = Monday 2023-03-27)"
+PA-0005,2023-03-19,NON_TRADING_DAY,"Signature Bank failed 2023-03-12 into a bridge bank; FDIC announced the sale to Flagstar Bank N.A. (NYCB) on Sunday 2023-03-19 (event day = Monday 2023-03-20)"
+PA-0004,2023-05-01,PRE_OPEN,"First Republic Bank was closed and sold to JPMorgan Chase before the market opened on Monday 2023-05-01 (event day = 2023-05-01)"

@@ -1,0 +1,42 @@
+Clean rerun comparison: results/ of the final run against the results of final_analysis.py run again
+from a fresh copy of the research folder (same code, same inputs)
+
+same      RUN_MANIFEST.json (all fields except runtime: 4641 s vs 4616 s)
+identical ablation_by_repeat.csv  sha256 8399fd81683c483c
+identical appendix_primary55.csv  sha256 894ee19025a2535b
+identical bootstrap_refit_by_replicate.csv  sha256 820afa2f9c446f33
+identical broader90_by_repeat.csv  sha256 74f3f27e4df8da6e
+identical broader90_grouping_check_by_repeat.csv  sha256 858b670ff7ed0076
+identical cost_ratio_sweep_by_repeat.csv  sha256 25cf28a8814b671c
+identical decision_policies_by_repeat.csv  sha256 530a3c50ccb22bd2
+identical figure_calibration.png  sha256 a625ae45849d0ae9
+identical figure_shap_fullsample.png  sha256 39682aeecab8f8f1
+identical main_by_repeat.csv  sha256 37886b8da4f3242b
+identical out_of_fold_predictions.csv  sha256 51b4d11ced19da86
+identical permutation_null.csv  sha256 cb3fe2645bd12d41
+identical robustness_by_repeat.csv  sha256 a9c6f806f8d2a6af
+identical spider_score_pursue_zone_fullsample.csv  sha256 09775bfc22ca42d7
+identical svb_case.json  sha256 0058aebeec6b2cc4
+identical table_ablation.csv  sha256 0a48c63008e1e7ff
+identical table_bootstrap_refit.csv  sha256 90d8ac796c8ac05f
+identical table_broader90.csv  sha256 ede6dd5c4337514d
+identical table_broader90_grouping_check.csv  sha256 bf9e8bc1973a3ecd
+identical table_calibration_bins.csv  sha256 4c6a3ccc60c57b92
+identical table_cluster_bootstrap.csv  sha256 58aaacae8293ba49
+identical table_cost_ratio_sweep.csv  sha256 725c3a21637024fd
+identical table_decision_policies.csv  sha256 a3d1ebd78b42ad66
+identical table_fbop_influence_model2.csv  sha256 428c164213ffb204
+identical table_main_comparison.csv  sha256 007f9be526bfe712
+identical table_paired_differences.csv  sha256 fa504f12e04f2032
+identical table_permutation_test.csv  sha256 47c636294038ccab
+identical table_rank_by_group.csv  sha256 4f77b964469f1b3e
+identical table_risk_influence.csv  sha256 34f1cf31d3335481
+identical table_risk_thirds.csv  sha256 0c0c5b3c88489a7f
+identical table_risk_validation.csv  sha256 596a8beaff9120ae
+identical table_robustness.csv  sha256 881e014966ec9caa
+identical table_sample_construction.csv  sha256 fc1d33d3a10f272e
+identical table_shap_fullsample.csv  sha256 fab35a04c02c0fbe
+identical table_spider_components.csv  sha256 f6ec8c4b4f6a6fc3
+identical tuned_parameters_by_fold.csv  sha256 44a04039e1dc0c20
+
+All 37 result files reproduce exactly (RUN_MANIFEST.json equal except runtime).

@@ -1,0 +1,24 @@
+\begin{table*}[!t]
+\caption{Paired Comparison of Model~3 with Selected Baselines (Same Partitions, 50 Repeats)}
+\label{tab:paired}
+\centering
+\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc}
+\toprule
+ & \multicolumn{3}{c}{\textbf{50 partitions}} & \multicolumn{2}{c}{\textbf{Cluster bootstrap, AUC diff. [95\% interval]}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-6}
+\textbf{Comparison} & \textbf{AUC diff. [5th, 95th pct.]} & \textbf{M3 higher} & \textbf{Brier diff. [5th, 95th pct.]} & \textbf{Conditional} & \textbf{Refitting} \\
+\midrule
+M3 $-$ Model~2 ($C=1$) & $-$0.020 [$-$0.085, $+$0.016] & 28\% & $-$0.006 [$-$0.024, $+$0.017] & $-$0.044 [$-$0.104, $+$0.001] & [$-$0.155, $+$0.131] \\
+M3 $-$ Ridge ($C$ tuned) & $-$0.038 [$-$0.092, $+$0.010] & 10\% & $+$0.008 [$-$0.009, $+$0.028] & $-$0.056 [$-$0.115, $-$0.010] & [$-$0.166, $+$0.117] \\
+M3 $-$ LR + pairwise & $-$0.038 [$-$0.085, $+$0.032] & 22\% & $+$0.017 [$-$0.004, $+$0.037] & $-$0.070 [$-$0.214, $+$0.049] & --- \\
+M3 $-$ Random forest & $-$0.011 [$-$0.079, $+$0.076] & 44\% & $+$0.001 [$-$0.019, $+$0.027] & $-$0.050 [$-$0.188, $+$0.066] & --- \\
+M3 $-$ XGBoost & $-$0.010 [$-$0.083, $+$0.055] & 42\% & $-$0.011 [$-$0.031, $+$0.010] & --- & --- \\
+\bottomrule
+\end{tabular*}
+\par\vspace{2pt}\parbox{0.96\textwidth}{\scriptsize Differences are Model~3 minus the comparator on the same partitions; a negative Brier
+difference favors Model~3. M3 higher: share of the 50 repeats in which Model~3's AUC is higher. Both bootstraps resample the 51 event
+clusters. The conditional bootstrap (4,000 draws) uses each transaction's out-of-fold prediction averaged over the 50 repeats and
+is conditional on those fitted predictions; the refitting bootstrap (500 draws) reruns the whole nested
+cross-validation, including tuning, on every resample.}
+\end{table*}

@@ -1,0 +1,22 @@
+\begin{table}[!t]
+\caption{Ablation Study: 50 Repeats of Grouped 5-Fold Cross-Validation}
+\label{tab:ablation}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Stage} & \textbf{AUC} & \textbf{Event AUC} & \textbf{Brier} \\
+\midrule
+A: measured inputs & 0.632 & 0.575 & 0.225 \\
+B: A $+$ Spider score & 0.630 & 0.573 & 0.225 \\
+C: A $+$ interaction rules & 0.598 & 0.534 & 0.231 \\
+D: full SNFF (Model~3) & 0.594 & 0.529 & 0.232 \\
+E: D without protection inputs & 0.615 & 0.556 & 0.228 \\
+F: D without buyer capital & 0.632 & 0.573 & 0.225 \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}\parbox{0.94\columnwidth}{\scriptsize All stages are L2 logistic regressions with the penalty chosen in the inner
+cross-validation; stage A is the ridge model of Table~\ref{tab:main_results}. In E and F the Spider score is recomputed
+without the removed inputs and the rules that use them.}
+\end{table}

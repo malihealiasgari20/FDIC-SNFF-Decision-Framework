@@ -1,0 +1,13 @@
+outcome,analysis,n,AUC_R,spearman_R_CAR,detail,positive
+"Reaction-day CAR[-1,+1], SPY (primary)",leave one event cluster out: minimum,51,0.6392857142857142,0.12525170255926393,USB|2009-11-02,
+"Reaction-day CAR[-1,+1], SPY (primary)",leave one event cluster out: maximum,54,0.7308270676691728,0.25452258513384207,WTFC|2010-04-26,
+"Reaction-day CAR[-1,+1], SPY (primary)","without SVB, First Republic and Washington Mutual",52,0.7359374999999999,0.3014026256760678,,
+"Reaction-day CAR[-1,+1], SPY (primary)",without the five event clusters with the largest absolute CAR,50,0.733446519524618,0.2392949001581946,FCNCA|2023-03-27;EWBC|2009-11-09;RF|2008-09-02;GSBC|2009-03-23;ZION|2009-07-20,
+"Reaction-day CAR[-1,+1], SPY (primary)",announced 2008-2010,37,0.7172619047619048,0.26593920611073263,,21.0
+"Reaction-day CAR[-1,+1], SPY (primary)",announced 2011-2024,18,0.6785714285714285,0.021671826625386997,,14.0
+"Reaction-day CAR[-1,+1], bank-index benchmark",leave one event cluster out: minimum,54,0.494017094017094,0.03412188641323976,USB|2009-04-27,
+"Reaction-day CAR[-1,+1], bank-index benchmark",leave one event cluster out: maximum,51,0.5732142857142858,0.12779504274545214,USB|2009-11-02,
+"Reaction-day CAR[-1,+1], bank-index benchmark","without SVB, First Republic and Washington Mutual",52,0.5399305555555556,0.17177259712350487,,
+"Reaction-day CAR[-1,+1], bank-index benchmark",without the five event clusters with the largest absolute CAR,50,0.5183823529411765,0.08780230379148529,EWBC|2009-11-09;FCNCA|2023-03-27;GSBC|2009-03-23;RF|2008-09-02;JPM|2008-09-26,
+"Reaction-day CAR[-1,+1], bank-index benchmark",announced 2008-2010,37,0.4423076923076923,0.16297969188052927,,24.0
+"Reaction-day CAR[-1,+1], bank-index benchmark",announced 2011-2024,18,0.7111111111111111,-0.1001031991744066,,15.0

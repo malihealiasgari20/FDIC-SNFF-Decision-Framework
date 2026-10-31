@@ -1,0 +1,12 @@
+Python 3.13.17 on Linux (x86-64), single-threaded.
+numpy 2.5.3
+pandas 3.0.5
+scikit-learn 1.9.1
+xgboost 3.4.1
+scipy 1.18.1
+matplotlib 3.11.2
+shap 0.54.1
+
+Final-analysis runtime: 77 minutes (RUN_MANIFEST.json).
+Byte-identical results are expected with these versions; other versions may differ in late decimals
+(XGBoost in particular).

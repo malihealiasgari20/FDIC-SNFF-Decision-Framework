@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite the article and this release by the DOI of its repository record."
+title: "Replication package for: An Interaction-Aware Decision Framework for FDIC-Assisted Distressed Bank Acquisitions"
+version: "4.0"
+date-released: "2026-10-30"
+type: dataset
+authors:
+  - family-names: Nejatbakhsh
+    given-names: Yousef
+    affiliation: "Rutgers University"
+  - family-names: Aliasgari
+    given-names: Malihe
+    affiliation: "Kean University"
+  - family-names: Safaee
+    given-names: Parsa
+    affiliation: "Eindhoven University of Technology"
+  - family-names: Shokoohyar
+    given-names: Sina
+    affiliation: "Seton Hall University"
+keywords:
+  - bank failure
+  - FDIC
+  - event study
+  - distressed acquisitions
+  - reproducibility

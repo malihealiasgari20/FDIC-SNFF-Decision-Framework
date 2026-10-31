@@ -1,0 +1,28 @@
+\begin{table*}[!t]
+\caption{Model Comparison: 50 Repeats of Grouped 5-Fold Cross-Validation ($n=55$, 51 Event Clusters)}
+\label{tab:main_results}
+\centering
+\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc}
+\toprule
+\textbf{Model} & \textbf{AUC [5th, 95th pct.]} & \textbf{Event-weighted AUC} & \textbf{Brier [5th, 95th pct.]} & \textbf{Brier skill} \\
+\midrule
+L2 logistic, $C=1$ (Model~2) & 0.615 [0.535, 0.672] & 0.551 & 0.238 [0.218, 0.266] & $-$2.7\% \\
+LASSO logistic & 0.518 [0.416, 0.620] & 0.479 & 0.249 [0.226, 0.282] & $-$7.6\% \\
+L2 logistic, $C$ tuned (ridge) & 0.632 [0.556, 0.684] & 0.575 & 0.225 [0.211, 0.249] & 2.9\% \\
+Decision tree & 0.585 [0.448, 0.675] & 0.533 & 0.291 [0.240, 0.362] & $-$25.9\% \\
+Random forest & 0.605 [0.545, 0.666] & 0.569 & 0.231 [0.216, 0.244] & 0.1\% \\
+XGBoost & 0.604 [0.534, 0.656] & 0.573 & 0.243 [0.223, 0.267] & $-$5.0\% \\
+LR + pairwise interactions & 0.632 [0.560, 0.691] & 0.568 & 0.216 [0.200, 0.233] & 6.8\% \\
+Spider + LR (Model~3) & 0.594 [0.525, 0.662] & 0.529 & 0.232 [0.214, 0.258] & $-$0.3\% \\
+\midrule
+Spider score alone (Model~1) & 0.423 [0.400, 0.457] & 0.450 & --- & --- \\
+\bottomrule
+\end{tabular*}
+\par\vspace{2pt}\parbox{0.96\textwidth}{\scriptsize Means over the 50 repeats of the pooled out-of-fold AUC and Brier score;
+brackets give the 5th and 95th percentiles across repeats (partition sensitivity, not a confidence interval).
+Model~2 and the ridge comparator are the same L2-penalized logistic regression on the eight inputs; Model~2 fixes
+$C=1$, the ridge comparator chooses $C$ by inner cross-validation. Event-weighted AUC collapses transactions that
+share a CAR into one observation. Brier skill is the improvement over predicting the training-fold share of
+positive-CAR transactions (Brier 0.231). The Spider score is not a probability, so only its ranking is evaluated.}
+\end{table*}

@@ -1,0 +1,5 @@
+outcome,sample,n,event_clusters,positive,model,AUC_mean,AUC_p05,AUC_p95,fbop_mean_percentile_rank
+"Reaction-day CAR[-1,+1], SPY (primary)",all 55 transactions,55,51,35,"Logistic regression (L2, C=1)",0.6146,0.5346428571428571,0.6715714285714285,0.05046296296296296
+"Reaction-day CAR[-1,+1], SPY (primary)",without the FBOP cluster,51,50,35,"Logistic regression (L2, C=1)",0.4978928571428572,0.4157142857142857,0.5807142857142857,
+"Reaction-day CAR[-1,+1], bank-index benchmark",all 55 transactions,55,51,39,"Logistic regression (L2, C=1)",0.27743589743589747,0.18725961538461539,0.36586538461538454,0.09888888888888889
+"Reaction-day CAR[-1,+1], bank-index benchmark",without the FBOP cluster,51,50,35,"Logistic regression (L2, C=1)",0.41803571428571423,0.32803571428571426,0.5084821428571429,

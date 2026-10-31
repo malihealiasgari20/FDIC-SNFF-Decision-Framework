@@ -1,0 +1,65 @@
+transaction_id,ticker_candidates,status_note,reclassify_private,audit_2026_10,source_url
+PA-0017,HWC|HBHC,Use HWC (Hancock Whitney) after 2018 rebrand; HBHC delisted on Yahoo,false,unchanged,
+PA-0443,PVTB,PrivateBancorp — delisted; needs FMP/CRSP if Yahoo empty,false,unchanged,
+PA-0416,IBKC,Iberiabank pre-2020 merger — delisted on Yahoo,false,unchanged,
+PA-0407,MBFI,MB Financial pre-2018 — delisted on Yahoo,false,unchanged,
+PA-0375,IBKC,Iberiabank — delisted on Yahoo,false,unchanged,
+PA-0376,IBKC,Iberiabank — delisted on Yahoo,false,unchanged,
+PA-0369,NYCB|FLG,NYCB — Yahoo moved its history to FLG after the Oct 2024 rename,false,added FLG fallback,
+PA-0360,,OneWest Bank was privately held in 2009 (not CIT Group),true,unchanged,
+PA-0361,CYN,City National Corp pre-RBC acquisition — delisted on Yahoo,false,unchanged,
+PA-0363,HBHC|HWC,Hancock Holding HBHC delisted on Yahoo; try HWC only for later events,false,unchanged,
+PA-0353,UMPQ,Umpqua — delisted on Yahoo after Columbia merger,false,unchanged,
+PA-0341,,OneWest Bank was privately held in 2010 (not CIT Group),true,unchanged,
+PA-0342,FMER,FirstMerit pre-2016 — delisted on Yahoo,false,unchanged,
+PA-0339,UMPQ,Umpqua — delisted on Yahoo,false,unchanged,
+PA-0324,NYCB|FLG,NYCB — Yahoo moved its history to FLG after the Oct 2024 rename,false,added FLG fallback,
+PA-0312,MBFI,MB Financial — delisted on Yahoo,false,unchanged,
+PA-0314,MBFI,MB Financial — delisted on Yahoo,false,unchanged,
+PA-0294,FMER,FirstMerit — delisted on Yahoo,false,unchanged,
+PA-0288,CYN,City National — delisted on Yahoo,false,unchanged,
+PA-0291,,EverBank Financial IPO was May 2012; privately held at the 2010 failure date,true,was EVER (recycled ticker),
+PA-0292,,EverBank Financial IPO was May 2012; privately held at the 2010 failure date,true,was EVER (recycled ticker),
+PA-0286,NAB.AX|GWBI,Great Western Bank was owned by National Australia Bank until its Oct 2014 IPO (foreign parent),false,was GWBI (not yet listed in 2010),
+PA-0284,UMPQ,Umpqua — delisted on Yahoo,false,unchanged,
+PA-0271,IBKC,Iberiabank — delisted on Yahoo,false,unchanged,
+PA-0258,FMBI,First Midwest Bancorp — delisted on Yahoo,false,unchanged,
+PA-0175,,Talmer Bancorp was not public until 2014 IPO,true,unchanged,
+PA-0118,CSFL,CenterState — delisted on Yahoo,false,unchanged,
+PA-0077,HTLF,Heartland Financial — delisted on Yahoo,false,unchanged,
+PA-0005,NYCB|FLG,Flagstar Bank N.A. was a subsidiary of New York Community Bancorp from 2022-12-01 (not Truist),false,was TFC,
+PA-0302,MUFG,Union Bank N.A. was wholly owned by Mitsubishi UFJ Financial Group from Nov 2008 (foreign parent),false,was UNB (Union Bankshares VT),
+PA-0317,MUFG,Union Bank N.A. was wholly owned by Mitsubishi UFJ Financial Group from Nov 2008 (foreign parent),false,was UNB (Union Bankshares VT),
+PA-0148,SAB.MC,Sabadell United Bank was owned by Banco Sabadell (Madrid listing; foreign parent),false,was SAN (Banco Santander),
+PA-0172,,CertusBank N.A. was privately held (Certus Holdings),true,was USB (substring bug),
+PA-0173,,CertusBank N.A. was privately held (Certus Holdings),true,was USB (substring bug),
+PA-0208,,CertusBank N.A. was privately held (Certus Holdings),true,was USB (substring bug),
+PA-0063,SNV,Synovus Bank (Synovus Financial),false,was USB (substring bug),
+PA-0402,FCBN,"First Citizens Bank and Trust Company, Inc. (SC, cert 15504): First Citizens Bancorporation, OTC",false,was FCNCA (different company),
+PA-0169,FCBN,"First Citizens Bank and Trust Company, Inc. (SC, cert 15504): First Citizens Bancorporation, OTC",false,was FCNCA (different company),
+PA-0269,FCBN,"First Citizens Bank and Trust Company, Inc. (SC, cert 15504): First Citizens Bancorporation, OTC",false,was FCNCA (different company),
+PA-0329,,"First Citizens Bank, Luverne AL (cert 23152) was privately held",true,was FCNCA (different company),
+PA-0192,FCAL,First California Bank (First California Financial Group; delisted 2013 after PacWest merger),false,was ZION (substring bug),
+PA-0228,FCAL,First California Bank (First California Financial Group; delisted 2013 after PacWest merger),false,was ZION (substring bug),
+PA-0491,ESXB|BTC,"VERIFY: Bank of Essex was owned by Community Bankers Trust Corp (NYSE Amex: BTC in 2008; renamed ticker ESXB on Nasdaq from 2014). Same issuer; check that any series returned is this company's, not the later BTC symbol",false,was coded private,https://www.sec.gov/Archives/edgar/data/1323648/000136231008007783/c77836exv99w1.htm
+PA-0478,TIBB,VERIFY: TIB Bank was owned by TIB Financial Corp (NASDAQ: TIBB),false,was coded private,https://www.sec.gov/Archives/edgar/data/1013796/000101379609000009/tibb8k021809ex99_1.htm
+PA-0469,FFCH,VERIFY: First Federal of Charleston was owned by First Financial Holdings (NASDAQ: FFCH),false,was coded private,https://www.sec.gov/Archives/edgar/data/787075/000114420408069091/v134365_10k.htm
+PA-0450,WIBC,VERIFY: Wilshire State Bank was owned by Wilshire Bancorp (NASDAQ: WIBC),false,was coded private,https://www.sec.gov/Archives/edgar/data/1285224/000110465909041439/a09-17266_1ex99d1.htm
+PA-0428,FFBC,"VERIFY: First Financial Bank, N.A. (Hamilton OH) was owned by First Financial Bancorp (NASDAQ: FFBC)",false,was coded private,https://www.sec.gov/Archives/edgar/data/708955/000114420409039911/v156176_ex99-1.htm
+PA-0403,FFBC,"VERIFY: Irwin Union Bank and Trust sold to First Financial Bank, N.A. (FFBC)",false,was coded private,https://www.sec.gov/Archives/edgar/data/708955/000114420409049659/v160841_ex99-1.htm
+PA-0404,FFBC,"VERIFY: Irwin Union Bank, FSB sold to First Financial Bank, N.A. (FFBC)",false,was coded private,https://www.sec.gov/Archives/edgar/data/708955/000114420409049659/v160841_ex99-1.htm
+PA-0348,SCBT|SSB,"VERIFY: SCBT, N.A. was owned by SCBT Financial Corp (NASDAQ: SCBT, later SSB)",false,was coded private,https://www.sec.gov/Archives/edgar/data/764038/000110465910004024/a10-2814_1ex99d1.htm
+PA-0195,SCBT|SSB,"VERIFY: SCBT, N.A. was owned by SCBT Financial Corp (NASDAQ: SCBT, later SSB)",false,was coded private,https://www.sec.gov/Archives/edgar/data/764038/000110465911008463/a11-6291_1ex99d1.htm
+PA-0330,CSBC,VERIFY: Citizens South Bank was owned by Citizens South Banking Corp (NASDAQ: CSBC),false,was coded private,https://www.sec.gov/Archives/edgar/data/1051871/000119312510133055/dex991.htm
+PA-0327,CHFN,"Charter Financial (CHFN) was quoted on the OTC Bulletin Board on 2010-03-26; Nasdaq trading began 2010-09-29 (8-K ex. 99.1, 2010-09-23). OTC parent at the event date",false,"was coded private; OTC at event date (reviewer finding, verified)",https://www.sec.gov/Archives/edgar/data/0001136796/000118811210002575/ex99-1.htm
+PA-0323,BNCN,VERIFY: Bank of North Carolina was owned by BNC Bancorp (NASDAQ: BNCN),false,was coded private,https://www.sec.gov/Archives/edgar/data/1210227/000119312510084421/dex991.htm
+PA-0316,WBCO,VERIFY: Whidbey Island Bank was owned by Washington Banking Co (NASDAQ: WBCO),false,was coded private,https://www.sec.gov/Archives/edgar/data/1058690/000089659510000188/f10qwbco1stq050510.htm
+PA-0315,BMO,VERIFY: Harris N.A. was owned by Bank of Montreal (foreign parent),false,was coded private,
+PA-0260,HOME,"VERIFY: Home Federal Bank (Nampa ID) was owned by Home Federal Bancorp (NASDAQ: HOME); ticker later reused, check prices",false,was coded private,https://www.sec.gov/Archives/edgar/data/1413440/000093905711000029/home12811earrel.htm
+PA-0261,HFWA,VERIFY: Heritage Bank was owned by Heritage Financial Corp (NASDAQ: HFWA),false,was coded private,https://www.hf-wa.com/news/news-details/2010/Heritage-Bank-Acquires-Banking-Operations-of-Cowlitz-Bank-of-Longview-Washington/default.aspx
+PA-0262,HOMB,VERIFY: Centennial Bank (Conway AR) was owned by Home BancShares (NASDAQ: HOMB),false,was coded private,https://www.sec.gov/Archives/edgar/data/1331520/000095012310025904/d71589exv99w1.htm
+PA-0240,HOMB,VERIFY: Centennial Bank (Conway AR) was owned by Home BancShares (NASDAQ: HOMB),false,was coded private,https://www.homebancshares.com/news-events/news/news-details/2010/Home-BancShares-Inc.-and-Centennial-Bank-Announce-In-Market-Florida-Acquisition/default.aspx
+PA-0165,WTFC,VERIFY: Northbrook Bank & Trust was a Wintrust subsidiary (NASDAQ: WTFC),false,was coded private,https://www.sec.gov/Archives/edgar/data/1015328/000095012311068778/c65625exv99w1.htm
+PA-0117,RBCAA,VERIFY: Republic Bank & Trust (Louisville KY) was owned by Republic Bancorp (NASDAQ: RBCAA),false,was coded private,https://www.sec.gov/Archives/edgar/data/921557/000115752313000155/a50532493ex99-1.htm
+PA-0054,HTH,VERIFY: PlainsCapital Bank was owned by Hilltop Holdings (NYSE: HTH),false,was coded private,https://www.sec.gov/Archives/edgar/data/1265131/000110465913070964/a13-20817_1ex99d1.htm
+PA-0142,SBNC,VERIFY: Southern Bank and Trust (Mount Olive NC) was owned by Southern BancShares (N.C.) (OTC),false,was coded private,https://www.southernbank.com/about/southern-bancshares/faqs/

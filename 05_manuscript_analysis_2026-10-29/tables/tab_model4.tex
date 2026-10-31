@@ -1,0 +1,23 @@
+\begin{table}[!t]
+\caption{Model~4 Decision Policies ($n=55$; Mean over 50 Repeats; Utility with $B=1$, $L=3$)}
+\label{tab:model4}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Policy} & \textbf{Thresh.} & \textbf{Pursue} & \textbf{TP/FP} & \textbf{F1} & \textbf{FPR} & \textbf{Util.} \\
+\midrule
+4A: Fixed ($\tilde S$) & 0.70/0.40 & 3.1 & 2.9/0.2 & 0.151 & 0.011 & 0.041 \\
+4B: F1-tuned & 0.55--0.80 & 40.2 & 27.6/12.6 & 0.734 & 0.629 & $-$0.184 \\
+4C: Cost (3:1) & 0.75/0.45 & 11.8 & 7.9/3.9 & 0.332 & 0.196 & $-$0.071 \\
+\midrule
+\multicolumn{7}{l}{\textit{Trivial policies}} \\
+Pursue all & --- & 55 & 35/20 & 0.778 & 1.000 & $-$0.455 \\
+Pursue none & --- & 0 & 0/0 & 0.000 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}\parbox{0.94\columnwidth}{\scriptsize Pursue: transactions recommended for pursuit; TP/FP: of these, transactions with a
+positive and with a negative announcement return; FPR: share of the 20 negative-CAR transactions recommended; Util.: realized
+utility $(TP - 3\,FP)/55$.}
+\end{table}

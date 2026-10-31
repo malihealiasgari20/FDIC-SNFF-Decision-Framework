@@ -1,0 +1,23 @@
+\begin{table}[!t]
+\caption{Permutation Tests: Is Discrimination Above Chance?}
+\label{tab:perm}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lcccccc}
+\toprule
+ & & \multicolumn{2}{c}{\textbf{Null AUC}} & \multicolumn{3}{c}{\textbf{$p$-value}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-7}
+\textbf{Model} & \textbf{AUC} & \textbf{Mean} & \textbf{95th} & \textbf{1-sided} & \textbf{Holm} & \textbf{2-sided} \\
+\midrule
+Model~2 ($C=1$) & 0.635 & 0.479 & 0.659 & 0.08 & 0.16 & 0.24 \\
+Ridge ($C$ tuned) & 0.668 & 0.478 & 0.653 & 0.04 & 0.13 & 0.14 \\
+Model~3 ($C$ tuned) & 0.600 & 0.477 & 0.647 & 0.12 & 0.16 & 0.36 \\
+Spider score (Model~1) & 0.421 & 0.499 & 0.630 & 0.82 & --- & 0.36 \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}\parbox{0.94\columnwidth}{\scriptsize Outcomes permuted across the 51 event clusters (400 permutations). On every
+permutation the complete nested procedure, including the inner tuning of $C$, is rerun; AUC is the mean over three
+partitions, with the same partition seeds for the observed data. One-sided: AUC above the null; Holm: one-sided
+$p$ adjusted for the three models tested; two-sided: distance from 0.5.}
+\end{table}

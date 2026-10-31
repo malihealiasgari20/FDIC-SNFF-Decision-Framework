@@ -1,0 +1,14 @@
+metric,value
+field_pass_universe,469
+public_acquirers_mapped,164
+pending_ticker_verification,0
+car_computed_all,95
+excluded_foreign_parent,5
+excluded_otc_parent,0
+final_public_modeling_rows,90
+final_rows_in_top150_sample,55
+target_band,80-150
+value_created_flag_1,64
+value_created_flag_0,26
+top150_value_created_flag_1,41
+top150_value_created_flag_0,14

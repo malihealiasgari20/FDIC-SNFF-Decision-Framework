@@ -1,0 +1,63 @@
+=== PRIMARY PANEL (55 transactions); market-adjusted returns (stock minus SPY) ===
+timing (verified): {'AFTER_CLOSE': 53, 'PRE_OPEN': 1, 'NON_TRADING_DAY': 1}; sessions from day d to day r: {1: 53, 0: 2}
+acquirer-days: 51 distinct (same buyer, same day: USB|2009-11-02 x4; USB|2008-11-24 x2)
+
+1. Average abnormal return by session relative to r (first session that could react)
+   day  mean AR, deals      t  % > 0 |  mean AR, acquirer-days      t   median
+    -5         -0.0008  -0.18    40% |                  0.0005   0.10  -0.0035
+    -4         -0.0005  -0.10    36% |                 -0.0007  -0.12  -0.0037
+    -3         -0.0011  -0.32    49% |                 -0.0002  -0.04   0.0020
+    -2          0.0056   1.94    60% |                  0.0053   1.73   0.0039
+    -1          0.0050   1.16    53% |                  0.0067   1.50   0.0037
+    +0          0.0401   2.75    73% |                  0.0412   2.62   0.0153
+    +1         -0.0065  -1.45    36% |                 -0.0060  -1.24  -0.0037
+    +2          0.0030   0.84    55% |                  0.0043   1.15   0.0072
+    +3          0.0063   1.80    60% |                  0.0054   1.44   0.0039
+    +4         -0.0039  -1.33    35% |                 -0.0028  -0.90  -0.0043
+    +5          0.0055   1.27    60% |                  0.0044   0.96   0.0027
+  pre-news drift, CAR over r-2..r-1: mean 0.0105 (t 2.11); acquirer-days 0.0121 (t 2.28)
+
+2. Labels (value created = CAR > 0)
+  reaction-day [-1,+1] (r-1, r, r+1)       35 positive / 20 not
+  release [0,+1] (d, d+1)                  39 positive / 16 not
+  June [-1,+1] (d-1, d, d+1)               41 positive / 14 not
+  reaction-day [-1,+1], market model       31 positive / 24 not
+  label changes: June vs reaction-day 14; release [0,+1] vs reaction-day 12; June vs release [0,+1] 4; market model vs market-adjusted (reaction-day) 4
+  the 14 June-vs-reaction changes: 10 positive -> not, 4 not -> positive; all from after-close releases: True
+  median |CAR| (reaction-day): all 0.0333; label-changing deals 0.0091
+  market-model estimation: 55 of 55 with >= 60 days; median beta 1.25
+
+=== BROADER PANEL (90 transactions); market-adjusted returns (stock minus SPY) ===
+timing (verified): {'AFTER_CLOSE': 88, 'PRE_OPEN': 1, 'NON_TRADING_DAY': 1}; sessions from day d to day r: {1: 88, 0: 2}
+acquirer-days: 78 distinct (same buyer, same day: USB|2009-11-02 x9; USB|2008-11-24 x2; ABCB|2010-11-15 x2; WTFC|2010-04-26 x2; ABCB|2011-07-18 x2)
+
+1. Average abnormal return by session relative to r (first session that could react)
+   day  mean AR, deals      t  % > 0 |  mean AR, acquirer-days      t   median
+    -5         -0.0032  -0.96    42% |                 -0.0013  -0.35  -0.0010
+    -4         -0.0012  -0.32    42% |                 -0.0022  -0.53  -0.0035
+    -3         -0.0031  -1.14    43% |                 -0.0031  -1.02  -0.0017
+    -2          0.0063   2.36    59% |                  0.0050   1.73   0.0019
+    -1          0.0074   1.28    50% |                  0.0098   1.49   0.0015
+    +0          0.0288   3.11    71% |                  0.0309   2.92   0.0114
+    +1         -0.0057  -1.40    46% |                 -0.0053  -1.12  -0.0008
+    +2          0.0016   0.56    51% |                  0.0048   1.51   0.0022
+    +3          0.0056   2.29    61% |                  0.0031   1.14   0.0018
+    +4         -0.0056  -2.72    34% |                 -0.0039  -1.69  -0.0038
+    +5          0.0052   1.82    62% |                  0.0045   1.39   0.0026
+  pre-news drift, CAR over r-2..r-1: mean 0.0137 (t 1.91); acquirer-days 0.0148 (t 1.82)
+
+2. Labels (value created = CAR > 0)
+  reaction-day [-1,+1] (r-1, r, r+1)       56 positive / 34 not
+  release [0,+1] (d, d+1)                  64 positive / 26 not
+  June [-1,+1] (d-1, d, d+1)               64 positive / 26 not
+  reaction-day [-1,+1], market model       49 positive / 41 not
+  label changes: June vs reaction-day 26; release [0,+1] vs reaction-day 24; June vs release [0,+1] 10; market model vs market-adjusted (reaction-day) 7
+  the 26 June-vs-reaction changes: 17 positive -> not, 9 not -> positive; all from after-close releases: True
+  median |CAR| (reaction-day): all 0.0217; label-changing deals 0.0091
+  market-model estimation: 90 of 90 with >= 60 days; median beta 1.26
+
+3. What each window contains, by timing class (sessions relative to r)
+  AFTER_CLOSE: June = r-2, r-1, r (two sessions before the news, one after); release [0,+1] = r-1, r;
+               reaction-day = r-1, r, r+1
+  PRE_OPEN / NON_TRADING_DAY (First Republic, SVB): June = r-1, r, r+1; release [0,+1] = r, r+1; reaction-day = r-1, r, r+1
+  Only the reaction-day window has the same position relative to the news for every transaction.

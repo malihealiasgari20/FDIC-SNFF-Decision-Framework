@@ -1,0 +1,27 @@
+\begin{table*}[!t]
+\caption{Robustness: Mean AUC over 50 Repeats under Alternative Outcomes, Specifications, and Sample}
+\label{tab:robustness}
+\centering
+\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc}
+\toprule
+\textbf{Variant} & \textbf{Positive CAR} & \textbf{Model~2} & \textbf{Ridge} & \textbf{Model~3} & \textbf{Spider score} \\
+\midrule
+Primary specification & 35/55 & 0.615 & 0.632 & 0.594 & 0.423 \\
+Outcome: $CAR_{[0,+1]}$ around announcement date & 39/55 & 0.441 & 0.508 & 0.507 & 0.473 \\
+Outcome: $CAR_{[-1,+1]}$ around announcement date & 41/55 & 0.572 & 0.601 & 0.591 & 0.425 \\
+Outcome: market-model CAR & 31/55 & 0.642 & 0.648 & 0.647 & 0.409 \\
+Outcome: CAR against bank-sector index & 39/55 & 0.277 & 0.280 & 0.413 & 0.505 \\
+Published inputs only (no $F$, $H$) & 35/55 & 0.635 & 0.646 & 0.615 & 0.466 \\
+Broad support definition ($H$) & 35/55 & 0.612 & 0.632 & 0.596 & 0.421 \\
+Rule $U$ requires support (broad $H$) & 35/55 & 0.612 & 0.632 & 0.601 & 0.396 \\
+Rule $Z$ removed & 35/55 & 0.615 & 0.632 & 0.593 & 0.429 \\
+\midrule
+Broader panel (no size cut) & 56/90 & 0.616 & 0.632 & 0.601 & 0.459 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{2pt}\parbox{0.96\textwidth}{\scriptsize Variants with the primary outcome use the partitions of Table~\ref{tab:main_results};
+each alternative outcome uses 50 grouped partitions with the same seeds, stratified on its own labels. Published inputs only:
+the six call-report inputs, without the deal terms $F$ and $H$; the Spider score is recomputed without its Protection component and
+rule~$Q$. The broader panel of 90 transactions (78 event clusters) uses its own 50 grouped partitions.}
+\end{table*}

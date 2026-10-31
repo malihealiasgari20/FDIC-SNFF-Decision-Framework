@@ -1,0 +1,587 @@
+{
+  "main::Logistic regression (L2, C=1)": {
+    "AUC": 0.615,
+    "AUC_p05": 0.535,
+    "AUC_p95": 0.672,
+    "AUC_event": 0.551,
+    "Brier": 0.238,
+    "Brier_skill_pct": -2.7
+  },
+  "main::LASSO logistic": {
+    "AUC": 0.518,
+    "AUC_p05": 0.416,
+    "AUC_p95": 0.62,
+    "AUC_event": 0.479,
+    "Brier": 0.249,
+    "Brier_skill_pct": -7.6
+  },
+  "main::Ridge logistic": {
+    "AUC": 0.632,
+    "AUC_p05": 0.556,
+    "AUC_p95": 0.684,
+    "AUC_event": 0.575,
+    "Brier": 0.225,
+    "Brier_skill_pct": 2.9
+  },
+  "main::Decision tree": {
+    "AUC": 0.585,
+    "AUC_p05": 0.448,
+    "AUC_p95": 0.675,
+    "AUC_event": 0.533,
+    "Brier": 0.291,
+    "Brier_skill_pct": -25.9
+  },
+  "main::Random forest": {
+    "AUC": 0.605,
+    "AUC_p05": 0.545,
+    "AUC_p95": 0.666,
+    "AUC_event": 0.569,
+    "Brier": 0.231,
+    "Brier_skill_pct": 0.1
+  },
+  "main::XGBoost": {
+    "AUC": 0.604,
+    "AUC_p05": 0.534,
+    "AUC_p95": 0.656,
+    "AUC_event": 0.573,
+    "Brier": 0.243,
+    "Brier_skill_pct": -5.0
+  },
+  "main::LR + pairwise interactions": {
+    "AUC": 0.632,
+    "AUC_p05": 0.56,
+    "AUC_p95": 0.691,
+    "AUC_event": 0.568,
+    "Brier": 0.216,
+    "Brier_skill_pct": 6.8
+  },
+  "main::SNFF + LR (Model 3)": {
+    "AUC": 0.594,
+    "AUC_p05": 0.525,
+    "AUC_p95": 0.662,
+    "AUC_event": 0.529,
+    "Brier": 0.232,
+    "Brier_skill_pct": -0.3
+  },
+  "main::Spider score alone (Model 1)": {
+    "AUC": 0.423,
+    "AUC_p05": 0.4,
+    "AUC_p95": 0.456,
+    "AUC_event": 0.45,
+    "Brier": null,
+    "Brier_skill_pct": null
+  },
+  "prevalence_brier": 0.231,
+  "paired::Logistic regression (L2, C=1)": {
+    "AUC_diff": -0.02,
+    "p05": -0.085,
+    "p95": 0.016,
+    "share_better_pct": 28,
+    "Brier_diff": -0.006,
+    "boot": [
+      -0.044,
+      -0.104,
+      0.001
+    ],
+    "boot_refit": [
+      -0.014,
+      -0.155,
+      0.131
+    ]
+  },
+  "paired::Ridge logistic": {
+    "AUC_diff": -0.038,
+    "p05": -0.092,
+    "p95": 0.01,
+    "share_better_pct": 10,
+    "Brier_diff": 0.008,
+    "boot": [
+      -0.056,
+      -0.115,
+      -0.01
+    ],
+    "boot_refit": [
+      -0.022,
+      -0.166,
+      0.117
+    ]
+  },
+  "paired::LR + pairwise interactions": {
+    "AUC_diff": -0.038,
+    "p05": -0.085,
+    "p95": 0.032,
+    "share_better_pct": 22,
+    "Brier_diff": 0.017,
+    "boot": [
+      -0.07,
+      -0.214,
+      0.049
+    ],
+    "boot_refit": null
+  },
+  "paired::Random forest": {
+    "AUC_diff": -0.011,
+    "p05": -0.079,
+    "p95": 0.076,
+    "share_better_pct": 44,
+    "Brier_diff": 0.001,
+    "boot": [
+      -0.05,
+      -0.188,
+      0.066
+    ],
+    "boot_refit": null
+  },
+  "paired::XGBoost": {
+    "AUC_diff": -0.01,
+    "p05": -0.083,
+    "p95": 0.055,
+    "share_better_pct": 42,
+    "Brier_diff": -0.011,
+    "boot": null,
+    "boot_refit": null
+  },
+  "perm::Logistic regression (L2, C=1)": {
+    "observed": 0.635,
+    "null_mean": 0.479,
+    "null_p95": 0.659,
+    "p_one": 0.082,
+    "p_holm": 0.165,
+    "p_two": 0.237
+  },
+  "perm::Ridge logistic": {
+    "observed": 0.668,
+    "null_mean": 0.478,
+    "null_p95": 0.653,
+    "p_one": 0.042,
+    "p_holm": 0.127,
+    "p_two": 0.145
+  },
+  "perm::SNFF + LR (Model 3)": {
+    "observed": 0.6,
+    "null_mean": 0.477,
+    "null_p95": 0.647,
+    "p_one": 0.12,
+    "p_holm": 0.165,
+    "p_two": 0.357
+  },
+  "perm::Spider score alone (Model 1)": {
+    "observed": 0.421,
+    "null_mean": 0.499,
+    "null_p95": 0.63,
+    "p_one": 0.82,
+    "p_holm": null,
+    "p_two": 0.362
+  },
+  "ablation::A: measured inputs": {
+    "AUC": 0.632,
+    "AUC_event": 0.575,
+    "Brier": 0.225
+  },
+  "ablation::B: A + Spider score": {
+    "AUC": 0.63,
+    "AUC_event": 0.573,
+    "Brier": 0.225
+  },
+  "ablation::C: A + interaction rules": {
+    "AUC": 0.598,
+    "AUC_event": 0.534,
+    "Brier": 0.231
+  },
+  "ablation::D: full SNFF (Model 3)": {
+    "AUC": 0.594,
+    "AUC_event": 0.529,
+    "Brier": 0.232
+  },
+  "ablation::E: D without protection inputs": {
+    "AUC": 0.615,
+    "AUC_event": 0.556,
+    "Brier": 0.228
+  },
+  "ablation::F: D without buyer capital": {
+    "AUC": 0.632,
+    "AUC_event": 0.573,
+    "Brier": 0.225
+  },
+  "robust::Reaction-day CAR[-1,+1] (primary)": {
+    "positives": 35,
+    "LR": 0.615,
+    "Ridge": 0.632,
+    "SNFF": 0.594,
+    "Score": 0.423
+  },
+  "robust::Release-date CAR[0,+1]": {
+    "positives": 39,
+    "LR": 0.441,
+    "Ridge": 0.508,
+    "SNFF": 0.507,
+    "Score": 0.473
+  },
+  "robust::Release-date CAR[-1,+1] (June window)": {
+    "positives": 41,
+    "LR": 0.572,
+    "Ridge": 0.601,
+    "SNFF": 0.591,
+    "Score": 0.425
+  },
+  "robust::Reaction-day CAR[-1,+1], market model": {
+    "positives": 31,
+    "LR": 0.642,
+    "Ridge": 0.648,
+    "SNFF": 0.647,
+    "Score": 0.409
+  },
+  "robust::Reaction-day CAR[-1,+1], bank-index benchmark": {
+    "positives": 39,
+    "LR": 0.277,
+    "Ridge": 0.28,
+    "SNFF": 0.413,
+    "Score": 0.505
+  },
+  "robust::Published call-report inputs only": {
+    "positives": 35,
+    "LR": 0.635,
+    "Ridge": 0.646,
+    "SNFF": 0.615,
+    "Score": 0.466
+  },
+  "robust::Broad support definition": {
+    "positives": 35,
+    "LR": 0.612,
+    "Ridge": 0.632,
+    "SNFF": 0.596,
+    "Score": 0.421
+  },
+  "robust::U rule requires support (broad)": {
+    "positives": 35,
+    "LR": 0.612,
+    "Ridge": 0.632,
+    "SNFF": 0.601,
+    "Score": 0.396
+  },
+  "robust::Z rule removed": {
+    "positives": 35,
+    "LR": 0.615,
+    "Ridge": 0.632,
+    "SNFF": 0.593,
+    "Score": 0.429
+  },
+  "broader": {
+    "Logistic regression (L2, C=1)": 0.616,
+    "LASSO logistic": 0.556,
+    "Ridge logistic": 0.632,
+    "Decision tree": 0.621,
+    "Random forest": 0.66,
+    "XGBoost": 0.611,
+    "LR + pairwise interactions": 0.676,
+    "SNFF + LR (Model 3)": 0.601,
+    "Spider score alone (Model 1)": 0.459
+  },
+  "broader_brier": {
+    "Logistic regression (L2, C=1)": 0.234,
+    "LASSO logistic": 0.242,
+    "Ridge logistic": 0.227,
+    "Decision tree": 0.264,
+    "Random forest": 0.22,
+    "XGBoost": 0.239,
+    "LR + pairwise interactions": 0.212,
+    "SNFF + LR (Model 3)": 0.237,
+    "Spider score alone (Model 1)": null
+  },
+  "policy::4A: fixed Spider thresholds": {
+    "pursue": 3.12,
+    "TP": 2.9,
+    "FP": 0.22,
+    "F1": 0.151,
+    "FPR": 0.011,
+    "utility_3to1": 0.041
+  },
+  "policy::4B: F1-tuned threshold": {
+    "pursue": 40.2,
+    "TP": 27.62,
+    "FP": 12.58,
+    "F1": 0.734,
+    "FPR": 0.629,
+    "utility_3to1": -0.184
+  },
+  "policy::4C: cost-based threshold (3:1)": {
+    "pursue": 11.78,
+    "TP": 7.86,
+    "FP": 3.92,
+    "F1": 0.332,
+    "FPR": 0.196,
+    "utility_3to1": -0.071
+  },
+  "policy::Pursue all": {
+    "pursue": 55.0,
+    "TP": 35.0,
+    "FP": 20.0,
+    "F1": 0.778,
+    "FPR": 1.0,
+    "utility_3to1": -0.455
+  },
+  "policy::Pursue none": {
+    "pursue": 0.0,
+    "TP": 0.0,
+    "FP": 0.0,
+    "F1": 0.0,
+    "FPR": 0.0,
+    "utility_3to1": 0.0
+  },
+  "sweep::1": {
+    "threshold": 0.5,
+    "pursue": 45.56,
+    "TP": 30.82,
+    "FP": 14.74,
+    "FPR": 0.737,
+    "F1": 0.765,
+    "utility_own": 0.292,
+    "gain_vs_trivial": 0.02,
+    "utility_3to1": -0.244
+  },
+  "sweep::2": {
+    "threshold": 0.667,
+    "pursue": 24.34,
+    "TP": 17.56,
+    "FP": 6.78,
+    "FPR": 0.339,
+    "F1": 0.59,
+    "utility_own": 0.073,
+    "gain_vs_trivial": 0.073,
+    "utility_3to1": -0.051
+  },
+  "sweep::3": {
+    "threshold": 0.75,
+    "pursue": 11.78,
+    "TP": 7.86,
+    "FP": 3.92,
+    "FPR": 0.196,
+    "F1": 0.332,
+    "utility_own": -0.071,
+    "gain_vs_trivial": -0.071,
+    "utility_3to1": -0.071
+  },
+  "sweep::4": {
+    "threshold": 0.8,
+    "pursue": 7.02,
+    "TP": 4.26,
+    "FP": 2.76,
+    "FPR": 0.138,
+    "F1": 0.197,
+    "utility_own": -0.123,
+    "gain_vs_trivial": -0.123,
+    "utility_3to1": -0.073
+  },
+  "sweep::5": {
+    "threshold": 0.833,
+    "pursue": 5.12,
+    "TP": 2.74,
+    "FP": 2.38,
+    "FPR": 0.119,
+    "F1": 0.133,
+    "utility_own": -0.167,
+    "gain_vs_trivial": -0.167,
+    "utility_3to1": -0.08
+  },
+  "component::S_final": {
+    "AUC55": 0.414,
+    "p55": 0.349,
+    "AUC35": 0.507,
+    "p35": 0.958
+  },
+  "component::V_score": {
+    "AUC55": 0.533,
+    "p55": 0.719,
+    "AUC35": 0.464,
+    "p35": 0.313
+  },
+  "component::P_score": {
+    "AUC55": 0.454,
+    "p55": 0.535,
+    "AUC35": 0.464,
+    "p35": 0.714
+  },
+  "component::B_score": {
+    "AUC55": 0.537,
+    "p55": 0.663,
+    "AUC35": 0.714,
+    "p35": 0.058
+  },
+  "component::R_score": {
+    "AUC55": 0.699,
+    "p55": 0.038,
+    "AUC35": 0.724,
+    "p35": 0.042
+  },
+  "component::E_score": {
+    "AUC55": 0.6,
+    "p55": 0.294,
+    "AUC35": 0.675,
+    "p35": 0.3
+  },
+  "risk_thirds": [
+    {
+      "R_third": "lowest third",
+      "deals": 19,
+      "positive": 7,
+      "median_CAR": -0.0091,
+      "positive_bank": 12,
+      "median_CAR_bank": 0.013,
+      "mean_NPL": 6.9289,
+      "mean_deposit_change": 3.7427
+    },
+    {
+      "R_third": "middle third",
+      "deals": 18,
+      "positive": 14,
+      "median_CAR": 0.0261,
+      "positive_bank": 14,
+      "median_CAR_bank": 0.0372,
+      "mean_NPL": 14.2371,
+      "mean_deposit_change": -8.6333
+    },
+    {
+      "R_third": "highest third",
+      "deals": 18,
+      "positive": 14,
+      "median_CAR": 0.0249,
+      "positive_bank": 13,
+      "median_CAR_bank": 0.0354,
+      "mean_NPL": 21.5035,
+      "mean_deposit_change": -8.0655
+    }
+  ],
+  "risk::Reaction-day CAR[-1,+1], SPY (primary)": {
+    "AUC55": 0.699,
+    "p55": 0.038,
+    "rho55": 0.187,
+    "p_rho55": 0.266,
+    "AUC35": 0.724,
+    "p35": 0.042,
+    "rho35": 0.36,
+    "p_rho35": 0.051
+  },
+  "risk::Reaction-day CAR[-1,+1], bank-index benchmark": {
+    "AUC55": 0.514,
+    "p55": 0.903,
+    "rho55": 0.07,
+    "p_rho55": 0.688,
+    "AUC35": 0.561,
+    "p35": 0.662,
+    "rho35": 0.337,
+    "p_rho35": 0.069
+  },
+  "risk::Reaction-day CAR[-1,+1], market model": {
+    "AUC55": 0.644,
+    "p55": 0.141,
+    "rho55": 0.138,
+    "p_rho55": 0.419,
+    "AUC35": 0.637,
+    "p35": 0.224,
+    "rho35": 0.243,
+    "p_rho35": 0.216
+  },
+  "risk::Release-date CAR[0,+1]": {
+    "AUC55": 0.423,
+    "p55": 0.47,
+    "rho55": 0.043,
+    "p_rho55": 0.808,
+    "AUC35": 0.572,
+    "p35": 0.57,
+    "rho35": 0.235,
+    "p_rho35": 0.228
+  },
+  "risk::Release-date CAR[-1,+1] (June window)": {
+    "AUC55": 0.343,
+    "p55": 0.131,
+    "rho55": -0.05,
+    "p_rho55": 0.763,
+    "AUC35": 0.562,
+    "p35": 0.618,
+    "rho35": 0.157,
+    "p_rho35": 0.446
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], SPY (primary)::leave one event cluster out: minimum": {
+    "n": 51,
+    "AUC": 0.639,
+    "rho": 0.125
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], SPY (primary)::leave one event cluster out: maximum": {
+    "n": 54,
+    "AUC": 0.731,
+    "rho": 0.255
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], SPY (primary)::without SVB, First Republic and Washington Mutual": {
+    "n": 52,
+    "AUC": 0.736,
+    "rho": 0.301
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], SPY (primary)::without the five event clusters with the largest absolute CAR": {
+    "n": 50,
+    "AUC": 0.733,
+    "rho": 0.239
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], SPY (primary)::announced 2008-2010": {
+    "n": 37,
+    "AUC": 0.717,
+    "rho": 0.266
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], SPY (primary)::announced 2011-2024": {
+    "n": 18,
+    "AUC": 0.679,
+    "rho": 0.022
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], bank-index benchmark::leave one event cluster out: minimum": {
+    "n": 54,
+    "AUC": 0.494,
+    "rho": 0.034
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], bank-index benchmark::leave one event cluster out: maximum": {
+    "n": 51,
+    "AUC": 0.573,
+    "rho": 0.128
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], bank-index benchmark::without SVB, First Republic and Washington Mutual": {
+    "n": 52,
+    "AUC": 0.54,
+    "rho": 0.172
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], bank-index benchmark::without the five event clusters with the largest absolute CAR": {
+    "n": 50,
+    "AUC": 0.518,
+    "rho": 0.088
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], bank-index benchmark::announced 2008-2010": {
+    "n": 37,
+    "AUC": 0.442,
+    "rho": 0.163
+  },
+  "risk_influence::Reaction-day CAR[-1,+1], bank-index benchmark::announced 2011-2024": {
+    "n": 18,
+    "AUC": 0.711,
+    "rho": -0.1
+  },
+  "manifest": {
+    "repeats": 50,
+    "permutations": 400,
+    "event_groups_primary": 51,
+    "event_groups_broader": 78,
+    "modal_tuned_C": {
+      "Ridge logistic": 0.1,
+      "SNFF + LR (Model 3)": 0.1
+    },
+    "sample": {
+      "P&A failures": 502,
+      "with complete call reports": 469,
+      "150 largest": 150,
+      "150: U.S.-listed parent": 94,
+      "150: U.S.-listed with prices (primary panel)": 55,
+      "150: U.S.-listed without prices": 39,
+      "150: private": 44,
+      "150: foreign-owned": 9,
+      "150: OTC": 3,
+      "469: U.S.-listed parent": 149,
+      "469: U.S.-listed with prices (broader panel)": 90
+    }
+  }
+}

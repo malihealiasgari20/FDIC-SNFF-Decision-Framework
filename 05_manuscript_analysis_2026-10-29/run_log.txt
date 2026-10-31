@@ -1,0 +1,37 @@
+[      0s] main comparison: 50 repeats, 55 deals, 51 event groups
+[     83s]   repeat 10/50
+[    167s]   repeat 20/50
+[    282s]   repeat 30/50
+[    401s]   repeat 40/50
+[    519s]   repeat 50/50
+[    597s] main comparison done
+[    847s] ablation done
+[    919s] robustness: Reaction-day CAR[-1,+1] (primary)
+[    993s] robustness: Release-date CAR[0,+1]
+[   1064s] robustness: Release-date CAR[-1,+1] (June window)
+[   1136s] robustness: Reaction-day CAR[-1,+1], market model
+[   1207s] robustness: Reaction-day CAR[-1,+1], bank-index benchmark
+[   1283s] robustness: Published call-report inputs only
+[   1356s] robustness: Broad support definition
+[   1430s] robustness: U rule requires support (broad)
+[   1502s] robustness: Z rule removed
+[   1582s]   broader panel repeat 10/50
+[   1666s]   broader panel repeat 20/50
+[   1747s]   broader panel repeat 30/50
+[   1830s]   broader panel repeat 40/50
+[   1911s]   broader panel repeat 50/50
+[   1911s] broader panel done
+[   1983s] grouping check done
+[   2399s]   permutation 100/400
+[   2820s]   permutation 200/400
+[   3241s]   permutation 300/400
+[   3668s]   permutation 400/400
+[   3668s] permutation test done
+[   3787s]   refitting bootstrap 100/500
+[   3908s]   refitting bootstrap 200/500
+[   4027s]   refitting bootstrap 300/500
+[   4147s]   refitting bootstrap 400/500
+[   4263s]   refitting bootstrap 500/500
+[   4263s] refitting bootstrap done
+[   4639s] risk-direction validation done
+[   4641s] DONE

@@ -1,0 +1,9 @@
+grouping,groups,model,AUC_mean,AUC_p05,AUC_p95,Brier_mean,partitions_with_pair_split
+listed parent + reaction day (corrected),78,"Logistic regression (L2, C=1)",0.6164180672268907,0.5610031512605043,0.6704569327731091,0.23424375269198638,0
+listed parent + reaction day (corrected),78,Ridge logistic,0.6323004201680672,0.5739495798319327,0.6775735294117647,0.2266120436921599,0
+listed parent + reaction day (corrected),78,SNFF + LR (Model 3),0.6014180672268907,0.5492121848739495,0.6536239495798318,0.23661893535432188,0
+listed parent + reaction day (corrected),78,Spider score alone (Model 1),0.4592699579831933,0.42847951680672275,0.4847689075630252,,0
+acquiring-bank certificate + day (Step 4 package),79,"Logistic regression (L2, C=1)",0.6154411764705883,0.5674894957983193,0.6529411764705882,0.2346038040553159,42
+acquiring-bank certificate + day (Step 4 package),79,Ridge logistic,0.6334243697478992,0.591281512605042,0.6681197478991596,0.2261936526979318,42
+acquiring-bank certificate + day (Step 4 package),79,SNFF + LR (Model 3),0.5974474789915967,0.5534138655462185,0.6420693277310924,0.2377861268291488,42
+acquiring-bank certificate + day (Step 4 package),79,Spider score alone (Model 1),0.4594537815126051,0.4314075630252101,0.4873293067226891,,42

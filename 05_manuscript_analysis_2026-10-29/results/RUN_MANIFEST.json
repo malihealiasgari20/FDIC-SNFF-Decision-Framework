@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-30",
+  "quick": false,
+  "repeats": 50,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "permutations": 400,
+  "permutation_repeats": 3,
+  "permutation_tuning": "complete nested procedure rerun on every permutation",
+  "bootstrap_refit_replicates": 500,
+  "bootstrap_refit_skipped": 0,
+  "seed_base": 5000,
+  "event_groups_primary": 51,
+  "event_groups_broader": 78,
+  "modal_tuned_C": {
+    "Ridge logistic": 0.1,
+    "SNFF + LR (Model 3)": 0.1
+  },
+  "sample": {
+    "P&A failures": 502,
+    "with complete call reports": 469,
+    "150 largest": 150,
+    "150: U.S.-listed parent": 94,
+    "150: U.S.-listed with prices (primary panel)": 55,
+    "150: U.S.-listed without prices": 39,
+    "150: private": 44,
+    "150: foreign-owned": 9,
+    "150: OTC": 3,
+    "469: U.S.-listed parent": 149,
+    "469: U.S.-listed with prices (broader panel)": 90
+  },
+  "shap": {
+    "C_full_sample": 0.1,
+    "shap_version": "0.54.1"
+  },
+  "inputs_sha256": {
+    "SNFF_Revised_Inputs_Primary55.csv": "90642ca00fb2831d3133e34c2bc59d55af4b895257abfdcae33910fbb40c8b84",
+    "SNFF_Revised_Inputs_Broader90.csv": "be9335f34cd0d2dcc3cba81fa7e994078d3dac70011725ed66944fed1137696a",
+    "Source_Verification_Ledger_90.csv": "64ba69e18b1d4527a439adae987109c208b866960287d6ef5a20c1994f3c1aca",
+    "Event_Convention_Comparison_90.csv": "0bccf63a34c549e4d7df97509665dad1e98f03494d40b9435d5d6ab8f97bba84",
+    "snff_revised_features.py": "45d8d44195e04a5fb1ba29afd55eba8c237be398e0f49ed0043d10c4172424f5",
+    "Bank_Benchmark_CAR_90.csv": "0af900a1df3fac26585d92a448d0945d861e93a15b4c83d7e2be75f07918aded",
+    "final_analysis.py": "98d2522a895989b1bef61a35820756ed46a5793023d827666f58ded13280a129"
+  },
+  "versions": {
+    "python": "3.13.17",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "shap": "0.54.1"
+  },
+  "runtime_seconds": 4641
+}

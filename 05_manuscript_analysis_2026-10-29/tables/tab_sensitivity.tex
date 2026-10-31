@@ -1,0 +1,22 @@
+\begin{table}[!t]
+\caption{Utility Sensitivity to the Assumed Loss-to-Benefit Ratio (Model~3 Probabilities; Mean over 50 Repeats)}
+\label{tab:sensitivity}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabular}{lcccccccc}
+\toprule
+ & & & & & & \multicolumn{2}{c}{\textbf{Own ratio}} & \textbf{3:1} \\
+\cmidrule(lr){7-8}\cmidrule(lr){9-9}
+\textbf{Ratio} & \textbf{Thr.} & \textbf{Pursue} & \textbf{TP/FP} & \textbf{FPR} & \textbf{F1} & \textbf{Util.} & \textbf{Gain} & \textbf{Util.} \\
+\midrule
+1:1 & 0.50 & 45.6 & 30.8/14.7 & 0.737 & 0.765 & 0.292 & 0.020 & $-$0.244 \\
+2:1 & 0.67 & 24.3 & 17.6/6.8 & 0.339 & 0.590 & 0.073 & 0.073 & $-$0.051 \\
+3:1 & 0.75 & 11.8 & 7.9/3.9 & 0.196 & 0.332 & $-$0.071 & $-$0.071 & $-$0.071 \\
+4:1 & 0.80 & 7.0 & 4.3/2.8 & 0.138 & 0.197 & $-$0.123 & $-$0.123 & $-$0.073 \\
+5:1 & 0.83 & 5.1 & 2.7/2.4 & 0.119 & 0.133 & $-$0.167 & $-$0.167 & $-$0.080 \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}\parbox{0.94\columnwidth}{\scriptsize Threshold $L/(B+L)$ applied to Model~3's out-of-fold probabilities. Gain: utility
+minus that of the better trivial policy (pursue all or pursue none) at the same ratio.}
+\end{table}
