@@ -1,5 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this package, please cite the article and this Zenodo-archived release."title: "Replication package for: Do Interaction Rules Improve Decisions on FDIC-Assisted Bank Acquisitions? A Leakage-Controlled Evaluation of the Spider Network Filtering Framework"
+message: "If you use this package, please cite the article and this Zenodo-archived release."
+title: "Replication package for: Do Interaction Rules Improve Decisions on FDIC-Assisted Bank Acquisitions? A Leakage-Controlled Evaluation of the Spider Network Filtering Framework"
 version: "4.17"
 date-released: "2026-11-25"
 doi: 10.5281/zenodo.24558799
