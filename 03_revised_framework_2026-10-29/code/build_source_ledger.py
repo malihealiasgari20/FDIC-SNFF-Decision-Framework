@@ -9,6 +9,11 @@ and any bridge bank, systemic-risk exception or FDIC financing of the buyer.
 The evidence table below was transcribed on 2026-10-29; FDIC releases are U.S.
 government works.
 
+Correction of 2026-11-23 (reviewer query): the FDIC releases of Westernbank Puerto Rico
+(PA-0306) and Eurobank (PA-0308) do not mention the FDIC financing of the buyer that the FDIC
+bid summaries list (Financing Note); it is coded from the bid summaries and the acquirers'
+filings, as recorded in the notes of the two rows.
+
 Event windows and CARs come from 02b_car_conventions_2026-10-29.
 
 usage: python3 -I build_source_ledger.py <research_folder> <output_csv>
@@ -31,7 +36,7 @@ PA-0421|PR-143-2009|2009-08-14|{A}3715|"This evening and over the weekend"; hotl
 PA-0490|PR-124-2008|2008-11-21|{A}3356|hotline "this evening until 9:00 p.m. pacific"|||AFTER_CLOSE|1|U.S. Bank takes the first $1.6 bn of losses on covered pools, FDIC shares further losses|0|0|0|joint release with PFF Bank & Trust
 PA-0489|PR-124-2008|2008-11-21|{A}3356|hotline "this evening until 9:00 p.m. pacific"|||AFTER_CLOSE|1|as PA-0490 (joint release)|0|0|0|joint release with Downey
 PA-0377|PR-201-2009|2009-11-06|{A}3647|"This evening and over the weekend"|||AFTER_CLOSE|1|loss share on approx. $7.7 bn of assets|0|0|0|
-PA-0306|PR-97-2010|2010-04-30|{A}4066|"This evening and over the weekend"|||AFTER_CLOSE|1|loss share on $8.77 bn of assets|0|0|0|
+PA-0306|PR-97-2010|2010-04-30|{A}4066|"This evening and over the weekend"|||AFTER_CLOSE|1|loss share on $8.77 bn of assets|0|0|1|buyer issued the FDIC a five-year $5,758,084,000 purchase money note at 2.50% and the FDIC received a cash-settled value appreciation instrument (Popular 8-K signed 2010-05-06, Ex. 4.1 and 4.2); FDIC bid summary: winning bid with Financing Note and Equity Appreciation Instrument; financing not in the FDIC release; coded 2026-11-23
 PA-0387|PR-195-2009|2009-10-30|{A}3655|nine FBOP banks "closed this evening"|||AFTER_CLOSE|1|loss share on approx. $14.4 bn of $18.2 bn purchased (U.S. Bancorp: substantially all loans)|0|0|0|one release for nine banks
 PA-0385|PR-195-2009|2009-10-30|{A}3655|nine FBOP banks "closed this evening"|||AFTER_CLOSE|1|as PA-0387|0|0|0|one release for nine banks
 PA-0388|PR-195-2009|2009-10-30|{A}3655|nine FBOP banks "closed this evening"|||AFTER_CLOSE|1|as PA-0387|0|0|0|one release for nine banks
@@ -40,7 +45,7 @@ PA-0030|PR-24-2015|2015-02-27|{G}f45980|hotline "beginning this evening"|2015-02
 PA-0001|PR-30-2024|2024-04-26|{G}398f972|"This evening"; hotline until 9 p.m. ET|2024-04-26 18:17 EDT|{G}398f972|AFTER_CLOSE|0|no loss share in release|0|0|0|the WSJ reported the planned seizure first; the earliest dated report found (Reuters, citing the WSJ) is stamped 5:56 p.m. on 2024-04-26 (Investing.com), after the close; the WSJ's own time was not found
 PA-0493|PR-113-2008|2008-11-07|{A}3367|hotline "this evening until 9 p.m. central"|||AFTER_CLOSE|0|none in release; P&A agreement (Prosperity 8-K, Ex. 2.1) has no loss-sharing section|0|0|0|
 PA-0017|PR-34-2017|2017-04-28|{A}6473|hotline "this evening until 9 p.m., CT"|||AFTER_CLOSE|0|no loss share in release|0|0|0|
-PA-0308|PR-95-2010|2010-04-30|{A}4070|"This evening and over the weekend"|||AFTER_CLOSE|1|loss share on $1.58 bn of assets|0|0|0|
+PA-0308|PR-95-2010|2010-04-30|{A}4070|"This evening and over the weekend"|||AFTER_CLOSE|1|loss share on $1.58 bn of assets|0|0|1|buyer issued the FDIC a one-year $715,536,000 promissory note at 0.881%, fully recourse, and a value appreciation instrument (Oriental press release of 2010-04-30 and 8-K signed 2010-05-06); FDIC bid summary: winning bid with Financing Note and Equity Appreciation Instrument; financing not in the FDIC release; coded 2026-11-23
 PA-0203|PR-18-2011|2011-01-28|{A}4399|"This evening and over the weekend"|||AFTER_CLOSE|0|no loss share in release|0|0|0|
 PA-0206|PR-13-2011|2011-01-21|{A}4404|"This evening and over the weekend"|||AFTER_CLOSE|1|loss share on $1.11 bn of assets|0|0|0|
 PA-0347|PR-26-2010|2010-01-29|{A}4150|"This evening"; hotline until 9 p.m. PST|||AFTER_CLOSE|1|loss share on $2 bn of assets|0|0|0|

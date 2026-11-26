@@ -1,0 +1,67 @@
+\begin{table*}[!t]
+\caption{Included and Excluded Transactions: Characteristics, the Models' Ranking by Acquirer Size, and Covariate Balance}
+\label{tab:selection}
+\centering
+\scriptsize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc}
+\toprule
+\multicolumn{6}{l}{\textit{A. Characteristics: median [first, third quartile]}} \\
+\textbf{Characteristic} & \textbf{Included} & \textbf{Excluded} & \textbf{AUC ($p$)} & \textbf{Parent acquired} & \textbf{Parent listed} \\
+\midrule
+Transactions (events) & 55 (51) & 39 (36) & --- & 26 & 13 \\
+Listed parents & 28 & 24 & --- & 17 & 7 \\
+Failed in 2008--2010 & 67\% & 85\% & 0.413 (0.08) & 92\% & 69\% \\
+Acquiring bank assets, \$ billion & 15.82 [4.16, 88.19] & 4.04 [2.21, 9.29] & 0.766 ($<$0.01) & 5.79 & 3.03 \\
+Acquiring bank capital $C$, \% & 9.35 [8.60, 11.63] & 12.19 [9.66, 13.55] & 0.300 (0.03) & 10.30 & 12.48 \\
+Failed bank assets, \$ billion & 1.11 [0.54, 3.56] & 0.60 [0.48, 1.17] & 0.662 (0.03) & 0.59 & 0.61 \\
+Failed bank deposits $G$, \$ billion & 1.00 [0.50, 2.63] & 0.52 [0.42, 1.11] & 0.653 (0.04) & 0.50 & 0.54 \\
+NPL ratio $N$, \% & 13.96 [9.00, 17.23] & 15.10 [10.98, 20.91] & 0.426 (0.30) & 15.95 & 13.14 \\
+NPL change $T$, percentage points & 2.80 [0.70, 6.56] & 4.38 [0.08, 6.72] & 0.488 (0.84) & 4.87 & 0.14 \\
+Deposit change $L$, \% & $-$4.54 [$-$11.71, 1.06] & $-$5.39 [$-$8.94, 0.02] & 0.494 (0.92) & $-$5.01 & $-$6.68 \\
+Relative size $M$ & 0.13 [0.03, 0.27] & 0.23 [0.11, 0.46] & 0.332 (0.04) & 0.19 & 0.37 \\
+\midrule
+\multicolumn{6}{l}{\textit{B. Mean AUC of the included transactions, by acquirer size and reweighted to all 94}} \\
+\textbf{Transactions} & \textbf{Positive} & \textbf{Model~2} & \textbf{Ridge} & \textbf{Model~3} & \textbf{Spider score} \\
+\midrule
+\multicolumn{6}{l}{S\&P~500 benchmark} \\
+\quad All 55 & 35 & 0.615 & 0.632 & 0.594 & 0.423 \\
+\quad Acquiring bank $\leq$ \$9.2 billion (19) & 13 & 0.321 & 0.358 & 0.319 & 0.478 \\
+\quad Acquiring bank $>$ \$9.2 billion (36) & 22 & 0.744 & 0.755 & 0.717 & 0.419 \\
+\quad Reweighted to all 94 (effective 27) & --- & 0.389 & 0.405 & 0.386 & 0.490 \\
+\quad Reweighted, truncated (effective 43) & --- & 0.505 & 0.526 & 0.497 & 0.449 \\
+\multicolumn{6}{l}{Bank-sector benchmark} \\
+\quad All 55 & 39 & 0.277 & 0.280 & 0.413 & 0.505 \\
+\quad Acquiring bank $\leq$ \$9.2 billion (19) & 14 & 0.238 & 0.199 & 0.229 & 0.569 \\
+\quad Acquiring bank $>$ \$9.2 billion (36) & 25 & 0.283 & 0.304 & 0.489 & 0.490 \\
+\quad Reweighted to all 94 (effective 27) & --- & 0.216 & 0.211 & 0.310 & 0.548 \\
+\quad Reweighted, truncated (effective 43) & --- & 0.276 & 0.270 & 0.389 & 0.510 \\
+\midrule
+\multicolumn{6}{l}{\textit{C. Balance: standardized difference of the included transactions from all 94}} \\
+\textbf{Characteristic} & \textbf{Mean, all 94} & \textbf{Mean, included} & \textbf{Unweighted} & \textbf{Weighted} & \textbf{Truncated} \\
+\midrule
+Log acquiring bank assets$^{*}$ & 2.42 & 3.08 & 0.38 & $-$0.16 & 0.02 \\
+Acquiring bank capital $C$, \%$^{*}$ & 10.88 & 10.14 & $-$0.27 & 0.10 & $-$0.01 \\
+Failed in 2008--2010 (share)$^{*}$ & 0.74 & 0.67 & $-$0.16 & 0.07 & 0.01 \\
+NPL ratio $N$, \%$^{*}$ & 15.65 & 14.09 & $-$0.14 & 0.25 & 0.00 \\
+Log failed bank assets & 0.34 & 0.61 & 0.19 & $-$0.02 & 0.05 \\
+Log failed bank deposits $G$ & 0.17 & 0.42 & 0.18 & $-$0.01 & 0.05 \\
+NPL change $T$, percentage points & 4.69 & 4.85 & 0.02 & 0.56 & 0.16 \\
+Deposit change $L$, \% & $-$4.01 & $-$4.17 & $-$0.01 & 0.09 & 0.04 \\
+Log relative size $M$ & $-$2.08 & $-$2.47 & $-$0.26 & 0.17 & 0.02 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{2pt}\parbox{0.96\textwidth}{\scriptsize The 94 transactions among the 150 largest eligible failures whose acquiring bank had a
+U.S.-listed parent: 55 included (28 parents) and 39 without price data (24 parents). Parent acquired:
+the excluded transactions whose parent was later acquired and delisted; parent listed: those whose parent still trades, under the
+same or a new ticker. The failed
+bank's figures come from its last public call report and the acquiring bank's from its report at the last quarter-end at least
+90 days before the failure, as for the model inputs. Panel~A: for the period, the share of transactions. AUC: probability that an
+included transaction has the higher value; $p$: two-sided, with inclusion permuted across listed parents (10,000
+permutations), unadjusted. Panel~B: out-of-fold predictions of Table~\ref{tab:main_results} for each benchmark, nothing refitted;
+the size cut is the median acquiring bank of all 94, and 29 of the 39 excluded transactions
+lie at or below it. Reweighted: each transaction weighted by the inverse of its probability of inclusion, estimated on the 94 from the
+acquiring bank's log assets and capital, the 2008--2010 period, and the NPL ratio ($^{*}$), normalized to a mean of one; truncated: the
+weights capped at their 95th percentile. Effective: the effective sample size, the squared sum of the weights over the sum of their
+squares. Panel~C: (mean of the included transactions, weighted as in the column, minus the mean of all 94) divided by the standard
+deviation of all 94.}
+\end{table*}

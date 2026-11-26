@@ -1,0 +1,55 @@
+[      0s] 2026 variants (22 one at a time, 3 structural, 1000 +/-50%, 1000 sign-preserving); Model 3 refitted for 226
+[     66s] components cached for 2 x 50 partitions
+[     67s] Spider score: SPY done; the reference reproduces the released score and 4A in all 50 partitions
+[     68s] Spider score: bank-sector index done; the reference reproduces the released score and 4A in all 50 partitions
+[     70s] constants chosen within training folds: SPY done
+[     72s] constants chosen within training folds: bank-sector index done
+[    326s] permutation test of the constants chosen in training folds: SPY done (the reference reproduces the released null)
+[    573s] permutation test of the constants chosen in training folds: bank-sector index done (the reference reproduces the released null)
+[    584s] Model 3, SPY: the reference reproduces the released Model 3, 4A, 4B and 4C in all 50 partitions
+[    679s]   Model 3, SPY: 10/226 variants
+[    785s]   Model 3, SPY: 20/226 variants
+[    891s]   Model 3, SPY: 30/226 variants
+[    996s]   Model 3, SPY: 40/226 variants
+[   1104s]   Model 3, SPY: 50/226 variants
+[   1210s]   Model 3, SPY: 60/226 variants
+[   1312s]   Model 3, SPY: 70/226 variants
+[   1423s]   Model 3, SPY: 80/226 variants
+[   1541s]   Model 3, SPY: 90/226 variants
+[   1666s]   Model 3, SPY: 100/226 variants
+[   1774s]   Model 3, SPY: 110/226 variants
+[   1897s]   Model 3, SPY: 120/226 variants
+[   2022s]   Model 3, SPY: 130/226 variants
+[   2141s]   Model 3, SPY: 140/226 variants
+[   2252s]   Model 3, SPY: 150/226 variants
+[   2362s]   Model 3, SPY: 160/226 variants
+[   2470s]   Model 3, SPY: 170/226 variants
+[   2578s]   Model 3, SPY: 180/226 variants
+[   2687s]   Model 3, SPY: 190/226 variants
+[   2790s]   Model 3, SPY: 200/226 variants
+[   2897s]   Model 3, SPY: 210/226 variants
+[   3005s]   Model 3, SPY: 220/226 variants
+[   3082s] Model 3, bank-sector index: the reference reproduces the released Model 3, 4A, 4B and 4C in all 50 partitions
+[   3177s]   Model 3, bank-sector index: 10/226 variants
+[   3284s]   Model 3, bank-sector index: 20/226 variants
+[   3386s]   Model 3, bank-sector index: 30/226 variants
+[   3492s]   Model 3, bank-sector index: 40/226 variants
+[   3597s]   Model 3, bank-sector index: 50/226 variants
+[   3710s]   Model 3, bank-sector index: 60/226 variants
+[   3816s]   Model 3, bank-sector index: 70/226 variants
+[   3923s]   Model 3, bank-sector index: 80/226 variants
+[   4035s]   Model 3, bank-sector index: 90/226 variants
+[   4141s]   Model 3, bank-sector index: 100/226 variants
+[   4251s]   Model 3, bank-sector index: 110/226 variants
+[   4362s]   Model 3, bank-sector index: 120/226 variants
+[   4471s]   Model 3, bank-sector index: 130/226 variants
+[   4580s]   Model 3, bank-sector index: 140/226 variants
+[   4685s]   Model 3, bank-sector index: 150/226 variants
+[   4793s]   Model 3, bank-sector index: 160/226 variants
+[   4904s]   Model 3, bank-sector index: 170/226 variants
+[   5013s]   Model 3, bank-sector index: 180/226 variants
+[   5116s]   Model 3, bank-sector index: 190/226 variants
+[   5222s]   Model 3, bank-sector index: 200/226 variants
+[   5332s]   Model 3, bank-sector index: 210/226 variants
+[   5437s]   Model 3, bank-sector index: 220/226 variants
+[   5498s] weight sensitivity done

@@ -1,0 +1,39 @@
+\begin{table*}[!t]
+\caption{Sensitivity of the Spider Score and Model~3 to the Expert Weights and Interaction Adjustments: Mean AUC over 50 Partitions}
+\label{tab:weights}
+\centering
+\scriptsize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc}
+\toprule
+\textbf{Constants} & \textbf{Variants} & \textbf{Spider score} & \textbf{Model~3} & \textbf{Model~3 $-$ ridge} \\
+\midrule
+\multicolumn{5}{l}{\textit{A. S\&P~500 benchmark}} \\
+Expert constants (reference) & 1 & 0.423 & 0.594 & $-$0.038 \\
+One constant changed & 22 & [0.398, 0.462] & [0.589, 0.604] & [$-$0.043, $-$0.029] \\
+Equal weights and/or no adjustments & 3 & [0.355, 0.396] & [0.595, 0.604] & [$-$0.037, $-$0.028] \\
+Random, each within $\pm$50\% & 1,000 (100) & 0.425 [0.386, 0.469] & 0.595 [0.589, 0.607] & $-$0.037 [$-$0.043, $-$0.025] \\
+Random, sign-preserving & 1,000 (100) & 0.419 [0.319, 0.539] & 0.597 [0.587, 0.628] & $-$0.035 [$-$0.046, $-$0.004] \\
+Chosen in training folds, $\pm$50\% draws & --- & 0.462 & --- & --- \\
+Chosen in training folds, sign-preserving draws & --- & 0.541 & --- & --- \\
+\midrule
+\multicolumn{5}{l}{\textit{B. Bank-sector benchmark}} \\
+Expert constants (reference) & 1 & 0.505 & 0.413 & $+$0.133 \\
+One constant changed & 22 & [0.463, 0.545] & [0.411, 0.418] & [$+$0.131, $+$0.138] \\
+Equal weights and/or no adjustments & 3 & [0.472, 0.504] & [0.412, 0.416] & [$+$0.132, $+$0.136] \\
+Random, each within $\pm$50\% & 1,000 (100) & 0.503 [0.473, 0.536] & 0.413 [0.411, 0.418] & $+$0.134 [$+$0.131, $+$0.138] \\
+Random, sign-preserving & 1,000 (100) & 0.485 [0.430, 0.551] & 0.414 [0.410, 0.429] & $+$0.134 [$+$0.130, $+$0.149] \\
+Chosen in training folds, $\pm$50\% draws & --- & 0.483 & --- & --- \\
+Chosen in training folds, sign-preserving draws & --- & 0.471 & --- & --- \\
+\bottomrule
+\end{tabular*}
+\par\vspace{2pt}\parbox{0.96\textwidth}{\scriptsize Partitions: those of Table~\ref{tab:main_results} for each benchmark. Reference: the constants
+of Eqs.~\eqref{eq:raw} and~\eqref{eq:adjusted}. One constant changed: one component weight times 0.5 or 1.5, the five then rescaled so that
+their absolute values again sum to one, or one adjustment times 0, 0.5, or 1.5 (22 variants); equal weights: 0.20 for each component;
+no adjustments: those of $Q$, $U$, $Z$, and $K$ set to zero; brackets give the lowest and highest mean AUC of the set. Random within
+$\pm$50\%: every constant times an independent factor drawn uniformly between 0.5 and 1.5, the component weights then rescaled;
+sign-preserving: component weights drawn uniformly over all nonnegative weights that sum to one, and each adjustment uniformly between
+zero and twice its value; median across draws, with the 5th and 95th percentiles in brackets. Variants: number of constant sets for the
+Spider score and, in parentheses, for Model~3, refitted with its inner tuning for each set. Model~3 $-$ ridge: mean difference from
+ridge regression on the same partitions (ridge regression and Model~2 do not use the constants). Chosen in training folds: the draw
+of the set, or the reference, with the highest training-fold AUC scores the held-out fold.}
+\end{table*}

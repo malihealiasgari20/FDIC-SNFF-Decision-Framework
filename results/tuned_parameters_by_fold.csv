@@ -1,0 +1,2251 @@
+repeat,fold,model,param
+0,0,"Logistic regression (L2, C=1)",1.0
+0,0,LASSO logistic,1.0
+0,0,Ridge logistic,0.1
+0,0,Decision tree,2.0
+0,0,Random forest,4.0
+0,0,XGBoost,1.0
+0,0,LR + pairwise interactions,0.1
+0,0,SNFF + LR (Model 3),0.1
+0,0,4B threshold,0.55
+0,1,"Logistic regression (L2, C=1)",1.0
+0,1,LASSO logistic,0.1
+0,1,Ridge logistic,0.1
+0,1,Decision tree,2.0
+0,1,Random forest,4.0
+0,1,XGBoost,2.0
+0,1,LR + pairwise interactions,0.1
+0,1,SNFF + LR (Model 3),0.1
+0,1,4B threshold,0.55
+0,2,"Logistic regression (L2, C=1)",1.0
+0,2,LASSO logistic,1.0
+0,2,Ridge logistic,0.1
+0,2,Decision tree,2.0
+0,2,Random forest,2.0
+0,2,XGBoost,1.0
+0,2,LR + pairwise interactions,0.1
+0,2,SNFF + LR (Model 3),0.1
+0,2,4B threshold,0.55
+0,3,"Logistic regression (L2, C=1)",1.0
+0,3,LASSO logistic,1.0
+0,3,Ridge logistic,0.1
+0,3,Decision tree,2.0
+0,3,Random forest,4.0
+0,3,XGBoost,1.0
+0,3,LR + pairwise interactions,0.1
+0,3,SNFF + LR (Model 3),0.1
+0,3,4B threshold,0.55
+0,4,"Logistic regression (L2, C=1)",1.0
+0,4,LASSO logistic,0.1
+0,4,Ridge logistic,0.1
+0,4,Decision tree,2.0
+0,4,Random forest,2.0
+0,4,XGBoost,2.0
+0,4,LR + pairwise interactions,0.1
+0,4,SNFF + LR (Model 3),0.1
+0,4,4B threshold,0.55
+1,0,"Logistic regression (L2, C=1)",1.0
+1,0,LASSO logistic,0.1
+1,0,Ridge logistic,0.1
+1,0,Decision tree,3.0
+1,0,Random forest,2.0
+1,0,XGBoost,1.0
+1,0,LR + pairwise interactions,0.1
+1,0,SNFF + LR (Model 3),0.1
+1,0,4B threshold,0.6
+1,1,"Logistic regression (L2, C=1)",1.0
+1,1,LASSO logistic,1.0
+1,1,Ridge logistic,0.1
+1,1,Decision tree,2.0
+1,1,Random forest,4.0
+1,1,XGBoost,1.0
+1,1,LR + pairwise interactions,0.1
+1,1,SNFF + LR (Model 3),0.1
+1,1,4B threshold,0.55
+1,2,"Logistic regression (L2, C=1)",1.0
+1,2,LASSO logistic,0.1
+1,2,Ridge logistic,0.1
+1,2,Decision tree,2.0
+1,2,Random forest,4.0
+1,2,XGBoost,2.0
+1,2,LR + pairwise interactions,0.1
+1,2,SNFF + LR (Model 3),0.1
+1,2,4B threshold,0.55
+1,3,"Logistic regression (L2, C=1)",1.0
+1,3,LASSO logistic,0.1
+1,3,Ridge logistic,0.1
+1,3,Decision tree,2.0
+1,3,Random forest,4.0
+1,3,XGBoost,1.0
+1,3,LR + pairwise interactions,0.1
+1,3,SNFF + LR (Model 3),0.1
+1,3,4B threshold,0.55
+1,4,"Logistic regression (L2, C=1)",1.0
+1,4,LASSO logistic,1.0
+1,4,Ridge logistic,1.0
+1,4,Decision tree,3.0
+1,4,Random forest,4.0
+1,4,XGBoost,2.0
+1,4,LR + pairwise interactions,0.1
+1,4,SNFF + LR (Model 3),1.0
+1,4,4B threshold,0.55
+2,0,"Logistic regression (L2, C=1)",1.0
+2,0,LASSO logistic,0.1
+2,0,Ridge logistic,0.1
+2,0,Decision tree,3.0
+2,0,Random forest,4.0
+2,0,XGBoost,1.0
+2,0,LR + pairwise interactions,0.1
+2,0,SNFF + LR (Model 3),0.1
+2,0,4B threshold,0.55
+2,1,"Logistic regression (L2, C=1)",1.0
+2,1,LASSO logistic,0.1
+2,1,Ridge logistic,0.1
+2,1,Decision tree,2.0
+2,1,Random forest,2.0
+2,1,XGBoost,1.0
+2,1,LR + pairwise interactions,0.1
+2,1,SNFF + LR (Model 3),0.1
+2,1,4B threshold,0.55
+2,2,"Logistic regression (L2, C=1)",1.0
+2,2,LASSO logistic,1.0
+2,2,Ridge logistic,0.1
+2,2,Decision tree,3.0
+2,2,Random forest,4.0
+2,2,XGBoost,2.0
+2,2,LR + pairwise interactions,0.1
+2,2,SNFF + LR (Model 3),0.1
+2,2,4B threshold,0.55
+2,3,"Logistic regression (L2, C=1)",1.0
+2,3,LASSO logistic,0.1
+2,3,Ridge logistic,0.1
+2,3,Decision tree,2.0
+2,3,Random forest,2.0
+2,3,XGBoost,1.0
+2,3,LR + pairwise interactions,0.1
+2,3,SNFF + LR (Model 3),0.1
+2,3,4B threshold,0.55
+2,4,"Logistic regression (L2, C=1)",1.0
+2,4,LASSO logistic,0.1
+2,4,Ridge logistic,0.1
+2,4,Decision tree,2.0
+2,4,Random forest,2.0
+2,4,XGBoost,1.0
+2,4,LR + pairwise interactions,0.1
+2,4,SNFF + LR (Model 3),0.1
+2,4,4B threshold,0.55
+3,0,"Logistic regression (L2, C=1)",1.0
+3,0,LASSO logistic,0.1
+3,0,Ridge logistic,0.1
+3,0,Decision tree,2.0
+3,0,Random forest,4.0
+3,0,XGBoost,2.0
+3,0,LR + pairwise interactions,0.1
+3,0,SNFF + LR (Model 3),0.1
+3,0,4B threshold,0.55
+3,1,"Logistic regression (L2, C=1)",1.0
+3,1,LASSO logistic,1.0
+3,1,Ridge logistic,0.1
+3,1,Decision tree,3.0
+3,1,Random forest,4.0
+3,1,XGBoost,1.0
+3,1,LR + pairwise interactions,0.1
+3,1,SNFF + LR (Model 3),0.1
+3,1,4B threshold,0.55
+3,2,"Logistic regression (L2, C=1)",1.0
+3,2,LASSO logistic,1.0
+3,2,Ridge logistic,0.1
+3,2,Decision tree,2.0
+3,2,Random forest,4.0
+3,2,XGBoost,1.0
+3,2,LR + pairwise interactions,0.1
+3,2,SNFF + LR (Model 3),0.1
+3,2,4B threshold,0.55
+3,3,"Logistic regression (L2, C=1)",1.0
+3,3,LASSO logistic,1.0
+3,3,Ridge logistic,0.1
+3,3,Decision tree,2.0
+3,3,Random forest,2.0
+3,3,XGBoost,1.0
+3,3,LR + pairwise interactions,0.1
+3,3,SNFF + LR (Model 3),0.1
+3,3,4B threshold,0.55
+3,4,"Logistic regression (L2, C=1)",1.0
+3,4,LASSO logistic,1.0
+3,4,Ridge logistic,0.1
+3,4,Decision tree,2.0
+3,4,Random forest,2.0
+3,4,XGBoost,2.0
+3,4,LR + pairwise interactions,0.1
+3,4,SNFF + LR (Model 3),0.1
+3,4,4B threshold,0.55
+4,0,"Logistic regression (L2, C=1)",1.0
+4,0,LASSO logistic,1.0
+4,0,Ridge logistic,0.1
+4,0,Decision tree,2.0
+4,0,Random forest,2.0
+4,0,XGBoost,1.0
+4,0,LR + pairwise interactions,0.1
+4,0,SNFF + LR (Model 3),0.1
+4,0,4B threshold,0.55
+4,1,"Logistic regression (L2, C=1)",1.0
+4,1,LASSO logistic,1.0
+4,1,Ridge logistic,0.1
+4,1,Decision tree,2.0
+4,1,Random forest,2.0
+4,1,XGBoost,1.0
+4,1,LR + pairwise interactions,0.1
+4,1,SNFF + LR (Model 3),0.1
+4,1,4B threshold,0.55
+4,2,"Logistic regression (L2, C=1)",1.0
+4,2,LASSO logistic,0.1
+4,2,Ridge logistic,0.1
+4,2,Decision tree,2.0
+4,2,Random forest,2.0
+4,2,XGBoost,1.0
+4,2,LR + pairwise interactions,0.1
+4,2,SNFF + LR (Model 3),0.1
+4,2,4B threshold,0.55
+4,3,"Logistic regression (L2, C=1)",1.0
+4,3,LASSO logistic,10.0
+4,3,Ridge logistic,10.0
+4,3,Decision tree,2.0
+4,3,Random forest,2.0
+4,3,XGBoost,1.0
+4,3,LR + pairwise interactions,0.1
+4,3,SNFF + LR (Model 3),0.1
+4,3,4B threshold,0.55
+4,4,"Logistic regression (L2, C=1)",1.0
+4,4,LASSO logistic,0.1
+4,4,Ridge logistic,0.1
+4,4,Decision tree,2.0
+4,4,Random forest,2.0
+4,4,XGBoost,1.0
+4,4,LR + pairwise interactions,0.1
+4,4,SNFF + LR (Model 3),0.1
+4,4,4B threshold,0.55
+5,0,"Logistic regression (L2, C=1)",1.0
+5,0,LASSO logistic,0.1
+5,0,Ridge logistic,0.1
+5,0,Decision tree,2.0
+5,0,Random forest,4.0
+5,0,XGBoost,2.0
+5,0,LR + pairwise interactions,0.1
+5,0,SNFF + LR (Model 3),0.1
+5,0,4B threshold,0.55
+5,1,"Logistic regression (L2, C=1)",1.0
+5,1,LASSO logistic,0.1
+5,1,Ridge logistic,0.1
+5,1,Decision tree,2.0
+5,1,Random forest,4.0
+5,1,XGBoost,1.0
+5,1,LR + pairwise interactions,0.1
+5,1,SNFF + LR (Model 3),0.1
+5,1,4B threshold,0.55
+5,2,"Logistic regression (L2, C=1)",1.0
+5,2,LASSO logistic,1.0
+5,2,Ridge logistic,0.1
+5,2,Decision tree,2.0
+5,2,Random forest,2.0
+5,2,XGBoost,2.0
+5,2,LR + pairwise interactions,0.1
+5,2,SNFF + LR (Model 3),0.1
+5,2,4B threshold,0.55
+5,3,"Logistic regression (L2, C=1)",1.0
+5,3,LASSO logistic,1.0
+5,3,Ridge logistic,0.1
+5,3,Decision tree,2.0
+5,3,Random forest,2.0
+5,3,XGBoost,1.0
+5,3,LR + pairwise interactions,0.1
+5,3,SNFF + LR (Model 3),0.1
+5,3,4B threshold,0.55
+5,4,"Logistic regression (L2, C=1)",1.0
+5,4,LASSO logistic,1.0
+5,4,Ridge logistic,0.1
+5,4,Decision tree,2.0
+5,4,Random forest,4.0
+5,4,XGBoost,1.0
+5,4,LR + pairwise interactions,0.1
+5,4,SNFF + LR (Model 3),0.1
+5,4,4B threshold,0.6
+6,0,"Logistic regression (L2, C=1)",1.0
+6,0,LASSO logistic,0.1
+6,0,Ridge logistic,0.1
+6,0,Decision tree,2.0
+6,0,Random forest,4.0
+6,0,XGBoost,1.0
+6,0,LR + pairwise interactions,0.1
+6,0,SNFF + LR (Model 3),0.1
+6,0,4B threshold,0.55
+6,1,"Logistic regression (L2, C=1)",1.0
+6,1,LASSO logistic,1.0
+6,1,Ridge logistic,1.0
+6,1,Decision tree,3.0
+6,1,Random forest,2.0
+6,1,XGBoost,2.0
+6,1,LR + pairwise interactions,0.1
+6,1,SNFF + LR (Model 3),0.1
+6,1,4B threshold,0.55
+6,2,"Logistic regression (L2, C=1)",1.0
+6,2,LASSO logistic,1.0
+6,2,Ridge logistic,0.1
+6,2,Decision tree,3.0
+6,2,Random forest,2.0
+6,2,XGBoost,1.0
+6,2,LR + pairwise interactions,0.1
+6,2,SNFF + LR (Model 3),0.1
+6,2,4B threshold,0.6
+6,3,"Logistic regression (L2, C=1)",1.0
+6,3,LASSO logistic,1.0
+6,3,Ridge logistic,0.1
+6,3,Decision tree,2.0
+6,3,Random forest,2.0
+6,3,XGBoost,1.0
+6,3,LR + pairwise interactions,0.1
+6,3,SNFF + LR (Model 3),0.1
+6,3,4B threshold,0.55
+6,4,"Logistic regression (L2, C=1)",1.0
+6,4,LASSO logistic,0.1
+6,4,Ridge logistic,0.1
+6,4,Decision tree,2.0
+6,4,Random forest,2.0
+6,4,XGBoost,1.0
+6,4,LR + pairwise interactions,0.1
+6,4,SNFF + LR (Model 3),0.1
+6,4,4B threshold,0.6
+7,0,"Logistic regression (L2, C=1)",1.0
+7,0,LASSO logistic,0.1
+7,0,Ridge logistic,0.1
+7,0,Decision tree,2.0
+7,0,Random forest,4.0
+7,0,XGBoost,1.0
+7,0,LR + pairwise interactions,0.1
+7,0,SNFF + LR (Model 3),0.1
+7,0,4B threshold,0.55
+7,1,"Logistic regression (L2, C=1)",1.0
+7,1,LASSO logistic,1.0
+7,1,Ridge logistic,0.1
+7,1,Decision tree,2.0
+7,1,Random forest,4.0
+7,1,XGBoost,1.0
+7,1,LR + pairwise interactions,0.1
+7,1,SNFF + LR (Model 3),1.0
+7,1,4B threshold,0.55
+7,2,"Logistic regression (L2, C=1)",1.0
+7,2,LASSO logistic,1.0
+7,2,Ridge logistic,0.1
+7,2,Decision tree,2.0
+7,2,Random forest,2.0
+7,2,XGBoost,2.0
+7,2,LR + pairwise interactions,0.1
+7,2,SNFF + LR (Model 3),0.1
+7,2,4B threshold,0.55
+7,3,"Logistic regression (L2, C=1)",1.0
+7,3,LASSO logistic,1.0
+7,3,Ridge logistic,0.1
+7,3,Decision tree,2.0
+7,3,Random forest,2.0
+7,3,XGBoost,2.0
+7,3,LR + pairwise interactions,0.1
+7,3,SNFF + LR (Model 3),0.1
+7,3,4B threshold,0.55
+7,4,"Logistic regression (L2, C=1)",1.0
+7,4,LASSO logistic,1.0
+7,4,Ridge logistic,0.1
+7,4,Decision tree,2.0
+7,4,Random forest,4.0
+7,4,XGBoost,1.0
+7,4,LR + pairwise interactions,0.1
+7,4,SNFF + LR (Model 3),0.1
+7,4,4B threshold,0.55
+8,0,"Logistic regression (L2, C=1)",1.0
+8,0,LASSO logistic,10.0
+8,0,Ridge logistic,0.1
+8,0,Decision tree,3.0
+8,0,Random forest,2.0
+8,0,XGBoost,1.0
+8,0,LR + pairwise interactions,0.1
+8,0,SNFF + LR (Model 3),0.1
+8,0,4B threshold,0.55
+8,1,"Logistic regression (L2, C=1)",1.0
+8,1,LASSO logistic,1.0
+8,1,Ridge logistic,1.0
+8,1,Decision tree,2.0
+8,1,Random forest,2.0
+8,1,XGBoost,2.0
+8,1,LR + pairwise interactions,0.1
+8,1,SNFF + LR (Model 3),0.1
+8,1,4B threshold,0.55
+8,2,"Logistic regression (L2, C=1)",1.0
+8,2,LASSO logistic,0.1
+8,2,Ridge logistic,0.1
+8,2,Decision tree,3.0
+8,2,Random forest,2.0
+8,2,XGBoost,1.0
+8,2,LR + pairwise interactions,0.1
+8,2,SNFF + LR (Model 3),0.1
+8,2,4B threshold,0.6
+8,3,"Logistic regression (L2, C=1)",1.0
+8,3,LASSO logistic,0.1
+8,3,Ridge logistic,0.1
+8,3,Decision tree,2.0
+8,3,Random forest,2.0
+8,3,XGBoost,1.0
+8,3,LR + pairwise interactions,0.1
+8,3,SNFF + LR (Model 3),0.1
+8,3,4B threshold,0.6
+8,4,"Logistic regression (L2, C=1)",1.0
+8,4,LASSO logistic,0.1
+8,4,Ridge logistic,0.1
+8,4,Decision tree,3.0
+8,4,Random forest,2.0
+8,4,XGBoost,1.0
+8,4,LR + pairwise interactions,0.1
+8,4,SNFF + LR (Model 3),0.1
+8,4,4B threshold,0.55
+9,0,"Logistic regression (L2, C=1)",1.0
+9,0,LASSO logistic,0.1
+9,0,Ridge logistic,0.1
+9,0,Decision tree,2.0
+9,0,Random forest,2.0
+9,0,XGBoost,1.0
+9,0,LR + pairwise interactions,0.1
+9,0,SNFF + LR (Model 3),0.1
+9,0,4B threshold,0.6
+9,1,"Logistic regression (L2, C=1)",1.0
+9,1,LASSO logistic,1.0
+9,1,Ridge logistic,0.1
+9,1,Decision tree,2.0
+9,1,Random forest,2.0
+9,1,XGBoost,2.0
+9,1,LR + pairwise interactions,0.1
+9,1,SNFF + LR (Model 3),0.1
+9,1,4B threshold,0.55
+9,2,"Logistic regression (L2, C=1)",1.0
+9,2,LASSO logistic,1.0
+9,2,Ridge logistic,0.1
+9,2,Decision tree,3.0
+9,2,Random forest,4.0
+9,2,XGBoost,1.0
+9,2,LR + pairwise interactions,0.1
+9,2,SNFF + LR (Model 3),0.1
+9,2,4B threshold,0.55
+9,3,"Logistic regression (L2, C=1)",1.0
+9,3,LASSO logistic,1.0
+9,3,Ridge logistic,0.1
+9,3,Decision tree,3.0
+9,3,Random forest,4.0
+9,3,XGBoost,1.0
+9,3,LR + pairwise interactions,0.1
+9,3,SNFF + LR (Model 3),0.1
+9,3,4B threshold,0.55
+9,4,"Logistic regression (L2, C=1)",1.0
+9,4,LASSO logistic,0.1
+9,4,Ridge logistic,0.1
+9,4,Decision tree,2.0
+9,4,Random forest,2.0
+9,4,XGBoost,1.0
+9,4,LR + pairwise interactions,0.1
+9,4,SNFF + LR (Model 3),0.1
+9,4,4B threshold,0.55
+10,0,"Logistic regression (L2, C=1)",1.0
+10,0,LASSO logistic,0.1
+10,0,Ridge logistic,0.1
+10,0,Decision tree,2.0
+10,0,Random forest,4.0
+10,0,XGBoost,2.0
+10,0,LR + pairwise interactions,0.1
+10,0,SNFF + LR (Model 3),0.1
+10,0,4B threshold,0.55
+10,1,"Logistic regression (L2, C=1)",1.0
+10,1,LASSO logistic,0.1
+10,1,Ridge logistic,0.1
+10,1,Decision tree,3.0
+10,1,Random forest,2.0
+10,1,XGBoost,2.0
+10,1,LR + pairwise interactions,0.1
+10,1,SNFF + LR (Model 3),0.1
+10,1,4B threshold,0.55
+10,2,"Logistic regression (L2, C=1)",1.0
+10,2,LASSO logistic,1.0
+10,2,Ridge logistic,0.1
+10,2,Decision tree,3.0
+10,2,Random forest,2.0
+10,2,XGBoost,1.0
+10,2,LR + pairwise interactions,0.1
+10,2,SNFF + LR (Model 3),0.1
+10,2,4B threshold,0.55
+10,3,"Logistic regression (L2, C=1)",1.0
+10,3,LASSO logistic,0.1
+10,3,Ridge logistic,0.1
+10,3,Decision tree,3.0
+10,3,Random forest,2.0
+10,3,XGBoost,1.0
+10,3,LR + pairwise interactions,0.1
+10,3,SNFF + LR (Model 3),0.1
+10,3,4B threshold,0.55
+10,4,"Logistic regression (L2, C=1)",1.0
+10,4,LASSO logistic,1.0
+10,4,Ridge logistic,0.1
+10,4,Decision tree,2.0
+10,4,Random forest,2.0
+10,4,XGBoost,1.0
+10,4,LR + pairwise interactions,0.1
+10,4,SNFF + LR (Model 3),0.1
+10,4,4B threshold,0.55
+11,0,"Logistic regression (L2, C=1)",1.0
+11,0,LASSO logistic,0.1
+11,0,Ridge logistic,0.1
+11,0,Decision tree,3.0
+11,0,Random forest,2.0
+11,0,XGBoost,1.0
+11,0,LR + pairwise interactions,0.1
+11,0,SNFF + LR (Model 3),0.1
+11,0,4B threshold,0.55
+11,1,"Logistic regression (L2, C=1)",1.0
+11,1,LASSO logistic,1.0
+11,1,Ridge logistic,0.1
+11,1,Decision tree,2.0
+11,1,Random forest,2.0
+11,1,XGBoost,1.0
+11,1,LR + pairwise interactions,0.1
+11,1,SNFF + LR (Model 3),0.1
+11,1,4B threshold,0.55
+11,2,"Logistic regression (L2, C=1)",1.0
+11,2,LASSO logistic,1.0
+11,2,Ridge logistic,0.1
+11,2,Decision tree,2.0
+11,2,Random forest,4.0
+11,2,XGBoost,1.0
+11,2,LR + pairwise interactions,0.1
+11,2,SNFF + LR (Model 3),0.1
+11,2,4B threshold,0.55
+11,3,"Logistic regression (L2, C=1)",1.0
+11,3,LASSO logistic,1.0
+11,3,Ridge logistic,0.1
+11,3,Decision tree,2.0
+11,3,Random forest,2.0
+11,3,XGBoost,1.0
+11,3,LR + pairwise interactions,0.1
+11,3,SNFF + LR (Model 3),0.1
+11,3,4B threshold,0.65
+11,4,"Logistic regression (L2, C=1)",1.0
+11,4,LASSO logistic,0.1
+11,4,Ridge logistic,0.1
+11,4,Decision tree,3.0
+11,4,Random forest,2.0
+11,4,XGBoost,1.0
+11,4,LR + pairwise interactions,0.1
+11,4,SNFF + LR (Model 3),0.1
+11,4,4B threshold,0.55
+12,0,"Logistic regression (L2, C=1)",1.0
+12,0,LASSO logistic,0.1
+12,0,Ridge logistic,0.1
+12,0,Decision tree,2.0
+12,0,Random forest,2.0
+12,0,XGBoost,1.0
+12,0,LR + pairwise interactions,0.1
+12,0,SNFF + LR (Model 3),0.1
+12,0,4B threshold,0.55
+12,1,"Logistic regression (L2, C=1)",1.0
+12,1,LASSO logistic,0.1
+12,1,Ridge logistic,0.1
+12,1,Decision tree,2.0
+12,1,Random forest,2.0
+12,1,XGBoost,1.0
+12,1,LR + pairwise interactions,0.1
+12,1,SNFF + LR (Model 3),0.1
+12,1,4B threshold,0.55
+12,2,"Logistic regression (L2, C=1)",1.0
+12,2,LASSO logistic,1.0
+12,2,Ridge logistic,0.1
+12,2,Decision tree,2.0
+12,2,Random forest,4.0
+12,2,XGBoost,2.0
+12,2,LR + pairwise interactions,0.1
+12,2,SNFF + LR (Model 3),0.1
+12,2,4B threshold,0.55
+12,3,"Logistic regression (L2, C=1)",1.0
+12,3,LASSO logistic,1.0
+12,3,Ridge logistic,0.1
+12,3,Decision tree,2.0
+12,3,Random forest,4.0
+12,3,XGBoost,1.0
+12,3,LR + pairwise interactions,0.1
+12,3,SNFF + LR (Model 3),0.1
+12,3,4B threshold,0.55
+12,4,"Logistic regression (L2, C=1)",1.0
+12,4,LASSO logistic,1.0
+12,4,Ridge logistic,0.1
+12,4,Decision tree,3.0
+12,4,Random forest,2.0
+12,4,XGBoost,2.0
+12,4,LR + pairwise interactions,0.1
+12,4,SNFF + LR (Model 3),0.1
+12,4,4B threshold,0.55
+13,0,"Logistic regression (L2, C=1)",1.0
+13,0,LASSO logistic,0.1
+13,0,Ridge logistic,0.1
+13,0,Decision tree,2.0
+13,0,Random forest,2.0
+13,0,XGBoost,1.0
+13,0,LR + pairwise interactions,0.1
+13,0,SNFF + LR (Model 3),0.1
+13,0,4B threshold,0.55
+13,1,"Logistic regression (L2, C=1)",1.0
+13,1,LASSO logistic,1.0
+13,1,Ridge logistic,0.1
+13,1,Decision tree,2.0
+13,1,Random forest,2.0
+13,1,XGBoost,2.0
+13,1,LR + pairwise interactions,0.1
+13,1,SNFF + LR (Model 3),0.1
+13,1,4B threshold,0.55
+13,2,"Logistic regression (L2, C=1)",1.0
+13,2,LASSO logistic,1.0
+13,2,Ridge logistic,0.1
+13,2,Decision tree,2.0
+13,2,Random forest,2.0
+13,2,XGBoost,1.0
+13,2,LR + pairwise interactions,0.1
+13,2,SNFF + LR (Model 3),0.1
+13,2,4B threshold,0.55
+13,3,"Logistic regression (L2, C=1)",1.0
+13,3,LASSO logistic,0.1
+13,3,Ridge logistic,0.1
+13,3,Decision tree,2.0
+13,3,Random forest,2.0
+13,3,XGBoost,1.0
+13,3,LR + pairwise interactions,0.1
+13,3,SNFF + LR (Model 3),0.1
+13,3,4B threshold,0.55
+13,4,"Logistic regression (L2, C=1)",1.0
+13,4,LASSO logistic,0.1
+13,4,Ridge logistic,0.1
+13,4,Decision tree,2.0
+13,4,Random forest,2.0
+13,4,XGBoost,1.0
+13,4,LR + pairwise interactions,0.1
+13,4,SNFF + LR (Model 3),0.1
+13,4,4B threshold,0.55
+14,0,"Logistic regression (L2, C=1)",1.0
+14,0,LASSO logistic,1.0
+14,0,Ridge logistic,0.1
+14,0,Decision tree,2.0
+14,0,Random forest,4.0
+14,0,XGBoost,1.0
+14,0,LR + pairwise interactions,0.1
+14,0,SNFF + LR (Model 3),0.1
+14,0,4B threshold,0.55
+14,1,"Logistic regression (L2, C=1)",1.0
+14,1,LASSO logistic,1.0
+14,1,Ridge logistic,0.1
+14,1,Decision tree,3.0
+14,1,Random forest,2.0
+14,1,XGBoost,1.0
+14,1,LR + pairwise interactions,0.1
+14,1,SNFF + LR (Model 3),0.1
+14,1,4B threshold,0.55
+14,2,"Logistic regression (L2, C=1)",1.0
+14,2,LASSO logistic,10.0
+14,2,Ridge logistic,1.0
+14,2,Decision tree,2.0
+14,2,Random forest,2.0
+14,2,XGBoost,1.0
+14,2,LR + pairwise interactions,0.1
+14,2,SNFF + LR (Model 3),0.1
+14,2,4B threshold,0.55
+14,3,"Logistic regression (L2, C=1)",1.0
+14,3,LASSO logistic,1.0
+14,3,Ridge logistic,0.1
+14,3,Decision tree,3.0
+14,3,Random forest,4.0
+14,3,XGBoost,1.0
+14,3,LR + pairwise interactions,0.1
+14,3,SNFF + LR (Model 3),0.1
+14,3,4B threshold,0.6
+14,4,"Logistic regression (L2, C=1)",1.0
+14,4,LASSO logistic,0.1
+14,4,Ridge logistic,0.1
+14,4,Decision tree,2.0
+14,4,Random forest,4.0
+14,4,XGBoost,2.0
+14,4,LR + pairwise interactions,0.1
+14,4,SNFF + LR (Model 3),0.1
+14,4,4B threshold,0.55
+15,0,"Logistic regression (L2, C=1)",1.0
+15,0,LASSO logistic,0.1
+15,0,Ridge logistic,0.1
+15,0,Decision tree,2.0
+15,0,Random forest,4.0
+15,0,XGBoost,1.0
+15,0,LR + pairwise interactions,0.1
+15,0,SNFF + LR (Model 3),0.1
+15,0,4B threshold,0.55
+15,1,"Logistic regression (L2, C=1)",1.0
+15,1,LASSO logistic,1.0
+15,1,Ridge logistic,0.1
+15,1,Decision tree,2.0
+15,1,Random forest,4.0
+15,1,XGBoost,1.0
+15,1,LR + pairwise interactions,0.1
+15,1,SNFF + LR (Model 3),0.1
+15,1,4B threshold,0.55
+15,2,"Logistic regression (L2, C=1)",1.0
+15,2,LASSO logistic,0.1
+15,2,Ridge logistic,0.1
+15,2,Decision tree,2.0
+15,2,Random forest,2.0
+15,2,XGBoost,1.0
+15,2,LR + pairwise interactions,0.1
+15,2,SNFF + LR (Model 3),0.1
+15,2,4B threshold,0.55
+15,3,"Logistic regression (L2, C=1)",1.0
+15,3,LASSO logistic,1.0
+15,3,Ridge logistic,0.1
+15,3,Decision tree,3.0
+15,3,Random forest,4.0
+15,3,XGBoost,1.0
+15,3,LR + pairwise interactions,0.1
+15,3,SNFF + LR (Model 3),0.1
+15,3,4B threshold,0.55
+15,4,"Logistic regression (L2, C=1)",1.0
+15,4,LASSO logistic,1.0
+15,4,Ridge logistic,0.1
+15,4,Decision tree,3.0
+15,4,Random forest,4.0
+15,4,XGBoost,2.0
+15,4,LR + pairwise interactions,0.1
+15,4,SNFF + LR (Model 3),0.1
+15,4,4B threshold,0.55
+16,0,"Logistic regression (L2, C=1)",1.0
+16,0,LASSO logistic,0.1
+16,0,Ridge logistic,0.1
+16,0,Decision tree,2.0
+16,0,Random forest,4.0
+16,0,XGBoost,1.0
+16,0,LR + pairwise interactions,0.1
+16,0,SNFF + LR (Model 3),0.1
+16,0,4B threshold,0.55
+16,1,"Logistic regression (L2, C=1)",1.0
+16,1,LASSO logistic,0.1
+16,1,Ridge logistic,0.1
+16,1,Decision tree,2.0
+16,1,Random forest,2.0
+16,1,XGBoost,1.0
+16,1,LR + pairwise interactions,0.1
+16,1,SNFF + LR (Model 3),0.1
+16,1,4B threshold,0.6
+16,2,"Logistic regression (L2, C=1)",1.0
+16,2,LASSO logistic,0.1
+16,2,Ridge logistic,0.1
+16,2,Decision tree,3.0
+16,2,Random forest,2.0
+16,2,XGBoost,1.0
+16,2,LR + pairwise interactions,0.1
+16,2,SNFF + LR (Model 3),0.1
+16,2,4B threshold,0.55
+16,3,"Logistic regression (L2, C=1)",1.0
+16,3,LASSO logistic,1.0
+16,3,Ridge logistic,0.1
+16,3,Decision tree,2.0
+16,3,Random forest,4.0
+16,3,XGBoost,1.0
+16,3,LR + pairwise interactions,0.1
+16,3,SNFF + LR (Model 3),0.1
+16,3,4B threshold,0.55
+16,4,"Logistic regression (L2, C=1)",1.0
+16,4,LASSO logistic,1.0
+16,4,Ridge logistic,1.0
+16,4,Decision tree,2.0
+16,4,Random forest,2.0
+16,4,XGBoost,1.0
+16,4,LR + pairwise interactions,0.1
+16,4,SNFF + LR (Model 3),0.1
+16,4,4B threshold,0.55
+17,0,"Logistic regression (L2, C=1)",1.0
+17,0,LASSO logistic,0.1
+17,0,Ridge logistic,0.1
+17,0,Decision tree,3.0
+17,0,Random forest,2.0
+17,0,XGBoost,1.0
+17,0,LR + pairwise interactions,0.1
+17,0,SNFF + LR (Model 3),0.1
+17,0,4B threshold,0.55
+17,1,"Logistic regression (L2, C=1)",1.0
+17,1,LASSO logistic,0.1
+17,1,Ridge logistic,0.1
+17,1,Decision tree,2.0
+17,1,Random forest,4.0
+17,1,XGBoost,1.0
+17,1,LR + pairwise interactions,0.1
+17,1,SNFF + LR (Model 3),0.1
+17,1,4B threshold,0.6
+17,2,"Logistic regression (L2, C=1)",1.0
+17,2,LASSO logistic,0.1
+17,2,Ridge logistic,0.1
+17,2,Decision tree,2.0
+17,2,Random forest,2.0
+17,2,XGBoost,1.0
+17,2,LR + pairwise interactions,0.1
+17,2,SNFF + LR (Model 3),0.1
+17,2,4B threshold,0.55
+17,3,"Logistic regression (L2, C=1)",1.0
+17,3,LASSO logistic,1.0
+17,3,Ridge logistic,0.1
+17,3,Decision tree,2.0
+17,3,Random forest,4.0
+17,3,XGBoost,1.0
+17,3,LR + pairwise interactions,0.1
+17,3,SNFF + LR (Model 3),0.1
+17,3,4B threshold,0.55
+17,4,"Logistic regression (L2, C=1)",1.0
+17,4,LASSO logistic,1.0
+17,4,Ridge logistic,1.0
+17,4,Decision tree,2.0
+17,4,Random forest,2.0
+17,4,XGBoost,1.0
+17,4,LR + pairwise interactions,0.1
+17,4,SNFF + LR (Model 3),0.1
+17,4,4B threshold,0.55
+18,0,"Logistic regression (L2, C=1)",1.0
+18,0,LASSO logistic,0.1
+18,0,Ridge logistic,0.1
+18,0,Decision tree,2.0
+18,0,Random forest,4.0
+18,0,XGBoost,1.0
+18,0,LR + pairwise interactions,0.1
+18,0,SNFF + LR (Model 3),0.1
+18,0,4B threshold,0.55
+18,1,"Logistic regression (L2, C=1)",1.0
+18,1,LASSO logistic,0.1
+18,1,Ridge logistic,0.1
+18,1,Decision tree,2.0
+18,1,Random forest,2.0
+18,1,XGBoost,1.0
+18,1,LR + pairwise interactions,0.1
+18,1,SNFF + LR (Model 3),0.1
+18,1,4B threshold,0.55
+18,2,"Logistic regression (L2, C=1)",1.0
+18,2,LASSO logistic,1.0
+18,2,Ridge logistic,1.0
+18,2,Decision tree,2.0
+18,2,Random forest,2.0
+18,2,XGBoost,1.0
+18,2,LR + pairwise interactions,0.1
+18,2,SNFF + LR (Model 3),0.1
+18,2,4B threshold,0.55
+18,3,"Logistic regression (L2, C=1)",1.0
+18,3,LASSO logistic,1.0
+18,3,Ridge logistic,0.1
+18,3,Decision tree,2.0
+18,3,Random forest,2.0
+18,3,XGBoost,1.0
+18,3,LR + pairwise interactions,0.1
+18,3,SNFF + LR (Model 3),0.1
+18,3,4B threshold,0.55
+18,4,"Logistic regression (L2, C=1)",1.0
+18,4,LASSO logistic,1.0
+18,4,Ridge logistic,1.0
+18,4,Decision tree,2.0
+18,4,Random forest,2.0
+18,4,XGBoost,2.0
+18,4,LR + pairwise interactions,0.1
+18,4,SNFF + LR (Model 3),1.0
+18,4,4B threshold,0.55
+19,0,"Logistic regression (L2, C=1)",1.0
+19,0,LASSO logistic,0.1
+19,0,Ridge logistic,0.1
+19,0,Decision tree,2.0
+19,0,Random forest,2.0
+19,0,XGBoost,1.0
+19,0,LR + pairwise interactions,0.1
+19,0,SNFF + LR (Model 3),0.1
+19,0,4B threshold,0.55
+19,1,"Logistic regression (L2, C=1)",1.0
+19,1,LASSO logistic,1.0
+19,1,Ridge logistic,1.0
+19,1,Decision tree,2.0
+19,1,Random forest,2.0
+19,1,XGBoost,1.0
+19,1,LR + pairwise interactions,0.1
+19,1,SNFF + LR (Model 3),0.1
+19,1,4B threshold,0.55
+19,2,"Logistic regression (L2, C=1)",1.0
+19,2,LASSO logistic,1.0
+19,2,Ridge logistic,0.1
+19,2,Decision tree,3.0
+19,2,Random forest,2.0
+19,2,XGBoost,1.0
+19,2,LR + pairwise interactions,0.1
+19,2,SNFF + LR (Model 3),10.0
+19,2,4B threshold,0.55
+19,3,"Logistic regression (L2, C=1)",1.0
+19,3,LASSO logistic,1.0
+19,3,Ridge logistic,0.1
+19,3,Decision tree,2.0
+19,3,Random forest,4.0
+19,3,XGBoost,1.0
+19,3,LR + pairwise interactions,0.1
+19,3,SNFF + LR (Model 3),0.1
+19,3,4B threshold,0.55
+19,4,"Logistic regression (L2, C=1)",1.0
+19,4,LASSO logistic,1.0
+19,4,Ridge logistic,0.1
+19,4,Decision tree,2.0
+19,4,Random forest,4.0
+19,4,XGBoost,2.0
+19,4,LR + pairwise interactions,0.1
+19,4,SNFF + LR (Model 3),0.1
+19,4,4B threshold,0.6
+20,0,"Logistic regression (L2, C=1)",1.0
+20,0,LASSO logistic,0.1
+20,0,Ridge logistic,0.1
+20,0,Decision tree,2.0
+20,0,Random forest,2.0
+20,0,XGBoost,1.0
+20,0,LR + pairwise interactions,0.1
+20,0,SNFF + LR (Model 3),0.1
+20,0,4B threshold,0.55
+20,1,"Logistic regression (L2, C=1)",1.0
+20,1,LASSO logistic,1.0
+20,1,Ridge logistic,1.0
+20,1,Decision tree,3.0
+20,1,Random forest,4.0
+20,1,XGBoost,1.0
+20,1,LR + pairwise interactions,0.1
+20,1,SNFF + LR (Model 3),1.0
+20,1,4B threshold,0.55
+20,2,"Logistic regression (L2, C=1)",1.0
+20,2,LASSO logistic,1.0
+20,2,Ridge logistic,0.1
+20,2,Decision tree,2.0
+20,2,Random forest,2.0
+20,2,XGBoost,2.0
+20,2,LR + pairwise interactions,0.1
+20,2,SNFF + LR (Model 3),0.1
+20,2,4B threshold,0.55
+20,3,"Logistic regression (L2, C=1)",1.0
+20,3,LASSO logistic,1.0
+20,3,Ridge logistic,1.0
+20,3,Decision tree,2.0
+20,3,Random forest,2.0
+20,3,XGBoost,1.0
+20,3,LR + pairwise interactions,0.1
+20,3,SNFF + LR (Model 3),0.1
+20,3,4B threshold,0.55
+20,4,"Logistic regression (L2, C=1)",1.0
+20,4,LASSO logistic,0.1
+20,4,Ridge logistic,0.1
+20,4,Decision tree,2.0
+20,4,Random forest,2.0
+20,4,XGBoost,1.0
+20,4,LR + pairwise interactions,0.1
+20,4,SNFF + LR (Model 3),0.1
+20,4,4B threshold,0.55
+21,0,"Logistic regression (L2, C=1)",1.0
+21,0,LASSO logistic,0.1
+21,0,Ridge logistic,0.1
+21,0,Decision tree,2.0
+21,0,Random forest,2.0
+21,0,XGBoost,1.0
+21,0,LR + pairwise interactions,0.1
+21,0,SNFF + LR (Model 3),0.1
+21,0,4B threshold,0.55
+21,1,"Logistic regression (L2, C=1)",1.0
+21,1,LASSO logistic,1.0
+21,1,Ridge logistic,0.1
+21,1,Decision tree,2.0
+21,1,Random forest,4.0
+21,1,XGBoost,1.0
+21,1,LR + pairwise interactions,0.1
+21,1,SNFF + LR (Model 3),0.1
+21,1,4B threshold,0.6
+21,2,"Logistic regression (L2, C=1)",1.0
+21,2,LASSO logistic,1.0
+21,2,Ridge logistic,0.1
+21,2,Decision tree,2.0
+21,2,Random forest,4.0
+21,2,XGBoost,1.0
+21,2,LR + pairwise interactions,0.1
+21,2,SNFF + LR (Model 3),0.1
+21,2,4B threshold,0.55
+21,3,"Logistic regression (L2, C=1)",1.0
+21,3,LASSO logistic,1.0
+21,3,Ridge logistic,0.1
+21,3,Decision tree,2.0
+21,3,Random forest,2.0
+21,3,XGBoost,1.0
+21,3,LR + pairwise interactions,0.1
+21,3,SNFF + LR (Model 3),0.1
+21,3,4B threshold,0.55
+21,4,"Logistic regression (L2, C=1)",1.0
+21,4,LASSO logistic,0.1
+21,4,Ridge logistic,0.1
+21,4,Decision tree,2.0
+21,4,Random forest,4.0
+21,4,XGBoost,1.0
+21,4,LR + pairwise interactions,0.1
+21,4,SNFF + LR (Model 3),0.1
+21,4,4B threshold,0.55
+22,0,"Logistic regression (L2, C=1)",1.0
+22,0,LASSO logistic,0.1
+22,0,Ridge logistic,0.1
+22,0,Decision tree,2.0
+22,0,Random forest,2.0
+22,0,XGBoost,1.0
+22,0,LR + pairwise interactions,0.1
+22,0,SNFF + LR (Model 3),0.1
+22,0,4B threshold,0.55
+22,1,"Logistic regression (L2, C=1)",1.0
+22,1,LASSO logistic,0.1
+22,1,Ridge logistic,0.1
+22,1,Decision tree,2.0
+22,1,Random forest,4.0
+22,1,XGBoost,1.0
+22,1,LR + pairwise interactions,0.1
+22,1,SNFF + LR (Model 3),0.1
+22,1,4B threshold,0.55
+22,2,"Logistic regression (L2, C=1)",1.0
+22,2,LASSO logistic,0.1
+22,2,Ridge logistic,0.1
+22,2,Decision tree,2.0
+22,2,Random forest,2.0
+22,2,XGBoost,1.0
+22,2,LR + pairwise interactions,0.1
+22,2,SNFF + LR (Model 3),0.1
+22,2,4B threshold,0.55
+22,3,"Logistic regression (L2, C=1)",1.0
+22,3,LASSO logistic,0.1
+22,3,Ridge logistic,0.1
+22,3,Decision tree,3.0
+22,3,Random forest,4.0
+22,3,XGBoost,2.0
+22,3,LR + pairwise interactions,0.1
+22,3,SNFF + LR (Model 3),0.1
+22,3,4B threshold,0.55
+22,4,"Logistic regression (L2, C=1)",1.0
+22,4,LASSO logistic,1.0
+22,4,Ridge logistic,0.1
+22,4,Decision tree,2.0
+22,4,Random forest,2.0
+22,4,XGBoost,1.0
+22,4,LR + pairwise interactions,0.1
+22,4,SNFF + LR (Model 3),0.1
+22,4,4B threshold,0.55
+23,0,"Logistic regression (L2, C=1)",1.0
+23,0,LASSO logistic,0.1
+23,0,Ridge logistic,0.1
+23,0,Decision tree,2.0
+23,0,Random forest,4.0
+23,0,XGBoost,1.0
+23,0,LR + pairwise interactions,0.1
+23,0,SNFF + LR (Model 3),0.1
+23,0,4B threshold,0.55
+23,1,"Logistic regression (L2, C=1)",1.0
+23,1,LASSO logistic,1.0
+23,1,Ridge logistic,0.1
+23,1,Decision tree,2.0
+23,1,Random forest,2.0
+23,1,XGBoost,1.0
+23,1,LR + pairwise interactions,0.1
+23,1,SNFF + LR (Model 3),0.1
+23,1,4B threshold,0.55
+23,2,"Logistic regression (L2, C=1)",1.0
+23,2,LASSO logistic,0.1
+23,2,Ridge logistic,0.1
+23,2,Decision tree,2.0
+23,2,Random forest,2.0
+23,2,XGBoost,1.0
+23,2,LR + pairwise interactions,0.1
+23,2,SNFF + LR (Model 3),0.1
+23,2,4B threshold,0.55
+23,3,"Logistic regression (L2, C=1)",1.0
+23,3,LASSO logistic,0.1
+23,3,Ridge logistic,0.1
+23,3,Decision tree,2.0
+23,3,Random forest,2.0
+23,3,XGBoost,1.0
+23,3,LR + pairwise interactions,0.1
+23,3,SNFF + LR (Model 3),0.1
+23,3,4B threshold,0.55
+23,4,"Logistic regression (L2, C=1)",1.0
+23,4,LASSO logistic,0.1
+23,4,Ridge logistic,0.1
+23,4,Decision tree,2.0
+23,4,Random forest,4.0
+23,4,XGBoost,2.0
+23,4,LR + pairwise interactions,0.1
+23,4,SNFF + LR (Model 3),0.1
+23,4,4B threshold,0.55
+24,0,"Logistic regression (L2, C=1)",1.0
+24,0,LASSO logistic,0.1
+24,0,Ridge logistic,0.1
+24,0,Decision tree,2.0
+24,0,Random forest,2.0
+24,0,XGBoost,1.0
+24,0,LR + pairwise interactions,0.1
+24,0,SNFF + LR (Model 3),0.1
+24,0,4B threshold,0.55
+24,1,"Logistic regression (L2, C=1)",1.0
+24,1,LASSO logistic,0.1
+24,1,Ridge logistic,0.1
+24,1,Decision tree,3.0
+24,1,Random forest,2.0
+24,1,XGBoost,2.0
+24,1,LR + pairwise interactions,0.1
+24,1,SNFF + LR (Model 3),0.1
+24,1,4B threshold,0.55
+24,2,"Logistic regression (L2, C=1)",1.0
+24,2,LASSO logistic,1.0
+24,2,Ridge logistic,0.1
+24,2,Decision tree,3.0
+24,2,Random forest,2.0
+24,2,XGBoost,1.0
+24,2,LR + pairwise interactions,0.1
+24,2,SNFF + LR (Model 3),0.1
+24,2,4B threshold,0.55
+24,3,"Logistic regression (L2, C=1)",1.0
+24,3,LASSO logistic,1.0
+24,3,Ridge logistic,0.1
+24,3,Decision tree,2.0
+24,3,Random forest,2.0
+24,3,XGBoost,2.0
+24,3,LR + pairwise interactions,0.1
+24,3,SNFF + LR (Model 3),0.1
+24,3,4B threshold,0.55
+24,4,"Logistic regression (L2, C=1)",1.0
+24,4,LASSO logistic,0.1
+24,4,Ridge logistic,0.1
+24,4,Decision tree,2.0
+24,4,Random forest,2.0
+24,4,XGBoost,1.0
+24,4,LR + pairwise interactions,0.1
+24,4,SNFF + LR (Model 3),0.1
+24,4,4B threshold,0.55
+25,0,"Logistic regression (L2, C=1)",1.0
+25,0,LASSO logistic,0.1
+25,0,Ridge logistic,0.1
+25,0,Decision tree,2.0
+25,0,Random forest,2.0
+25,0,XGBoost,1.0
+25,0,LR + pairwise interactions,0.1
+25,0,SNFF + LR (Model 3),0.1
+25,0,4B threshold,0.55
+25,1,"Logistic regression (L2, C=1)",1.0
+25,1,LASSO logistic,1.0
+25,1,Ridge logistic,0.1
+25,1,Decision tree,2.0
+25,1,Random forest,2.0
+25,1,XGBoost,1.0
+25,1,LR + pairwise interactions,0.1
+25,1,SNFF + LR (Model 3),0.1
+25,1,4B threshold,0.55
+25,2,"Logistic regression (L2, C=1)",1.0
+25,2,LASSO logistic,1.0
+25,2,Ridge logistic,0.1
+25,2,Decision tree,2.0
+25,2,Random forest,2.0
+25,2,XGBoost,1.0
+25,2,LR + pairwise interactions,0.1
+25,2,SNFF + LR (Model 3),0.1
+25,2,4B threshold,0.55
+25,3,"Logistic regression (L2, C=1)",1.0
+25,3,LASSO logistic,0.1
+25,3,Ridge logistic,0.1
+25,3,Decision tree,2.0
+25,3,Random forest,4.0
+25,3,XGBoost,2.0
+25,3,LR + pairwise interactions,0.1
+25,3,SNFF + LR (Model 3),1.0
+25,3,4B threshold,0.55
+25,4,"Logistic regression (L2, C=1)",1.0
+25,4,LASSO logistic,1.0
+25,4,Ridge logistic,0.1
+25,4,Decision tree,3.0
+25,4,Random forest,4.0
+25,4,XGBoost,1.0
+25,4,LR + pairwise interactions,0.1
+25,4,SNFF + LR (Model 3),0.1
+25,4,4B threshold,0.55
+26,0,"Logistic regression (L2, C=1)",1.0
+26,0,LASSO logistic,0.1
+26,0,Ridge logistic,0.1
+26,0,Decision tree,2.0
+26,0,Random forest,2.0
+26,0,XGBoost,1.0
+26,0,LR + pairwise interactions,0.1
+26,0,SNFF + LR (Model 3),0.1
+26,0,4B threshold,0.55
+26,1,"Logistic regression (L2, C=1)",1.0
+26,1,LASSO logistic,0.1
+26,1,Ridge logistic,0.1
+26,1,Decision tree,2.0
+26,1,Random forest,2.0
+26,1,XGBoost,1.0
+26,1,LR + pairwise interactions,0.1
+26,1,SNFF + LR (Model 3),0.1
+26,1,4B threshold,0.6
+26,2,"Logistic regression (L2, C=1)",1.0
+26,2,LASSO logistic,1.0
+26,2,Ridge logistic,1.0
+26,2,Decision tree,2.0
+26,2,Random forest,4.0
+26,2,XGBoost,1.0
+26,2,LR + pairwise interactions,0.1
+26,2,SNFF + LR (Model 3),0.1
+26,2,4B threshold,0.55
+26,3,"Logistic regression (L2, C=1)",1.0
+26,3,LASSO logistic,1.0
+26,3,Ridge logistic,0.1
+26,3,Decision tree,2.0
+26,3,Random forest,2.0
+26,3,XGBoost,2.0
+26,3,LR + pairwise interactions,0.1
+26,3,SNFF + LR (Model 3),0.1
+26,3,4B threshold,0.55
+26,4,"Logistic regression (L2, C=1)",1.0
+26,4,LASSO logistic,1.0
+26,4,Ridge logistic,0.1
+26,4,Decision tree,3.0
+26,4,Random forest,2.0
+26,4,XGBoost,1.0
+26,4,LR + pairwise interactions,0.1
+26,4,SNFF + LR (Model 3),0.1
+26,4,4B threshold,0.55
+27,0,"Logistic regression (L2, C=1)",1.0
+27,0,LASSO logistic,0.1
+27,0,Ridge logistic,0.1
+27,0,Decision tree,2.0
+27,0,Random forest,2.0
+27,0,XGBoost,1.0
+27,0,LR + pairwise interactions,0.1
+27,0,SNFF + LR (Model 3),0.1
+27,0,4B threshold,0.55
+27,1,"Logistic regression (L2, C=1)",1.0
+27,1,LASSO logistic,1.0
+27,1,Ridge logistic,0.1
+27,1,Decision tree,2.0
+27,1,Random forest,2.0
+27,1,XGBoost,1.0
+27,1,LR + pairwise interactions,0.1
+27,1,SNFF + LR (Model 3),0.1
+27,1,4B threshold,0.55
+27,2,"Logistic regression (L2, C=1)",1.0
+27,2,LASSO logistic,0.1
+27,2,Ridge logistic,0.1
+27,2,Decision tree,2.0
+27,2,Random forest,2.0
+27,2,XGBoost,2.0
+27,2,LR + pairwise interactions,0.1
+27,2,SNFF + LR (Model 3),0.1
+27,2,4B threshold,0.55
+27,3,"Logistic regression (L2, C=1)",1.0
+27,3,LASSO logistic,0.1
+27,3,Ridge logistic,0.1
+27,3,Decision tree,3.0
+27,3,Random forest,2.0
+27,3,XGBoost,1.0
+27,3,LR + pairwise interactions,0.1
+27,3,SNFF + LR (Model 3),0.1
+27,3,4B threshold,0.55
+27,4,"Logistic regression (L2, C=1)",1.0
+27,4,LASSO logistic,1.0
+27,4,Ridge logistic,0.1
+27,4,Decision tree,2.0
+27,4,Random forest,2.0
+27,4,XGBoost,1.0
+27,4,LR + pairwise interactions,0.1
+27,4,SNFF + LR (Model 3),0.1
+27,4,4B threshold,0.55
+28,0,"Logistic regression (L2, C=1)",1.0
+28,0,LASSO logistic,0.1
+28,0,Ridge logistic,0.1
+28,0,Decision tree,2.0
+28,0,Random forest,2.0
+28,0,XGBoost,1.0
+28,0,LR + pairwise interactions,0.1
+28,0,SNFF + LR (Model 3),0.1
+28,0,4B threshold,0.55
+28,1,"Logistic regression (L2, C=1)",1.0
+28,1,LASSO logistic,1.0
+28,1,Ridge logistic,0.1
+28,1,Decision tree,2.0
+28,1,Random forest,2.0
+28,1,XGBoost,1.0
+28,1,LR + pairwise interactions,0.1
+28,1,SNFF + LR (Model 3),0.1
+28,1,4B threshold,0.55
+28,2,"Logistic regression (L2, C=1)",1.0
+28,2,LASSO logistic,1.0
+28,2,Ridge logistic,0.1
+28,2,Decision tree,3.0
+28,2,Random forest,4.0
+28,2,XGBoost,1.0
+28,2,LR + pairwise interactions,0.1
+28,2,SNFF + LR (Model 3),0.1
+28,2,4B threshold,0.55
+28,3,"Logistic regression (L2, C=1)",1.0
+28,3,LASSO logistic,1.0
+28,3,Ridge logistic,1.0
+28,3,Decision tree,2.0
+28,3,Random forest,2.0
+28,3,XGBoost,1.0
+28,3,LR + pairwise interactions,0.1
+28,3,SNFF + LR (Model 3),1.0
+28,3,4B threshold,0.55
+28,4,"Logistic regression (L2, C=1)",1.0
+28,4,LASSO logistic,0.1
+28,4,Ridge logistic,0.1
+28,4,Decision tree,3.0
+28,4,Random forest,2.0
+28,4,XGBoost,1.0
+28,4,LR + pairwise interactions,0.1
+28,4,SNFF + LR (Model 3),0.1
+28,4,4B threshold,0.65
+29,0,"Logistic regression (L2, C=1)",1.0
+29,0,LASSO logistic,0.1
+29,0,Ridge logistic,0.1
+29,0,Decision tree,2.0
+29,0,Random forest,2.0
+29,0,XGBoost,1.0
+29,0,LR + pairwise interactions,0.1
+29,0,SNFF + LR (Model 3),0.1
+29,0,4B threshold,0.6
+29,1,"Logistic regression (L2, C=1)",1.0
+29,1,LASSO logistic,1.0
+29,1,Ridge logistic,0.1
+29,1,Decision tree,2.0
+29,1,Random forest,2.0
+29,1,XGBoost,1.0
+29,1,LR + pairwise interactions,0.1
+29,1,SNFF + LR (Model 3),0.1
+29,1,4B threshold,0.65
+29,2,"Logistic regression (L2, C=1)",1.0
+29,2,LASSO logistic,0.1
+29,2,Ridge logistic,0.1
+29,2,Decision tree,2.0
+29,2,Random forest,2.0
+29,2,XGBoost,1.0
+29,2,LR + pairwise interactions,0.1
+29,2,SNFF + LR (Model 3),0.1
+29,2,4B threshold,0.55
+29,3,"Logistic regression (L2, C=1)",1.0
+29,3,LASSO logistic,0.1
+29,3,Ridge logistic,0.1
+29,3,Decision tree,3.0
+29,3,Random forest,4.0
+29,3,XGBoost,1.0
+29,3,LR + pairwise interactions,0.1
+29,3,SNFF + LR (Model 3),0.1
+29,3,4B threshold,0.55
+29,4,"Logistic regression (L2, C=1)",1.0
+29,4,LASSO logistic,1.0
+29,4,Ridge logistic,0.1
+29,4,Decision tree,3.0
+29,4,Random forest,2.0
+29,4,XGBoost,1.0
+29,4,LR + pairwise interactions,0.1
+29,4,SNFF + LR (Model 3),0.1
+29,4,4B threshold,0.55
+30,0,"Logistic regression (L2, C=1)",1.0
+30,0,LASSO logistic,0.1
+30,0,Ridge logistic,0.1
+30,0,Decision tree,2.0
+30,0,Random forest,2.0
+30,0,XGBoost,2.0
+30,0,LR + pairwise interactions,0.1
+30,0,SNFF + LR (Model 3),0.1
+30,0,4B threshold,0.55
+30,1,"Logistic regression (L2, C=1)",1.0
+30,1,LASSO logistic,1.0
+30,1,Ridge logistic,0.1
+30,1,Decision tree,2.0
+30,1,Random forest,4.0
+30,1,XGBoost,1.0
+30,1,LR + pairwise interactions,0.1
+30,1,SNFF + LR (Model 3),0.1
+30,1,4B threshold,0.55
+30,2,"Logistic regression (L2, C=1)",1.0
+30,2,LASSO logistic,10.0
+30,2,Ridge logistic,0.1
+30,2,Decision tree,3.0
+30,2,Random forest,2.0
+30,2,XGBoost,1.0
+30,2,LR + pairwise interactions,0.1
+30,2,SNFF + LR (Model 3),0.1
+30,2,4B threshold,0.55
+30,3,"Logistic regression (L2, C=1)",1.0
+30,3,LASSO logistic,1.0
+30,3,Ridge logistic,0.1
+30,3,Decision tree,3.0
+30,3,Random forest,2.0
+30,3,XGBoost,1.0
+30,3,LR + pairwise interactions,0.1
+30,3,SNFF + LR (Model 3),0.1
+30,3,4B threshold,0.55
+30,4,"Logistic regression (L2, C=1)",1.0
+30,4,LASSO logistic,1.0
+30,4,Ridge logistic,1.0
+30,4,Decision tree,2.0
+30,4,Random forest,4.0
+30,4,XGBoost,2.0
+30,4,LR + pairwise interactions,0.1
+30,4,SNFF + LR (Model 3),0.1
+30,4,4B threshold,0.55
+31,0,"Logistic regression (L2, C=1)",1.0
+31,0,LASSO logistic,1.0
+31,0,Ridge logistic,0.1
+31,0,Decision tree,3.0
+31,0,Random forest,2.0
+31,0,XGBoost,1.0
+31,0,LR + pairwise interactions,0.1
+31,0,SNFF + LR (Model 3),0.1
+31,0,4B threshold,0.55
+31,1,"Logistic regression (L2, C=1)",1.0
+31,1,LASSO logistic,0.1
+31,1,Ridge logistic,1.0
+31,1,Decision tree,3.0
+31,1,Random forest,4.0
+31,1,XGBoost,2.0
+31,1,LR + pairwise interactions,0.1
+31,1,SNFF + LR (Model 3),0.1
+31,1,4B threshold,0.55
+31,2,"Logistic regression (L2, C=1)",1.0
+31,2,LASSO logistic,0.1
+31,2,Ridge logistic,0.1
+31,2,Decision tree,2.0
+31,2,Random forest,2.0
+31,2,XGBoost,1.0
+31,2,LR + pairwise interactions,0.1
+31,2,SNFF + LR (Model 3),0.1
+31,2,4B threshold,0.55
+31,3,"Logistic regression (L2, C=1)",1.0
+31,3,LASSO logistic,0.1
+31,3,Ridge logistic,0.1
+31,3,Decision tree,2.0
+31,3,Random forest,2.0
+31,3,XGBoost,1.0
+31,3,LR + pairwise interactions,0.1
+31,3,SNFF + LR (Model 3),0.1
+31,3,4B threshold,0.55
+31,4,"Logistic regression (L2, C=1)",1.0
+31,4,LASSO logistic,0.1
+31,4,Ridge logistic,0.1
+31,4,Decision tree,2.0
+31,4,Random forest,2.0
+31,4,XGBoost,1.0
+31,4,LR + pairwise interactions,0.1
+31,4,SNFF + LR (Model 3),0.1
+31,4,4B threshold,0.55
+32,0,"Logistic regression (L2, C=1)",1.0
+32,0,LASSO logistic,0.1
+32,0,Ridge logistic,0.1
+32,0,Decision tree,3.0
+32,0,Random forest,4.0
+32,0,XGBoost,1.0
+32,0,LR + pairwise interactions,0.1
+32,0,SNFF + LR (Model 3),0.1
+32,0,4B threshold,0.55
+32,1,"Logistic regression (L2, C=1)",1.0
+32,1,LASSO logistic,0.1
+32,1,Ridge logistic,0.1
+32,1,Decision tree,3.0
+32,1,Random forest,2.0
+32,1,XGBoost,1.0
+32,1,LR + pairwise interactions,0.1
+32,1,SNFF + LR (Model 3),0.1
+32,1,4B threshold,0.6
+32,2,"Logistic regression (L2, C=1)",1.0
+32,2,LASSO logistic,1.0
+32,2,Ridge logistic,1.0
+32,2,Decision tree,2.0
+32,2,Random forest,4.0
+32,2,XGBoost,1.0
+32,2,LR + pairwise interactions,0.1
+32,2,SNFF + LR (Model 3),1.0
+32,2,4B threshold,0.6
+32,3,"Logistic regression (L2, C=1)",1.0
+32,3,LASSO logistic,0.1
+32,3,Ridge logistic,0.1
+32,3,Decision tree,2.0
+32,3,Random forest,2.0
+32,3,XGBoost,1.0
+32,3,LR + pairwise interactions,0.1
+32,3,SNFF + LR (Model 3),0.1
+32,3,4B threshold,0.55
+32,4,"Logistic regression (L2, C=1)",1.0
+32,4,LASSO logistic,1.0
+32,4,Ridge logistic,1.0
+32,4,Decision tree,2.0
+32,4,Random forest,2.0
+32,4,XGBoost,1.0
+32,4,LR + pairwise interactions,0.1
+32,4,SNFF + LR (Model 3),0.1
+32,4,4B threshold,0.6
+33,0,"Logistic regression (L2, C=1)",1.0
+33,0,LASSO logistic,0.1
+33,0,Ridge logistic,0.1
+33,0,Decision tree,3.0
+33,0,Random forest,2.0
+33,0,XGBoost,1.0
+33,0,LR + pairwise interactions,0.1
+33,0,SNFF + LR (Model 3),0.1
+33,0,4B threshold,0.55
+33,1,"Logistic regression (L2, C=1)",1.0
+33,1,LASSO logistic,0.1
+33,1,Ridge logistic,0.1
+33,1,Decision tree,3.0
+33,1,Random forest,4.0
+33,1,XGBoost,1.0
+33,1,LR + pairwise interactions,0.1
+33,1,SNFF + LR (Model 3),0.1
+33,1,4B threshold,0.6
+33,2,"Logistic regression (L2, C=1)",1.0
+33,2,LASSO logistic,1.0
+33,2,Ridge logistic,0.1
+33,2,Decision tree,2.0
+33,2,Random forest,4.0
+33,2,XGBoost,1.0
+33,2,LR + pairwise interactions,0.1
+33,2,SNFF + LR (Model 3),0.1
+33,2,4B threshold,0.55
+33,3,"Logistic regression (L2, C=1)",1.0
+33,3,LASSO logistic,0.1
+33,3,Ridge logistic,0.1
+33,3,Decision tree,2.0
+33,3,Random forest,2.0
+33,3,XGBoost,2.0
+33,3,LR + pairwise interactions,0.1
+33,3,SNFF + LR (Model 3),0.1
+33,3,4B threshold,0.55
+33,4,"Logistic regression (L2, C=1)",1.0
+33,4,LASSO logistic,0.1
+33,4,Ridge logistic,0.1
+33,4,Decision tree,3.0
+33,4,Random forest,4.0
+33,4,XGBoost,2.0
+33,4,LR + pairwise interactions,0.1
+33,4,SNFF + LR (Model 3),0.1
+33,4,4B threshold,0.55
+34,0,"Logistic regression (L2, C=1)",1.0
+34,0,LASSO logistic,0.1
+34,0,Ridge logistic,0.1
+34,0,Decision tree,2.0
+34,0,Random forest,2.0
+34,0,XGBoost,1.0
+34,0,LR + pairwise interactions,0.1
+34,0,SNFF + LR (Model 3),0.1
+34,0,4B threshold,0.55
+34,1,"Logistic regression (L2, C=1)",1.0
+34,1,LASSO logistic,1.0
+34,1,Ridge logistic,0.1
+34,1,Decision tree,2.0
+34,1,Random forest,2.0
+34,1,XGBoost,1.0
+34,1,LR + pairwise interactions,0.1
+34,1,SNFF + LR (Model 3),0.1
+34,1,4B threshold,0.55
+34,2,"Logistic regression (L2, C=1)",1.0
+34,2,LASSO logistic,1.0
+34,2,Ridge logistic,0.1
+34,2,Decision tree,3.0
+34,2,Random forest,4.0
+34,2,XGBoost,1.0
+34,2,LR + pairwise interactions,0.1
+34,2,SNFF + LR (Model 3),0.1
+34,2,4B threshold,0.55
+34,3,"Logistic regression (L2, C=1)",1.0
+34,3,LASSO logistic,1.0
+34,3,Ridge logistic,0.1
+34,3,Decision tree,3.0
+34,3,Random forest,2.0
+34,3,XGBoost,1.0
+34,3,LR + pairwise interactions,0.1
+34,3,SNFF + LR (Model 3),0.1
+34,3,4B threshold,0.55
+34,4,"Logistic regression (L2, C=1)",1.0
+34,4,LASSO logistic,1.0
+34,4,Ridge logistic,0.1
+34,4,Decision tree,2.0
+34,4,Random forest,2.0
+34,4,XGBoost,1.0
+34,4,LR + pairwise interactions,0.1
+34,4,SNFF + LR (Model 3),0.1
+34,4,4B threshold,0.55
+35,0,"Logistic regression (L2, C=1)",1.0
+35,0,LASSO logistic,0.1
+35,0,Ridge logistic,0.1
+35,0,Decision tree,2.0
+35,0,Random forest,4.0
+35,0,XGBoost,1.0
+35,0,LR + pairwise interactions,0.1
+35,0,SNFF + LR (Model 3),0.1
+35,0,4B threshold,0.55
+35,1,"Logistic regression (L2, C=1)",1.0
+35,1,LASSO logistic,0.1
+35,1,Ridge logistic,0.1
+35,1,Decision tree,2.0
+35,1,Random forest,2.0
+35,1,XGBoost,2.0
+35,1,LR + pairwise interactions,0.1
+35,1,SNFF + LR (Model 3),0.1
+35,1,4B threshold,0.55
+35,2,"Logistic regression (L2, C=1)",1.0
+35,2,LASSO logistic,0.1
+35,2,Ridge logistic,0.1
+35,2,Decision tree,3.0
+35,2,Random forest,4.0
+35,2,XGBoost,1.0
+35,2,LR + pairwise interactions,0.1
+35,2,SNFF + LR (Model 3),0.1
+35,2,4B threshold,0.55
+35,3,"Logistic regression (L2, C=1)",1.0
+35,3,LASSO logistic,1.0
+35,3,Ridge logistic,0.1
+35,3,Decision tree,2.0
+35,3,Random forest,2.0
+35,3,XGBoost,1.0
+35,3,LR + pairwise interactions,0.1
+35,3,SNFF + LR (Model 3),0.1
+35,3,4B threshold,0.55
+35,4,"Logistic regression (L2, C=1)",1.0
+35,4,LASSO logistic,1.0
+35,4,Ridge logistic,1.0
+35,4,Decision tree,2.0
+35,4,Random forest,2.0
+35,4,XGBoost,1.0
+35,4,LR + pairwise interactions,0.1
+35,4,SNFF + LR (Model 3),0.1
+35,4,4B threshold,0.6
+36,0,"Logistic regression (L2, C=1)",1.0
+36,0,LASSO logistic,0.1
+36,0,Ridge logistic,0.1
+36,0,Decision tree,3.0
+36,0,Random forest,4.0
+36,0,XGBoost,1.0
+36,0,LR + pairwise interactions,0.1
+36,0,SNFF + LR (Model 3),0.1
+36,0,4B threshold,0.55
+36,1,"Logistic regression (L2, C=1)",1.0
+36,1,LASSO logistic,1.0
+36,1,Ridge logistic,0.1
+36,1,Decision tree,3.0
+36,1,Random forest,2.0
+36,1,XGBoost,1.0
+36,1,LR + pairwise interactions,0.1
+36,1,SNFF + LR (Model 3),0.1
+36,1,4B threshold,0.55
+36,2,"Logistic regression (L2, C=1)",1.0
+36,2,LASSO logistic,0.1
+36,2,Ridge logistic,0.1
+36,2,Decision tree,2.0
+36,2,Random forest,2.0
+36,2,XGBoost,2.0
+36,2,LR + pairwise interactions,0.1
+36,2,SNFF + LR (Model 3),0.1
+36,2,4B threshold,0.55
+36,3,"Logistic regression (L2, C=1)",1.0
+36,3,LASSO logistic,0.1
+36,3,Ridge logistic,0.1
+36,3,Decision tree,2.0
+36,3,Random forest,2.0
+36,3,XGBoost,1.0
+36,3,LR + pairwise interactions,0.1
+36,3,SNFF + LR (Model 3),0.1
+36,3,4B threshold,0.6
+36,4,"Logistic regression (L2, C=1)",1.0
+36,4,LASSO logistic,1.0
+36,4,Ridge logistic,0.1
+36,4,Decision tree,3.0
+36,4,Random forest,4.0
+36,4,XGBoost,1.0
+36,4,LR + pairwise interactions,0.1
+36,4,SNFF + LR (Model 3),0.1
+36,4,4B threshold,0.55
+37,0,"Logistic regression (L2, C=1)",1.0
+37,0,LASSO logistic,1.0
+37,0,Ridge logistic,0.1
+37,0,Decision tree,2.0
+37,0,Random forest,2.0
+37,0,XGBoost,1.0
+37,0,LR + pairwise interactions,0.1
+37,0,SNFF + LR (Model 3),0.1
+37,0,4B threshold,0.55
+37,1,"Logistic regression (L2, C=1)",1.0
+37,1,LASSO logistic,0.1
+37,1,Ridge logistic,0.1
+37,1,Decision tree,2.0
+37,1,Random forest,4.0
+37,1,XGBoost,2.0
+37,1,LR + pairwise interactions,0.1
+37,1,SNFF + LR (Model 3),0.1
+37,1,4B threshold,0.55
+37,2,"Logistic regression (L2, C=1)",1.0
+37,2,LASSO logistic,1.0
+37,2,Ridge logistic,0.1
+37,2,Decision tree,2.0
+37,2,Random forest,2.0
+37,2,XGBoost,1.0
+37,2,LR + pairwise interactions,0.1
+37,2,SNFF + LR (Model 3),0.1
+37,2,4B threshold,0.55
+37,3,"Logistic regression (L2, C=1)",1.0
+37,3,LASSO logistic,0.1
+37,3,Ridge logistic,0.1
+37,3,Decision tree,2.0
+37,3,Random forest,2.0
+37,3,XGBoost,1.0
+37,3,LR + pairwise interactions,0.1
+37,3,SNFF + LR (Model 3),0.1
+37,3,4B threshold,0.55
+37,4,"Logistic regression (L2, C=1)",1.0
+37,4,LASSO logistic,1.0
+37,4,Ridge logistic,0.1
+37,4,Decision tree,2.0
+37,4,Random forest,4.0
+37,4,XGBoost,1.0
+37,4,LR + pairwise interactions,0.1
+37,4,SNFF + LR (Model 3),0.1
+37,4,4B threshold,0.55
+38,0,"Logistic regression (L2, C=1)",1.0
+38,0,LASSO logistic,0.1
+38,0,Ridge logistic,0.1
+38,0,Decision tree,2.0
+38,0,Random forest,2.0
+38,0,XGBoost,1.0
+38,0,LR + pairwise interactions,0.1
+38,0,SNFF + LR (Model 3),0.1
+38,0,4B threshold,0.55
+38,1,"Logistic regression (L2, C=1)",1.0
+38,1,LASSO logistic,1.0
+38,1,Ridge logistic,1.0
+38,1,Decision tree,2.0
+38,1,Random forest,4.0
+38,1,XGBoost,2.0
+38,1,LR + pairwise interactions,0.1
+38,1,SNFF + LR (Model 3),1.0
+38,1,4B threshold,0.55
+38,2,"Logistic regression (L2, C=1)",1.0
+38,2,LASSO logistic,0.1
+38,2,Ridge logistic,0.1
+38,2,Decision tree,2.0
+38,2,Random forest,2.0
+38,2,XGBoost,1.0
+38,2,LR + pairwise interactions,0.1
+38,2,SNFF + LR (Model 3),0.1
+38,2,4B threshold,0.55
+38,3,"Logistic regression (L2, C=1)",1.0
+38,3,LASSO logistic,1.0
+38,3,Ridge logistic,0.1
+38,3,Decision tree,3.0
+38,3,Random forest,4.0
+38,3,XGBoost,1.0
+38,3,LR + pairwise interactions,0.1
+38,3,SNFF + LR (Model 3),0.1
+38,3,4B threshold,0.55
+38,4,"Logistic regression (L2, C=1)",1.0
+38,4,LASSO logistic,0.1
+38,4,Ridge logistic,0.1
+38,4,Decision tree,2.0
+38,4,Random forest,2.0
+38,4,XGBoost,1.0
+38,4,LR + pairwise interactions,0.1
+38,4,SNFF + LR (Model 3),0.1
+38,4,4B threshold,0.55
+39,0,"Logistic regression (L2, C=1)",1.0
+39,0,LASSO logistic,0.1
+39,0,Ridge logistic,0.1
+39,0,Decision tree,2.0
+39,0,Random forest,2.0
+39,0,XGBoost,1.0
+39,0,LR + pairwise interactions,0.1
+39,0,SNFF + LR (Model 3),0.1
+39,0,4B threshold,0.55
+39,1,"Logistic regression (L2, C=1)",1.0
+39,1,LASSO logistic,1.0
+39,1,Ridge logistic,0.1
+39,1,Decision tree,2.0
+39,1,Random forest,4.0
+39,1,XGBoost,2.0
+39,1,LR + pairwise interactions,0.1
+39,1,SNFF + LR (Model 3),0.1
+39,1,4B threshold,0.55
+39,2,"Logistic regression (L2, C=1)",1.0
+39,2,LASSO logistic,1.0
+39,2,Ridge logistic,0.1
+39,2,Decision tree,3.0
+39,2,Random forest,4.0
+39,2,XGBoost,1.0
+39,2,LR + pairwise interactions,0.1
+39,2,SNFF + LR (Model 3),0.1
+39,2,4B threshold,0.55
+39,3,"Logistic regression (L2, C=1)",1.0
+39,3,LASSO logistic,1.0
+39,3,Ridge logistic,0.1
+39,3,Decision tree,3.0
+39,3,Random forest,4.0
+39,3,XGBoost,2.0
+39,3,LR + pairwise interactions,0.1
+39,3,SNFF + LR (Model 3),0.1
+39,3,4B threshold,0.65
+39,4,"Logistic regression (L2, C=1)",1.0
+39,4,LASSO logistic,0.1
+39,4,Ridge logistic,0.1
+39,4,Decision tree,2.0
+39,4,Random forest,2.0
+39,4,XGBoost,1.0
+39,4,LR + pairwise interactions,0.1
+39,4,SNFF + LR (Model 3),10.0
+39,4,4B threshold,0.55
+40,0,"Logistic regression (L2, C=1)",1.0
+40,0,LASSO logistic,0.1
+40,0,Ridge logistic,0.1
+40,0,Decision tree,2.0
+40,0,Random forest,2.0
+40,0,XGBoost,1.0
+40,0,LR + pairwise interactions,0.1
+40,0,SNFF + LR (Model 3),0.1
+40,0,4B threshold,0.55
+40,1,"Logistic regression (L2, C=1)",1.0
+40,1,LASSO logistic,0.1
+40,1,Ridge logistic,0.1
+40,1,Decision tree,3.0
+40,1,Random forest,2.0
+40,1,XGBoost,1.0
+40,1,LR + pairwise interactions,0.1
+40,1,SNFF + LR (Model 3),0.1
+40,1,4B threshold,0.6
+40,2,"Logistic regression (L2, C=1)",1.0
+40,2,LASSO logistic,0.1
+40,2,Ridge logistic,0.1
+40,2,Decision tree,2.0
+40,2,Random forest,2.0
+40,2,XGBoost,2.0
+40,2,LR + pairwise interactions,0.1
+40,2,SNFF + LR (Model 3),0.1
+40,2,4B threshold,0.55
+40,3,"Logistic regression (L2, C=1)",1.0
+40,3,LASSO logistic,0.1
+40,3,Ridge logistic,0.1
+40,3,Decision tree,2.0
+40,3,Random forest,4.0
+40,3,XGBoost,1.0
+40,3,LR + pairwise interactions,0.1
+40,3,SNFF + LR (Model 3),0.1
+40,3,4B threshold,0.55
+40,4,"Logistic regression (L2, C=1)",1.0
+40,4,LASSO logistic,1.0
+40,4,Ridge logistic,1.0
+40,4,Decision tree,2.0
+40,4,Random forest,2.0
+40,4,XGBoost,1.0
+40,4,LR + pairwise interactions,0.1
+40,4,SNFF + LR (Model 3),0.1
+40,4,4B threshold,0.6
+41,0,"Logistic regression (L2, C=1)",1.0
+41,0,LASSO logistic,0.1
+41,0,Ridge logistic,0.1
+41,0,Decision tree,2.0
+41,0,Random forest,2.0
+41,0,XGBoost,1.0
+41,0,LR + pairwise interactions,0.1
+41,0,SNFF + LR (Model 3),0.1
+41,0,4B threshold,0.55
+41,1,"Logistic regression (L2, C=1)",1.0
+41,1,LASSO logistic,0.1
+41,1,Ridge logistic,1.0
+41,1,Decision tree,2.0
+41,1,Random forest,2.0
+41,1,XGBoost,1.0
+41,1,LR + pairwise interactions,0.1
+41,1,SNFF + LR (Model 3),1.0
+41,1,4B threshold,0.6
+41,2,"Logistic regression (L2, C=1)",1.0
+41,2,LASSO logistic,0.1
+41,2,Ridge logistic,0.1
+41,2,Decision tree,3.0
+41,2,Random forest,2.0
+41,2,XGBoost,2.0
+41,2,LR + pairwise interactions,0.1
+41,2,SNFF + LR (Model 3),0.1
+41,2,4B threshold,0.55
+41,3,"Logistic regression (L2, C=1)",1.0
+41,3,LASSO logistic,0.1
+41,3,Ridge logistic,0.1
+41,3,Decision tree,2.0
+41,3,Random forest,2.0
+41,3,XGBoost,1.0
+41,3,LR + pairwise interactions,0.1
+41,3,SNFF + LR (Model 3),0.1
+41,3,4B threshold,0.55
+41,4,"Logistic regression (L2, C=1)",1.0
+41,4,LASSO logistic,0.1
+41,4,Ridge logistic,0.1
+41,4,Decision tree,3.0
+41,4,Random forest,4.0
+41,4,XGBoost,1.0
+41,4,LR + pairwise interactions,0.1
+41,4,SNFF + LR (Model 3),0.1
+41,4,4B threshold,0.55
+42,0,"Logistic regression (L2, C=1)",1.0
+42,0,LASSO logistic,0.1
+42,0,Ridge logistic,0.1
+42,0,Decision tree,2.0
+42,0,Random forest,2.0
+42,0,XGBoost,1.0
+42,0,LR + pairwise interactions,0.1
+42,0,SNFF + LR (Model 3),0.1
+42,0,4B threshold,0.55
+42,1,"Logistic regression (L2, C=1)",1.0
+42,1,LASSO logistic,1.0
+42,1,Ridge logistic,0.1
+42,1,Decision tree,3.0
+42,1,Random forest,2.0
+42,1,XGBoost,1.0
+42,1,LR + pairwise interactions,0.1
+42,1,SNFF + LR (Model 3),0.1
+42,1,4B threshold,0.55
+42,2,"Logistic regression (L2, C=1)",1.0
+42,2,LASSO logistic,1.0
+42,2,Ridge logistic,0.1
+42,2,Decision tree,2.0
+42,2,Random forest,2.0
+42,2,XGBoost,2.0
+42,2,LR + pairwise interactions,0.1
+42,2,SNFF + LR (Model 3),0.1
+42,2,4B threshold,0.55
+42,3,"Logistic regression (L2, C=1)",1.0
+42,3,LASSO logistic,1.0
+42,3,Ridge logistic,0.1
+42,3,Decision tree,2.0
+42,3,Random forest,4.0
+42,3,XGBoost,1.0
+42,3,LR + pairwise interactions,0.1
+42,3,SNFF + LR (Model 3),0.1
+42,3,4B threshold,0.55
+42,4,"Logistic regression (L2, C=1)",1.0
+42,4,LASSO logistic,1.0
+42,4,Ridge logistic,0.1
+42,4,Decision tree,2.0
+42,4,Random forest,2.0
+42,4,XGBoost,1.0
+42,4,LR + pairwise interactions,0.1
+42,4,SNFF + LR (Model 3),0.1
+42,4,4B threshold,0.55
+43,0,"Logistic regression (L2, C=1)",1.0
+43,0,LASSO logistic,0.1
+43,0,Ridge logistic,0.1
+43,0,Decision tree,2.0
+43,0,Random forest,2.0
+43,0,XGBoost,1.0
+43,0,LR + pairwise interactions,0.1
+43,0,SNFF + LR (Model 3),0.1
+43,0,4B threshold,0.55
+43,1,"Logistic regression (L2, C=1)",1.0
+43,1,LASSO logistic,0.1
+43,1,Ridge logistic,0.1
+43,1,Decision tree,2.0
+43,1,Random forest,2.0
+43,1,XGBoost,1.0
+43,1,LR + pairwise interactions,0.1
+43,1,SNFF + LR (Model 3),10.0
+43,1,4B threshold,0.6
+43,2,"Logistic regression (L2, C=1)",1.0
+43,2,LASSO logistic,1.0
+43,2,Ridge logistic,0.1
+43,2,Decision tree,3.0
+43,2,Random forest,2.0
+43,2,XGBoost,2.0
+43,2,LR + pairwise interactions,0.1
+43,2,SNFF + LR (Model 3),0.1
+43,2,4B threshold,0.6
+43,3,"Logistic regression (L2, C=1)",1.0
+43,3,LASSO logistic,1.0
+43,3,Ridge logistic,0.1
+43,3,Decision tree,2.0
+43,3,Random forest,2.0
+43,3,XGBoost,1.0
+43,3,LR + pairwise interactions,0.1
+43,3,SNFF + LR (Model 3),1.0
+43,3,4B threshold,0.55
+43,4,"Logistic regression (L2, C=1)",1.0
+43,4,LASSO logistic,1.0
+43,4,Ridge logistic,0.1
+43,4,Decision tree,2.0
+43,4,Random forest,4.0
+43,4,XGBoost,1.0
+43,4,LR + pairwise interactions,0.1
+43,4,SNFF + LR (Model 3),0.1
+43,4,4B threshold,0.55
+44,0,"Logistic regression (L2, C=1)",1.0
+44,0,LASSO logistic,0.1
+44,0,Ridge logistic,0.1
+44,0,Decision tree,2.0
+44,0,Random forest,4.0
+44,0,XGBoost,1.0
+44,0,LR + pairwise interactions,0.1
+44,0,SNFF + LR (Model 3),0.1
+44,0,4B threshold,0.55
+44,1,"Logistic regression (L2, C=1)",1.0
+44,1,LASSO logistic,0.1
+44,1,Ridge logistic,0.1
+44,1,Decision tree,3.0
+44,1,Random forest,2.0
+44,1,XGBoost,1.0
+44,1,LR + pairwise interactions,0.1
+44,1,SNFF + LR (Model 3),0.1
+44,1,4B threshold,0.6
+44,2,"Logistic regression (L2, C=1)",1.0
+44,2,LASSO logistic,1.0
+44,2,Ridge logistic,0.1
+44,2,Decision tree,2.0
+44,2,Random forest,4.0
+44,2,XGBoost,2.0
+44,2,LR + pairwise interactions,0.1
+44,2,SNFF + LR (Model 3),1.0
+44,2,4B threshold,0.65
+44,3,"Logistic regression (L2, C=1)",1.0
+44,3,LASSO logistic,0.1
+44,3,Ridge logistic,0.1
+44,3,Decision tree,2.0
+44,3,Random forest,4.0
+44,3,XGBoost,1.0
+44,3,LR + pairwise interactions,0.1
+44,3,SNFF + LR (Model 3),0.1
+44,3,4B threshold,0.6
+44,4,"Logistic regression (L2, C=1)",1.0
+44,4,LASSO logistic,1.0
+44,4,Ridge logistic,0.1
+44,4,Decision tree,3.0
+44,4,Random forest,2.0
+44,4,XGBoost,1.0
+44,4,LR + pairwise interactions,0.1
+44,4,SNFF + LR (Model 3),0.1
+44,4,4B threshold,0.55
+45,0,"Logistic regression (L2, C=1)",1.0
+45,0,LASSO logistic,0.1
+45,0,Ridge logistic,0.1
+45,0,Decision tree,2.0
+45,0,Random forest,2.0
+45,0,XGBoost,1.0
+45,0,LR + pairwise interactions,0.1
+45,0,SNFF + LR (Model 3),0.1
+45,0,4B threshold,0.55
+45,1,"Logistic regression (L2, C=1)",1.0
+45,1,LASSO logistic,0.1
+45,1,Ridge logistic,0.1
+45,1,Decision tree,3.0
+45,1,Random forest,2.0
+45,1,XGBoost,1.0
+45,1,LR + pairwise interactions,0.1
+45,1,SNFF + LR (Model 3),0.1
+45,1,4B threshold,0.55
+45,2,"Logistic regression (L2, C=1)",1.0
+45,2,LASSO logistic,0.1
+45,2,Ridge logistic,0.1
+45,2,Decision tree,2.0
+45,2,Random forest,2.0
+45,2,XGBoost,1.0
+45,2,LR + pairwise interactions,0.1
+45,2,SNFF + LR (Model 3),0.1
+45,2,4B threshold,0.55
+45,3,"Logistic regression (L2, C=1)",1.0
+45,3,LASSO logistic,0.1
+45,3,Ridge logistic,0.1
+45,3,Decision tree,2.0
+45,3,Random forest,2.0
+45,3,XGBoost,1.0
+45,3,LR + pairwise interactions,0.1
+45,3,SNFF + LR (Model 3),0.1
+45,3,4B threshold,0.6
+45,4,"Logistic regression (L2, C=1)",1.0
+45,4,LASSO logistic,0.1
+45,4,Ridge logistic,0.1
+45,4,Decision tree,2.0
+45,4,Random forest,4.0
+45,4,XGBoost,1.0
+45,4,LR + pairwise interactions,0.1
+45,4,SNFF + LR (Model 3),0.1
+45,4,4B threshold,0.55
+46,0,"Logistic regression (L2, C=1)",1.0
+46,0,LASSO logistic,1.0
+46,0,Ridge logistic,0.1
+46,0,Decision tree,2.0
+46,0,Random forest,4.0
+46,0,XGBoost,1.0
+46,0,LR + pairwise interactions,0.1
+46,0,SNFF + LR (Model 3),0.1
+46,0,4B threshold,0.55
+46,1,"Logistic regression (L2, C=1)",1.0
+46,1,LASSO logistic,0.1
+46,1,Ridge logistic,0.1
+46,1,Decision tree,2.0
+46,1,Random forest,2.0
+46,1,XGBoost,1.0
+46,1,LR + pairwise interactions,0.1
+46,1,SNFF + LR (Model 3),0.1
+46,1,4B threshold,0.55
+46,2,"Logistic regression (L2, C=1)",1.0
+46,2,LASSO logistic,0.1
+46,2,Ridge logistic,0.1
+46,2,Decision tree,3.0
+46,2,Random forest,2.0
+46,2,XGBoost,1.0
+46,2,LR + pairwise interactions,0.1
+46,2,SNFF + LR (Model 3),0.1
+46,2,4B threshold,0.55
+46,3,"Logistic regression (L2, C=1)",1.0
+46,3,LASSO logistic,0.1
+46,3,Ridge logistic,0.1
+46,3,Decision tree,2.0
+46,3,Random forest,2.0
+46,3,XGBoost,1.0
+46,3,LR + pairwise interactions,0.1
+46,3,SNFF + LR (Model 3),0.1
+46,3,4B threshold,0.55
+46,4,"Logistic regression (L2, C=1)",1.0
+46,4,LASSO logistic,1.0
+46,4,Ridge logistic,1.0
+46,4,Decision tree,2.0
+46,4,Random forest,4.0
+46,4,XGBoost,1.0
+46,4,LR + pairwise interactions,0.1
+46,4,SNFF + LR (Model 3),0.1
+46,4,4B threshold,0.55
+47,0,"Logistic regression (L2, C=1)",1.0
+47,0,LASSO logistic,0.1
+47,0,Ridge logistic,0.1
+47,0,Decision tree,2.0
+47,0,Random forest,2.0
+47,0,XGBoost,1.0
+47,0,LR + pairwise interactions,0.1
+47,0,SNFF + LR (Model 3),0.1
+47,0,4B threshold,0.55
+47,1,"Logistic regression (L2, C=1)",1.0
+47,1,LASSO logistic,0.1
+47,1,Ridge logistic,0.1
+47,1,Decision tree,2.0
+47,1,Random forest,4.0
+47,1,XGBoost,1.0
+47,1,LR + pairwise interactions,0.1
+47,1,SNFF + LR (Model 3),0.1
+47,1,4B threshold,0.55
+47,2,"Logistic regression (L2, C=1)",1.0
+47,2,LASSO logistic,1.0
+47,2,Ridge logistic,0.1
+47,2,Decision tree,2.0
+47,2,Random forest,2.0
+47,2,XGBoost,1.0
+47,2,LR + pairwise interactions,0.1
+47,2,SNFF + LR (Model 3),0.1
+47,2,4B threshold,0.55
+47,3,"Logistic regression (L2, C=1)",1.0
+47,3,LASSO logistic,0.1
+47,3,Ridge logistic,0.1
+47,3,Decision tree,2.0
+47,3,Random forest,2.0
+47,3,XGBoost,1.0
+47,3,LR + pairwise interactions,0.1
+47,3,SNFF + LR (Model 3),0.1
+47,3,4B threshold,0.55
+47,4,"Logistic regression (L2, C=1)",1.0
+47,4,LASSO logistic,1.0
+47,4,Ridge logistic,0.1
+47,4,Decision tree,2.0
+47,4,Random forest,4.0
+47,4,XGBoost,1.0
+47,4,LR + pairwise interactions,0.1
+47,4,SNFF + LR (Model 3),0.1
+47,4,4B threshold,0.55
+48,0,"Logistic regression (L2, C=1)",1.0
+48,0,LASSO logistic,0.1
+48,0,Ridge logistic,0.1
+48,0,Decision tree,2.0
+48,0,Random forest,2.0
+48,0,XGBoost,2.0
+48,0,LR + pairwise interactions,0.1
+48,0,SNFF + LR (Model 3),0.1
+48,0,4B threshold,0.55
+48,1,"Logistic regression (L2, C=1)",1.0
+48,1,LASSO logistic,0.1
+48,1,Ridge logistic,0.1
+48,1,Decision tree,2.0
+48,1,Random forest,4.0
+48,1,XGBoost,1.0
+48,1,LR + pairwise interactions,0.1
+48,1,SNFF + LR (Model 3),0.1
+48,1,4B threshold,0.55
+48,2,"Logistic regression (L2, C=1)",1.0
+48,2,LASSO logistic,0.1
+48,2,Ridge logistic,0.1
+48,2,Decision tree,2.0
+48,2,Random forest,4.0
+48,2,XGBoost,1.0
+48,2,LR + pairwise interactions,0.1
+48,2,SNFF + LR (Model 3),0.1
+48,2,4B threshold,0.55
+48,3,"Logistic regression (L2, C=1)",1.0
+48,3,LASSO logistic,0.1
+48,3,Ridge logistic,0.1
+48,3,Decision tree,3.0
+48,3,Random forest,2.0
+48,3,XGBoost,2.0
+48,3,LR + pairwise interactions,0.1
+48,3,SNFF + LR (Model 3),0.1
+48,3,4B threshold,0.55
+48,4,"Logistic regression (L2, C=1)",1.0
+48,4,LASSO logistic,1.0
+48,4,Ridge logistic,0.1
+48,4,Decision tree,2.0
+48,4,Random forest,4.0
+48,4,XGBoost,1.0
+48,4,LR + pairwise interactions,0.1
+48,4,SNFF + LR (Model 3),0.1
+48,4,4B threshold,0.55
+49,0,"Logistic regression (L2, C=1)",1.0
+49,0,LASSO logistic,1.0
+49,0,Ridge logistic,0.1
+49,0,Decision tree,3.0
+49,0,Random forest,2.0
+49,0,XGBoost,1.0
+49,0,LR + pairwise interactions,0.1
+49,0,SNFF + LR (Model 3),0.1
+49,0,4B threshold,0.55
+49,1,"Logistic regression (L2, C=1)",1.0
+49,1,LASSO logistic,0.1
+49,1,Ridge logistic,0.1
+49,1,Decision tree,2.0
+49,1,Random forest,4.0
+49,1,XGBoost,2.0
+49,1,LR + pairwise interactions,0.1
+49,1,SNFF + LR (Model 3),0.1
+49,1,4B threshold,0.55
+49,2,"Logistic regression (L2, C=1)",1.0
+49,2,LASSO logistic,0.1
+49,2,Ridge logistic,0.1
+49,2,Decision tree,3.0
+49,2,Random forest,4.0
+49,2,XGBoost,2.0
+49,2,LR + pairwise interactions,0.1
+49,2,SNFF + LR (Model 3),0.1
+49,2,4B threshold,0.55
+49,3,"Logistic regression (L2, C=1)",1.0
+49,3,LASSO logistic,1.0
+49,3,Ridge logistic,1.0
+49,3,Decision tree,2.0
+49,3,Random forest,4.0
+49,3,XGBoost,1.0
+49,3,LR + pairwise interactions,0.1
+49,3,SNFF + LR (Model 3),0.1
+49,3,4B threshold,0.55
+49,4,"Logistic regression (L2, C=1)",1.0
+49,4,LASSO logistic,0.1
+49,4,Ridge logistic,0.1
+49,4,Decision tree,2.0
+49,4,Random forest,2.0
+49,4,XGBoost,1.0
+49,4,LR + pairwise interactions,0.1
+49,4,SNFF + LR (Model 3),10.0
+49,4,4B threshold,0.55

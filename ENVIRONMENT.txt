@@ -1,4 +1,6 @@
-Python 3.13.17 on Linux (x86-64), single-threaded.
+Release 4.17 (2026-11-25). Computational environment of the final runs.
+
+Python 3.13.18 on Linux (x86-64), single-threaded (release 4.0: Python 3.13.17).
 numpy 2.5.3
 pandas 3.0.5
 scikit-learn 1.9.1
@@ -7,6 +9,22 @@ scipy 1.18.1
 matplotlib 3.11.2
 shap 0.54.1
 
-Final-analysis runtime: 77 minutes (RUN_MANIFEST.json).
-Byte-identical results are expected with these versions; other versions may differ in late decimals
+Execution dates and runtimes of the released results:
+final_analysis.py and cluster_influence_check.py: last complete run 2026-11-23 (release 4.5), 95 minutes
+  (RUN_MANIFEST.json: 5,696 s; two runs concurrently on two cores of a shared machine; the second took 5,716 s and
+  reproduced all 73 result files byte for byte). The bank-sector section added in 4.5 takes about 44 minutes of this
+  (18 of them for its permutation test). Earlier complete runs: release 4.4, 79 minutes; 4.3, 62; 4.2, 60; 4.1, 57;
+  4.0, 77 minutes on another machine.
+weight_sensitivity.py (release 4.6), run after the final analysis on 2026-11-24: about 91 minutes (5,444 and 5,498 s,
+  two runs concurrently), most of it refitting Model 3.
+selection_comparison.py (releases 4.7 and 4.8), run after the final analysis on 2026-11-24: about 1 second.
+Releases 4.9 to 4.17 rerun no analysis; release 4.17 was verified on 2026-11-25 with `reproduce.sh --quick` and the
+manuscript, from a fresh extraction of the release ZIP.
+
+The `date` field of RUN_MANIFEST.json (2026-10-30) is a fixed constant of final_analysis.py that identifies the analysis
+specification, not the execution date.
+
+matplotlib 3.11.2 renders text with the system FreeType (2.14.3 for releases 4.1 to 4.17), so the PNG figures (two in
+results/, and tables/figure_calibration_coprimary.png) can differ in anti-aliasing between machines; their data are in
+the result tables. Byte-identical results are expected with these versions; other versions may differ in late decimals
 (XGBoost in particular).

@@ -1,0 +1,50 @@
+\begin{table}[!t]
+\caption{Spider Network Inputs and Scores: SVB--First Citizens}
+\label{tab:svb_scores}
+\centering
+\footnotesize
+\textit{A. Inputs and scores}\\[2pt]
+\begin{tabular}{lcc}
+\toprule
+\textbf{Component} & \textbf{Raw value} & \textbf{Model value} \\
+\midrule
+Deposits (Dec.~31, 2022) & \$175.4B & $G = 0.931$ \\
+\textbf{Value score} $V$ & --- & \textbf{0.931} \\[3pt]
+FDIC loss share & Yes & $F = 1$ \\
+Government support & Bridge bank & $H = 1$ \\
+\textbf{Protection score} $P$ & --- & \textbf{1.000} \\[3pt]
+NPL ratio & 0.19\% & $N = 0.002$ \\
+Deposit change, two quarters & $-7.8\%$ & $L = 0$ \\
+NPL change, two quarters & $+0.06$ pp & $T = 0$ \\
+\textbf{Risk score} $R$ & --- & \textbf{0.001} \\[3pt]
+Buyer capital (Sep.~30, 2022) & 9.24\% & $C = 0.318$ \\
+\textbf{Buyer strength} $B$ & --- & \textbf{0.318} \\[3pt]
+Relative size & 1.92 & $M = 1.000$ \\
+\textbf{Execution score} $E$ & --- & \textbf{1.000} \\
+\bottomrule
+\end{tabular}
+
+\vspace{6pt}
+\textit{B. Retrospective: SVB's deposits at three dates}\\[2pt]
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Deposits at} & \textbf{Call report} & \textbf{Failure}$^{\dagger}$ & \textbf{Sale}$^{\dagger}$ \\
+ & Dec.~31, 2022 & Mar.~10, 2023 & Mar.~27, 2023 \\
+\midrule
+Deposits (\$B) & 175.4 & 119 & 56.0 \\
+Value score $V$ & 0.931 & 0.632 & 0.296 \\
+Adjusted score $S^*$ & 0.443 & 0.353 & 0.252 \\
+Rank of $S^*$ (of 55) & 1 & 2 & 4 \\
+$\tilde S$, all 55 & 1.000 (P) & 0.831 (P) & 0.641 (C) \\
+$\tilde S$, other 54 & 1.000 (P) & 0.975 (P) & 0.753 (P) \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}\parbox{0.94\columnwidth}{\scriptsize Panel~A: SVB's last public call report, First Citizens' call report 90 or
+more days before the failure, and the terms of the FDIC's announcement, normalized with the bounds, thresholds, and rescaling of
+the full 55-transaction panel. Panel~B: SVB's deposits at three points of its resolution, each in place of the figure of Panel~A,
+with the assets of the same date in the relative size (\$209.0B, \$167B, \$106.6B); the relative size stays above its cap, so only $V$ changes. $\tilde S$:
+rescaled on the bounds of all 55 transactions, as in Panel~A, or of the other 54, clipped to $[0, 1]$; P = Pursue, C = Caution.
+Sale: the deposits First Citizens assumed. $^{\dagger}$After the failure: outside the information set (Section~\ref{sec:infoset}) and used in no other analysis.
+Sources: call report; FDIC~\cite{fdic2023svb}; First Citizens~\cite{firstcitizens2023}.}
+\end{table}

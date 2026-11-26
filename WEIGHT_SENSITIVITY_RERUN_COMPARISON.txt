@@ -1,0 +1,14 @@
+Rerun comparison (release 4.6): the files of weight_sensitivity.py from two independent runs, each on its own copy of the
+release 4.5 results (same code, same inputs; the 73 result files of 4.5 were byte-identical in both after the runs)
+
+identical table_weight_sensitivity.csv  sha256 db4b9317195f0506
+identical table_weight_sensitivity_permutation.csv  sha256 abaa1cb1393f39f3
+identical weight_sensitivity_model3.csv  sha256 231da908b601f2bc
+identical weight_sensitivity_model3_by_repeat.csv  sha256 4ef016da125c9ff5
+identical weight_sensitivity_nested_by_repeat.csv  sha256 1f67119655fe6f85
+identical weight_sensitivity_nested_choices.csv  sha256 5eea56654f75f4f2
+identical weight_sensitivity_permutation_null.csv  sha256 a244bca04480e5f9
+identical weight_sensitivity_spider.csv  sha256 aa21d5cd91d3df4e
+identical weight_sensitivity_variants.csv  sha256 209790e5e6ee98d6
+
+All 9 result files reproduce exactly.

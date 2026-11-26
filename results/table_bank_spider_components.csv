@@ -1,0 +1,13 @@
+deals,component,sign_in_S,AUC,p_two_sided
+primary 55,S_final,+,0.5160256410256411,0.8668133186681332
+primary 55,V_score,+,0.5769230769230769,0.41915808419158085
+primary 55,P_score,+,0.4935897435897436,0.8863113688631137
+primary 55,B_score,+,0.5120192307692308,0.8857114288571143
+primary 55,R_score,-,0.5144230769230769,0.9025097490250975
+primary 55,E_score,-,0.5689102564102565,0.49375062493750627
+28 broader-only with own event (rules fitted on the 55),S_final,+,0.5757575757575757,0.5842415758424158
+28 broader-only with own event (rules fitted on the 55),V_score,+,0.4166666666666667,0.17688231176882313
+28 broader-only with own event (rules fitted on the 55),P_score,+,0.5075757575757576,1.0
+28 broader-only with own event (rules fitted on the 55),B_score,+,0.7310606060606061,0.08809119088091191
+28 broader-only with own event (rules fitted on the 55),R_score,-,0.6439393939393939,0.30296970302969706
+28 broader-only with own event (rules fitted on the 55),E_score,-,0.5,1.0

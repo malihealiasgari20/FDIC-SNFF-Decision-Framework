@@ -1,0 +1,20 @@
+PASS  90 rows, one per transaction: 90 rows
+PASS  same transactions as the ledger
+PASS  source type recorded
+PASS  https source for every row
+PASS  financing recorded as 0/1
+PASS  appreciation instrument recorded as 0/1/blank
+PASS  documents agree with the ledger's fdic_buyer_financing
+PASS  ledger broad indicator = bridge bank or SRE or FDIC financing
+PASS  H_support_broad in SNFF_Revised_Inputs_Primary55.csv = ledger broad indicator
+PASS  H_support_broad in SNFF_Revised_Inputs_Broader90.csv = ledger broad indicator
+
+transactions by source of the winning bid (primary 55 / broader 35):
+  FDIC bid summary        45 /  35
+  P&A agreement            6 /   0
+  acquirer SEC filing      3 /   0
+  FDIC press release       1 /   0
+FDIC financing of the buyer (4): PA-0004 FIRST REPUBLIC BANK; PA-0006 SILICON VALLEY BANK; PA-0306 WESTERNBANK PUERTO RICO; PA-0308 EUROBANK
+appreciation instrument paid to the FDIC, not financing (9): PA-0006 SILICON VALLEY BANK; PA-0153 INTEGRA BANK NATIONAL ASSOCIATION; PA-0165 FIRST CHICAGO BANK & TRUST; PA-0306 WESTERNBANK PUERTO RICO; PA-0308 EUROBANK; PA-0335 THE PARK AVENUE BANK; PA-0200 COMMUNITY FIRST BANK - CHICAGO; PA-0210 LEGACY BANK; PA-0259 RAVENSWOOD BANK
+
+all checks passed

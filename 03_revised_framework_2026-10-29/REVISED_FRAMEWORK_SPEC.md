@@ -43,7 +43,7 @@ quarter-end; P is then the quarter before Stage 1's Q-1.
 | `T_npl_change_pp` | NPL ratio at P minus NPL ratio two quarters earlier, percentage points | Same reports |
 | `F_loss_share` | FDIC loss-share agreement in the deal (0/1) | FDIC press release (ledger) |
 | `H_support_narrow` | Bridge bank or systemic-risk exception (0/1) | FDIC releases; 1 only for SVB |
-| `H_support_broad` | Narrow, plus FDIC financing of the buyer | Adds First Republic ($50 bn five-year FDIC financing) |
+| `H_support_broad` | Narrow, plus FDIC financing of the buyer | Adds First Republic ($50 bn five-year FDIC financing), Westernbank Puerto Rico and Eurobank (notes issued by the buyers to the FDIC); checked against the winning bid of all 90 transactions in `FDIC_Financing_Check_90.csv` (release 4.1) |
 | `y`, `car_reaction_m1p1` | **Primary outcome**: CAR[-1,+1] around the first session that could react to the announcement; value created if > 0 | Cached prices (June 2026); 35 / 20 in the 55, 56 / 34 in the 90 |
 | `y_release_0p1`, `car_release_0p1` | CAR[0,+1] around the first trading day on or after the release date | 39 / 16; 64 / 26 |
 | `y_release_m1p1_june`, `car_release_m1p1_june` | The June 2026 window: CAR[-1,+1] around the same day | 41 / 14; 64 / 26 |
@@ -92,7 +92,17 @@ and First Republic. Government support: the narrow definition (bridge bank or
 systemic-risk exception) applies to SVB only; the broad definition adds First
 Republic, whose buyer received $50 bn of five-year FDIC financing (SVB's buyer
 also issued the FDIC a $35 bn purchase money note and received a $70 bn FDIC
-credit facility, First Citizens 8-K of 27 March 2023).
+credit facility, First Citizens 8-K of 27 March 2023), and, since release 4.1,
+Westernbank Puerto Rico and Eurobank, whose buyers issued the FDIC a five-year
+$5.758 bn purchase money note at 2.50% (Banco Popular) and a one-year $715.5 mn
+note at 0.881% (Oriental). Their FDIC releases do not mention the notes; the FDIC
+bid summaries and the buyers' filings do. `data/FDIC_Financing_Check_90.csv`
+records the document that states the winning bid of each of the 90 transactions
+(the FDIC bid summary for 80; the P&A agreement, the acquirer's SEC filing or the
+FDIC release for ten deals of August 2008 to April 2009) and whether that bid
+includes FDIC financing of the buyer; `code/check_fdic_financing.py` checks it
+against the ledger. Value or equity appreciation instruments paid to the FDIC are
+not counted as support.
 
 **Distress indicators and report timing.** N, L and T come from the failed
 bank's FDIC call reports (the API queries are recorded in the Stage 1 raw pull).
@@ -226,6 +236,134 @@ Model inputs: the baseline models (Model 2 and the comparators) use the six
 measured variables plus F and H (8 inputs, against 10 in July); Model 3 adds
 S_final and the four rules (13).
 
+## Acquisition events (release 4.3; `code/build_event_inputs.py`)
+
+An acquisition event is every failed bank that one acquirer bought from the FDIC on one
+day. Its banks share one announcement return (the event clusters of the cross-validation),
+and the acquirer decides on them together: U.S. Bank's winning bids for the four FBOP
+subsidiaries of the primary panel are marked "Linked: Yes" in the FDIC bid summaries, and
+the FDIC announced the nine-bank sale as one transaction (PR-195-2009). The Spider score
+of a bank is not additive over banks (deposits and relative size are sums; the flags and
+rules switch at thresholds), so an event is scored on the consolidated call reports of its
+banks, with every input defined as for one bank:
+
+| Input | Event value |
+|---|---|
+| `G_deposits_usd_bn` | total deposits at report P |
+| `N_npl_pct` | total noncurrent loans / total net loans at P (each bank weighted by its loans) |
+| `L_deposit_change_pct` | total deposits at P / total deposits two quarters earlier - 1 |
+| `T_npl_change_pp` | consolidated N at P minus consolidated N two quarters earlier |
+| `E_relative_size` | total failed-bank assets at P / acquiring-bank assets, counted once (two Wintrust subsidiaries combined) |
+| `C_buyer_capital_pct` | acquiring bank's equity / assets (combined equity / combined assets for two subsidiaries) |
+| F, H, outcomes, report dates | common to the event's banks (checked) |
+
+`data/Multi_Bank_Event_Call_Reports.csv` holds the call-report amounts (FDIC BankFind API,
+retrieved 2026-11-23: assets, deposits, net loans and leases `LNLSNET`, noncurrent loans and
+leases `NCLNLS`) of the 15 banks in the four multi-bank events of the primary panel, at
+report P and two quarters earlier, with the query URL of each bank. `N_npl_pct` is
+`NCLNLS / LNLSNET`, as in the Stage 1 pull. Before use, the builder checks that these
+amounts reproduce every bank's assets, deposits, N, L, T and E in the 90-transaction
+inputs (largest difference 9e-15), and that no other failure in the 502-failure inclusion
+log was bought by an acquiring bank of the primary panel on the same day.
+
+| Event | Banks | In the primary panel |
+|---|---|---|
+| USB, 2009-10-30 (FBOP) | 9 | California National, Park National, San Diego National, Pacific National |
+| USB, 2008-11-21 | Downey Savings and Loan, PFF Bank & Trust | both |
+| WTFC, 2010-04-23 | Wheatland Bank (Wheaton B&T), Lincoln Park Savings Bank (Northbrook B&T) | Wheatland |
+| ABCB, 2010-11-12 | Darby Bank & Trust, Tifton Banking Company (Ameris Bank) | Darby |
+
+Outputs: `data/SNFF_Event_Inputs_Primary51.csv` (the 51 events of the primary panel, 62
+banks, 34 with a positive CAR; the 47 single-bank events are unchanged),
+`data/SNFF_Event_Consolidations.csv` (the four consolidated events, and FBOP restricted to
+its four panel banks) and `data/Event_Inputs_Report.txt`.
+
+## SVB's deposits at three dates (release 4.4; `data/SVB_Deposit_Stages.csv`)
+
+The Value input of every transaction is the failed bank's deposit base at its last public
+call report (report P), the only deposit figure that is public before the failure and
+measured the same way for all transactions. For SVB, the one bridge-bank sale of the
+panel, the deposits changed sharply between that report and the sale. The file records
+SVB's deposits and assets at three dates, with the document each figure comes from:
+
+| Stage | Date | Deposits (USD bn) | Assets (USD bn) | In the information set | Source |
+|---|---|---|---|---|---|
+| last call report | 2022-12-31 | 175.378 | 209.026 | yes | FDIC BankFind call report (CERT 24735); equal to the inputs |
+| at failure | 2023-03-10 | 119 | 167 | no | FDIC PR-23-2023 ("about $119 billion", "approximately $167 billion") |
+| assumed by the acquirer | 2023-03-27 | 55.96 | 106.60 | no | First Citizens, Q1 2023 earnings release (deposits assumed; total assets acquired at estimated fair value) |
+
+Only the first row is an input. The other two are dated after the failure and are used
+only in a retrospective description of the SVB case (`final_analysis.py`, section "SVB
+DEPOSIT STAGES"; Table 6, Panel B): each replaces the call-report deposits of the case, with
+the assets of the same date in the relative size (which stays above its cap, so E is
+unchanged), every other input unchanged, scored with the full-panel Spider fit and with a
+fit on the other 54 transactions. A second variant also lets the deposit change L react,
+measured from the report two quarters before P to the stage date. The panel's inputs are
+not changed. Outputs: `results/table_svb_deposit_stages.csv` and
+`results/table_svb_deposit_breakeven.csv` (deposits at which the case reaches the Pursue
+threshold on each set of bounds).
+
+## Two co-primary benchmarks (release 4.5)
+
+Decision 6 below (SPY as the only benchmark) is superseded. Step 4 built a bank-sector
+benchmark from the June 2026 price cache after all (`05_.../code/bank_benchmark_cars.py`,
+`05_.../data/Bank_Benchmark_CAR_90.csv`): the equal-weighted daily return of the 27
+U.S.-listed bank holding companies with complete price series in the cache, leaving out the
+acquirer and every bank with its own reaction day within four days (24 to 27 constituents),
+with the window and day 0 of the SPY-adjusted outcome. It labels 39 of the 55 transactions
+positive; ten labels differ from the SPY-adjusted labels, in six event clusters, four of them
+the FBOP subsidiaries. The submitted paper used it as a robustness check. Following a
+reviewer's comment, release 4.5 reports the two outcomes as co-primary specifications and
+repeats every analysis with the bank-sector labels (`final_analysis.py`, last section). The
+bank-sector specification was elevated during the revision, after the results under both were
+known; it was not designated in advance. Its constituents are banks that still traded in June
+2026, so it is a peer portfolio rather than a published index.
+
+## Sensitivity to the constants (release 4.6; `05_.../code/weight_sensitivity.py`)
+
+The five component weights (0.30, 0.20, 0.20, 0.20, 0.10) and the four adjustments (+0.08, +0.07, -0.10,
+-0.06) are expert choices, unchanged in every release; none was estimated from the outcomes. Release 4.6
+evaluates alternatives, defined before any of them was evaluated, with the partitions of the main comparison for both
+benchmarks: each constant changed alone (a weight times 0.5 or 1.5, the five then rescaled so that their
+absolute values sum to one; an adjustment times 0, 0.5 or 1.5); equal weights, no adjustments, and both;
+1,000 draws within +/-50% of every constant; 1,000 sign-preserving draws over the whole range (weights
+uniform on the simplex, adjustments between zero and twice their value); and constants chosen inside each
+training fold from either set of draws by the training-fold AUC, with a permutation test of that choice.
+The weights inside the Protection and Risk components, the rule thresholds and the rules themselves are not
+varied. The expert constants remain the specification of the framework.
+
+## Included and excluded transactions (releases 4.7 and 4.8; `05_.../code/selection_comparison.py`)
+
+Of the 150 largest eligible failures, 94 were acquired by a bank with a U.S.-listed parent. The price
+data of the study cover 55 of them (the primary panel, with 28 listed parents). The other 39 have 24
+listed parents, as recorded in `data/Excluded39_Parent_Status.csv`: 17 parents, with 26 of the
+transactions, were later acquired and delisted; 7 parents, with 13 transactions, still trade, but their
+prices were not retrieved (ten transactions of six parents first coded as privately held, and three of
+New York Community Bancorp, whose history the price source moved to the ticker FLG). Transactions and
+parents are counted separately throughout. The comparison measures every characteristic as for
+the model inputs: the failed bank's from its last public call report (the rule reproduces the released
+inputs of all 90 listed-acquirer transactions exactly) and the acquiring bank's assets and total equity
+(EQTOT) from its call report at the last quarter-end at least 90 days before the failure
+(`data/Excluded39_Buyer_Call_Reports.csv`, FDIC BankFind API, retrieved 2026-11-24; every value was
+retrieved twice with identical results, and five reports of panel acquirers reproduce the released
+inputs exactly). Inclusion is a property of the listed parent, so the permutation test reassigns it
+across the 52 parents. The models' out-of-fold predictions are evaluated by acquirer size (at most or
+above the median acquiring bank of all 94) and reweighted by the inverse of an estimated probability of
+inclusion (logistic model on the acquiring bank's log assets and capital, the 2008-2010 period and the
+NPL ratio); nothing is refitted, and no earlier result changes.
+
+Release 4.8 adds the diagnostics of the reweighting. `results/table_selection_balance.csv` gives the
+balance of the panel against all 94 before and after weighting, as standardized differences (mean of
+the included, weighted as in the column, minus the mean of all 94, divided by the standard deviation of
+all 94), for the four characteristics of the inclusion model and five others;
+`results/table_selection_weight_diagnostics.csv` gives the range of the estimated inclusion
+probabilities in each group, the excluded transactions below the lowest included probability, and the
+largest weight, its share of the total and the effective sample size of each weighting. The weighted
+figures represent all 94 only if, given the four characteristics, inclusion is unrelated to the outcome
+and to the models' predictions, the inclusion model is correctly specified, and the two groups overlap;
+the first two cannot be checked without the excluded transactions' prices, and the inclusion model
+treats the 94 transactions as independent although inclusion is decided by their 52 parents.
+
 ## Checks (`data/Revised_Variables_Validation_Report.txt`)
 
 All pass: failed-bank reports public before the failure (30-day filing deadline);
@@ -280,4 +418,5 @@ python3 -I 03_revised_framework_2026-10-29/code/build_source_ledger.py . 03_revi
 python3 -I 03_revised_framework_2026-10-29/code/build_revised_variables.py . 03_revised_framework_2026-10-29/data
 python3 -I 03_revised_framework_2026-10-29/code/event_convention_report.py . 03_revised_framework_2026-10-29
 python3 -I 03_revised_framework_2026-10-29/code/validate_revised_variables.py . 03_revised_framework_2026-10-29
+python3 -I 03_revised_framework_2026-10-29/code/build_event_inputs.py .
 ```

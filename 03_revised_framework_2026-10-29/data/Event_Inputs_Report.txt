@@ -1,0 +1,14 @@
+Acquisition-event inputs (build_event_inputs.py, release 4.3)
+
+1. The call reports of the 15 banks reproduce their assets, deposits, N, L, T and E in the 90-transaction inputs (largest absolute difference 8.9e-15).
+2. Four events of the primary panel include more than one bank: ABCB|2010-11-15 (2 banks, 1 in the primary panel); USB|2008-11-24 (2 banks, 2 in the primary panel); USB|2009-11-02 (9 banks, 4 in the primary panel); WTFC|2010-04-26 (2 banks, 1 in the primary panel). No other failure in the 502-failure inclusion log was bought by an acquiring bank of the primary panel on the same day.
+3. SNFF_Event_Inputs_Primary51.csv: 51 events (62 banks: the 55 of the primary panel and the 7 bought with them), 34 with a positive CAR.
+
+Consolidated multi-bank events:
+                                            n_banks  failed_assets_usd_bn  G_deposits_usd_bn  N_npl_pct  L_deposit_change_pct  T_npl_change_pp  C_buyer_capital_pct  E_relative_size
+event_id        scope                                                                                                                                                               
+ABCB|2010-11-15 all banks bought that day         2                0.7984             0.7292    14.7655              -14.4277          -3.0963              12.5962           0.3299
+USB|2008-11-24  all banks bought that day         2               16.4948            12.0470    15.2304              -10.5772           3.3016               8.8903           0.0681
+USB|2009-11-02  all banks bought that day         9               18.3325            14.2452     4.1562               19.4216           2.1056               9.3511           0.0704
+WTFC|2010-04-26 all banks bought that day         2                0.6396             0.6100    37.7756               -2.3005          29.8199               9.7300           0.4753
+USB|2009-11-02  banks in the primary panel        4               17.4139            13.4883     3.8723               20.4666           2.0832               9.3511           0.0669

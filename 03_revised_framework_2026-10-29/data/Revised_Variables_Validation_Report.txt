@@ -26,9 +26,9 @@
   [ok] broader 90: day 0 is the first session after the verified announcement (same day only for pre-open)
   [ok] broader 90: y = 1 exactly when the reaction-day CAR[-1,+1] > 0
   primary 55: value created 35 / not 20 (reaction-day [-1,+1], primary); release [0,+1] 39 / 16; June [-1,+1] 41 / 14
-  primary 55: loss share 40 of 55; government support narrow 1, broad 2
+  primary 55: loss share 40 of 55; government support narrow 1, broad 4
   broader 90: value created 56 / not 34 (reaction-day [-1,+1], primary); release [0,+1] 64 / 26; June [-1,+1] 64 / 26
-  broader 90: loss share 66 of 90; government support narrow 1, broad 2
+  broader 90: loss share 66 of 90; government support narrow 1, broad 4
   failed-bank report P: the quarter before Stage 1's Q-1 for 25 of 55 and 41 of 90
     PA-0161 PR-120-2011: release as of 2011-03-31, assets 192.5, deposits 189.5; input report 2011-03-31, assets 192.5, deposits 189.5 (Stage 1 Q-1 2011-06-30)
     PA-0162 PR-120-2011: release as of 2011-03-31, assets 186.3, deposits 162.1; input report 2011-03-31, assets 186.3, deposits 162.1 (Stage 1 Q-1 2011-06-30)
@@ -64,9 +64,9 @@ T_npl_change_pp            0.51              -0.14                 0.28         
 5. Rule coverage (thresholds from all rows of each panel; descriptive)
   primary 55, default (U without H)  L=14 T=14 Q=11 U=11 Z=1 K=5
   primary 55, U with H, narrow       L=14 T=14 Q=11 U=0 Z=1 K=5
-  primary 55, U with H, broad        L=14 T=14 Q=11 U=1 Z=1 K=5
+  primary 55, U with H, broad        L=14 T=14 Q=11 U=2 Z=1 K=5
   broader 90, default (U without H)  L=23 T=23 Q=19 U=16 Z=3 K=10
   broader 90, U with H, narrow       L=23 T=23 Q=19 U=0 Z=3 K=10
-  broader 90, U with H, broad        L=23 T=23 Q=19 U=1 Z=3 K=10
+  broader 90, U with H, broad        L=23 T=23 Q=19 U=2 Z=3 K=10
 
 ALL CHECKS PASSED

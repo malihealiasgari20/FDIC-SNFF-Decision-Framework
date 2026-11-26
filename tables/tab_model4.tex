@@ -1,0 +1,50 @@
+\begin{table}[!t]
+\caption{Model~4 Decision Policies (Mean over 50 Repeats; Utility under the Hypothetical Payoffs $B=1$, $L=3$)}
+\label{tab:model4}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Policy} & \textbf{Thresh.} & \textbf{Pursue} & \textbf{TP/FP} & \textbf{F1} & \textbf{FPR} & \textbf{Util.} \\
+ & & \textbf{(of $n$)} & & & & \\
+\midrule
+\multicolumn{7}{l}{\textit{A. Transactions ($n=55$), S\&P~500 benchmark}} \\
+4A: Fixed ($\tilde S$) & 0.70/0.40 & 3.1 & 2.9/0.2 & 0.151 & 0.011 & 0.041 \\
+4B: F1-tuned & 0.55--0.80 & 40.2 & 27.6/12.6 & 0.734 & 0.629 & $-$0.184 \\
+4C: Cost (3:1) & 0.75/0.45 & 11.8 & 7.9/3.9 & 0.332 & 0.196 & $-$0.071 \\
+\multicolumn{7}{l}{\textit{Trivial policies}} \\
+Pursue all & --- & 55 & 35/20 & 0.778 & 1.000 & $-$0.455 \\
+Pursue none & --- & 0 & 0/0 & 0.000 & 0.000 & 0.000 \\
+\midrule
+\multicolumn{7}{l}{\textit{B. Transactions ($n=55$), bank-sector benchmark}} \\
+4A: Fixed ($\tilde S$) & 0.70/0.40 & 2.9 & 2.6/0.3 & 0.124 & 0.020 & 0.030 \\
+4B: F1-tuned & 0.55--0.80 & 50.2 & 34.6/15.6 & 0.775 & 0.974 & $-$0.221 \\
+4C: Cost (3:1) & 0.75/0.45 & 16.1 & 11.2/4.9 & 0.404 & 0.309 & $-$0.066 \\
+\multicolumn{7}{l}{\textit{Trivial policies}} \\
+Pursue all & --- & 55 & 39/16 & 0.830 & 1.000 & $-$0.164 \\
+Pursue none & --- & 0 & 0/0 & 0.000 & 0.000 & 0.000 \\
+\midrule
+\multicolumn{7}{l}{\textit{C. Acquisition events ($n=51$), S\&P~500 benchmark}} \\
+4A: Fixed ($\tilde S$) & 0.70/0.40 & 3.0 & 2.7/0.3 & 0.147 & 0.018 & 0.036 \\
+4B: F1-tuned & 0.55--0.80 & 41.6 & 27.2/14.4 & 0.719 & 0.847 & $-$0.313 \\
+4C: Cost (3:1) & 0.75/0.45 & 11.8 & 7.9/3.9 & 0.344 & 0.228 & $-$0.073 \\
+\multicolumn{7}{l}{\textit{Trivial policies}} \\
+Pursue all & --- & 51 & 34/17 & 0.800 & 1.000 & $-$0.333 \\
+Pursue none & --- & 0 & 0/0 & 0.000 & 0.000 & 0.000 \\
+\midrule
+\multicolumn{7}{l}{\textit{D. Acquisition events ($n=51$), bank-sector benchmark}} \\
+4A: Fixed ($\tilde S$) & 0.70/0.40 & 3.2 & 2.9/0.4 & 0.146 & 0.024 & 0.035 \\
+4B: F1-tuned & 0.55--0.80 & 47.6 & 32.7/14.9 & 0.782 & 0.992 & $-$0.234 \\
+4C: Cost (3:1) & 0.75/0.45 & 14.2 & 10.5/3.7 & 0.415 & 0.249 & $-$0.015 \\
+\multicolumn{7}{l}{\textit{Trivial policies}} \\
+Pursue all & --- & 51 & 36/15 & 0.828 & 1.000 & $-$0.176 \\
+Pursue none & --- & 0 & 0/0 & 0.000 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}\parbox{0.94\columnwidth}{\scriptsize Pursue (of $n$): mean number of the $n$ transactions (Panels C and D: acquisition events) recommended for pursuit, e.g., 3.1 of 55 for 4A in Panel~A;
+TP/FP: of these, those with a positive and with a negative announcement return; FPR: share of the negative-CAR observations
+recommended (20, 16, 17, and 15 in Panels A to D); Util.: utility under the assumed payoffs, $(TP - 3\,FP)/n$. Panels C and D score each
+event on the consolidated inputs of every bank its acquirer bought that day (Section~\ref{sec:events}) and use 50 partitions of the
+51 events with the same seeds. Panels B and D use the bank-sector labels.}
+\end{table}

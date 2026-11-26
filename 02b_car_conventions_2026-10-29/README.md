@@ -4,8 +4,8 @@
 rebuilt offline with the patched Stage 1 code (code bundle v2, with
 `APPLY_PENDING_TICKER_MAPPINGS = True`, which adds the four Wintrust/Northbrook
 deals, PA-0165 among them) and the June 2026 price cache
-(`00_original_stage1_2026-06-19/raw_pulls/car_price_cache.json`). No prices were
-downloaded.
+(`00_original_stage1_2026-06-19/raw_pulls/car_price_cache.json`, kept by the authors and not
+redistributed). No prices were downloaded.
 
 Columns used by the revised framework:
 
