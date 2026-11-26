@@ -9,14 +9,23 @@
  & & & & & & \multicolumn{2}{c}{\textbf{Own ratio}} & \textbf{3:1} \\
 \cmidrule(lr){7-8}\cmidrule(lr){9-9}
 \textbf{Ratio} & \textbf{Thr.} & \textbf{Pursue} & \textbf{TP/FP} & \textbf{FPR} & \textbf{F1} & \textbf{Util.} & \textbf{Gain} & \textbf{Util.} \\
+ & & \textbf{(of 55)} & & & & & & \\
 \midrule
+\multicolumn{9}{l}{\textit{A. S\&P~500 benchmark}} \\
 1:1 & 0.50 & 45.6 & 30.8/14.7 & 0.737 & 0.765 & 0.292 & 0.020 & $-$0.244 \\
 2:1 & 0.67 & 24.3 & 17.6/6.8 & 0.339 & 0.590 & 0.073 & 0.073 & $-$0.051 \\
 3:1 & 0.75 & 11.8 & 7.9/3.9 & 0.196 & 0.332 & $-$0.071 & $-$0.071 & $-$0.071 \\
 4:1 & 0.80 & 7.0 & 4.3/2.8 & 0.138 & 0.197 & $-$0.123 & $-$0.123 & $-$0.073 \\
 5:1 & 0.83 & 5.1 & 2.7/2.4 & 0.119 & 0.133 & $-$0.167 & $-$0.167 & $-$0.080 \\
+\midrule
+\multicolumn{9}{l}{\textit{B. Bank-sector benchmark}} \\
+1:1 & 0.50 & 52.9 & 37.0/16.0 & 0.998 & 0.804 & 0.382 & $-$0.036 & $-$0.198 \\
+2:1 & 0.67 & 36.4 & 24.3/12.1 & 0.757 & 0.642 & 0.000 & $-$0.127 & $-$0.220 \\
+3:1 & 0.75 & 16.1 & 11.2/4.9 & 0.309 & 0.404 & $-$0.066 & $-$0.066 & $-$0.066 \\
+4:1 & 0.80 & 7.3 & 4.7/2.6 & 0.161 & 0.202 & $-$0.101 & $-$0.101 & $-$0.055 \\
+5:1 & 0.83 & 4.3 & 2.2/2.1 & 0.130 & 0.100 & $-$0.149 & $-$0.149 & $-$0.073 \\
 \bottomrule
 \end{tabular}
 \par\vspace{2pt}\parbox{0.94\columnwidth}{\scriptsize Threshold $L/(B+L)$ applied to Model~3's out-of-fold probabilities. Gain: utility
-minus that of the better trivial policy (pursue all or pursue none) at the same ratio.}
+minus that of the better trivial policy (pursue all or pursue none) at the same ratio. Each ratio is a hypothetical scenario. Panel~B: bank-sector labels.}
 \end{table}

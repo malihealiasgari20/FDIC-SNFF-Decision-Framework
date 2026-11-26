@@ -1,0 +1,25 @@
+benchmark,model,acquirer_size_class,n,n_positive,AUC_mean,size_cut_usd_bn,n_excluded_in_class
+S&P 500,Model 2,all 55,55,35,0.6146,9.200918,39
+S&P 500,Model 2,at or below the median,19,13,0.3205128205128205,9.200918,29
+S&P 500,Model 2,above the median,36,22,0.7440909090909092,9.200918,10
+S&P 500,Ridge,all 55,55,35,0.6323714285714285,9.200918,39
+S&P 500,Ridge,at or below the median,19,13,0.35769230769230764,9.200918,29
+S&P 500,Ridge,above the median,36,22,0.7548051948051946,9.200918,10
+S&P 500,Model 3,all 55,55,35,0.5943999999999999,9.200918,39
+S&P 500,Model 3,at or below the median,19,13,0.3192307692307692,9.200918,29
+S&P 500,Model 3,above the median,36,22,0.7165584415584416,9.200918,10
+S&P 500,Spider score,all 55,55,35,0.42322857142857145,9.200918,39
+S&P 500,Spider score,at or below the median,19,13,0.47769230769230764,9.200918,29
+S&P 500,Spider score,above the median,36,22,0.41870129870129863,9.200918,10
+bank-sector index,Model 2,all 55,55,39,0.27743589743589747,9.200918,39
+bank-sector index,Model 2,at or below the median,19,14,0.2377142857142857,9.200918,29
+bank-sector index,Model 2,above the median,36,25,0.28305454545454545,9.200918,10
+bank-sector index,Ridge,all 55,55,39,0.27990384615384617,9.200918,39
+bank-sector index,Ridge,at or below the median,19,14,0.19914285714285715,9.200918,29
+bank-sector index,Ridge,above the median,36,25,0.30356363636363637,9.200918,10
+bank-sector index,Model 3,all 55,55,39,0.41330128205128197,9.200918,39
+bank-sector index,Model 3,at or below the median,19,14,0.2285714285714285,9.200918,29
+bank-sector index,Model 3,above the median,36,25,0.4894545454545455,9.200918,10
+bank-sector index,Spider score,all 55,55,39,0.505048076923077,9.200918,39
+bank-sector index,Spider score,at or below the median,19,14,0.5688571428571428,9.200918,29
+bank-sector index,Spider score,above the median,36,25,0.4899636363636364,9.200918,10

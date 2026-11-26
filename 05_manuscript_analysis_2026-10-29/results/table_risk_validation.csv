@@ -9,3 +9,8 @@ primary 55,"Release-date CAR[-1,+1] (June window)",55,41,0.343205574912892,0.130
 35 broader-only (rules fitted on the 55),"Reaction-day CAR[-1,+1], market model",35,18,0.6372549019607844,0.22407759224077592,0.24265402569492078,0.21557844215578442
 35 broader-only (rules fitted on the 55),"Release-date CAR[0,+1]",35,25,0.572,0.5702429757024298,0.23479932890942046,0.22777722227777222
 35 broader-only (rules fitted on the 55),"Release-date CAR[-1,+1] (June window)",35,23,0.5615942028985508,0.6184381561843816,0.1568134108248101,0.44645535446455353
+28 broader-only with own event (rules fitted on the 55),"Reaction-day CAR[-1,+1], SPY (primary)",28,20,0.6937500000000001,0.11598840115988401,0.3489804329930028,0.0744925507449255
+28 broader-only with own event (rules fitted on the 55),"Reaction-day CAR[-1,+1], bank-index benchmark",28,22,0.6439393939393939,0.30296970302969706,0.3697824039008209,0.05799420057994201
+28 broader-only with own event (rules fitted on the 55),"Reaction-day CAR[-1,+1], market model",28,17,0.5668449197860963,0.5662433756624338,0.18420692659160065,0.3508649135086491
+28 broader-only with own event (rules fitted on the 55),"Release-date CAR[0,+1]",28,19,0.6666666666666667,0.1611838816118388,0.2378541147222897,0.22187781221877811
+28 broader-only with own event (rules fitted on the 55),"Release-date CAR[-1,+1] (June window)",28,17,0.6577540106951871,0.1743825617438256,0.26194060735239505,0.18298170182981702

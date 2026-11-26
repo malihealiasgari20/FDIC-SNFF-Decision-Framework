@@ -1,25 +1,39 @@
 \begin{table}[!t]
-\caption{Direction of the Spider Score and Its Components (AUC against a Positive CAR)}
+\caption{Direction of the Spider Score and Its Components (Descriptive, Full-Panel AUC against a Positive CAR)}
 \label{tab:components}
 \centering
 \footnotesize
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{lccccc}
 \toprule
- & & \multicolumn{2}{c}{\textbf{Primary panel (55)}} & \multicolumn{2}{c}{\textbf{Other 35 deals}} \\
+ & & \multicolumn{2}{c}{\textbf{Primary panel (55)}} & \multicolumn{2}{c}{\textbf{Other 28 deals}} \\
 \cmidrule(lr){3-4}\cmidrule(lr){5-6}
 \textbf{Component} & \textbf{Sign in $S$} & \textbf{AUC} & \textbf{$p$} & \textbf{AUC} & \textbf{$p$} \\
 \midrule
-Spider score $\tilde S$ & $+$ & 0.414 & 0.35 & 0.507 & 0.96 \\
-Value $V$ & $+$ & 0.533 & 0.72 & 0.464 & 0.31 \\
-Protection $P$ & $+$ & 0.454 & 0.54 & 0.464 & 0.71 \\
-Buyer strength $B$ & $+$ & 0.537 & 0.66 & 0.714 & 0.06 \\
-Risk $R$ & $-$ & 0.699 & 0.04 & 0.724 & 0.04 \\
-Execution $E$ & $-$ & 0.600 & 0.29 & 0.675 & 0.30 \\
+\multicolumn{6}{l}{\textit{A. S\&P~500 benchmark}} \\
+Spider score $\tilde S$ & $+$ & 0.414 & 0.35 & 0.562 & 0.62 \\
+Value $V$ & $+$ & 0.533 & 0.72 & 0.438 & 0.21 \\
+Protection $P$ & $+$ & 0.454 & 0.54 & 0.537 & 0.91 \\
+Buyer strength $B$ & $+$ & 0.537 & 0.66 & 0.650 & 0.23 \\
+Risk $R$ & $-$ & 0.699 & 0.04 & 0.694 & 0.11 \\
+Execution $E$ & $-$ & 0.600 & 0.29 & 0.562 & 0.63 \\
+\midrule
+\multicolumn{6}{l}{\textit{B. Bank-sector benchmark}} \\
+Spider score $\tilde S$ & $+$ & 0.516 & 0.87 & 0.576 & 0.58 \\
+Value $V$ & $+$ & 0.577 & 0.42 & 0.417 & 0.18 \\
+Protection $P$ & $+$ & 0.494 & 0.89 & 0.508 & 1.00 \\
+Buyer strength $B$ & $+$ & 0.512 & 0.89 & 0.731 & 0.09 \\
+Risk $R$ & $-$ & 0.514 & 0.90 & 0.644 & 0.30 \\
+Execution $E$ & $-$ & 0.569 & 0.49 & 0.500 & 1.00 \\
 \bottomrule
 \end{tabular}
 \par\vspace{2pt}\parbox{0.94\columnwidth}{\scriptsize Normalization bounds and thresholds fitted on the primary panel only; no outcome
-is used. ``Other 35 deals'' are the broader-panel transactions outside the primary panel. AUC above 0.5 means
-higher component values go with a positive announcement return (SPY-adjusted, primary window); $p$ is two-sided, from
-10,000 permutations of outcomes across event clusters. Table~\ref{tab:risk} repeats the Risk row under other benchmarks.}
+is used. The table describes the full panel and is not an out-of-sample evaluation: the Spider score's AUCs here (0.414
+and 0.516) use bounds and thresholds fitted once on all 55 transactions, whereas its out-of-sample AUCs in
+Table~\ref{tab:main_results} (0.423 and 0.505) use bounds and thresholds fitted inside each training fold of the
+repeated grouped cross-validation. The two follow different protocols and do not contradict each other. ``Other 28 deals'' are the 35 broader-panel transactions outside the primary panel, less the seven that share an
+acquirer and an announcement return with a primary-panel transaction. AUC above 0.5 means
+higher component values go with a positive announcement return (reaction-day window; Panel~A against SPY, Panel~B against the
+bank-sector index); $p$ is two-sided, from 10,000 permutations of outcomes across event clusters. Table~\ref{tab:risk} repeats the
+Risk row under other benchmarks and windows.}
 \end{table}

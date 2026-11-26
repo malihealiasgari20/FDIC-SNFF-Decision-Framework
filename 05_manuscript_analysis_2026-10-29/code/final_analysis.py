@@ -22,7 +22,22 @@ and tuning grids, the same decision policies), with these changes:
   the deal terms F and H) and to a bank-sector benchmark for the CAR
   (05_.../data/Bank_Benchmark_CAR_90.csv, built by bank_benchmark_cars.py);
 * validation of the direction of the Risk component (benchmarks, windows,
-  leave-one-event-out and influential transactions).
+  leave-one-event-out and influential transactions);
+* the component AUCs outside the primary panel are also reported for the 28
+  transactions whose acquirer and reaction day, and so whose CAR, do not appear
+  in the primary panel (added in release 4.2; broader_only_shared_events.csv
+  lists the seven others);
+* the acquisition events: each multi-bank purchase scored on its banks'
+  consolidated call reports, and the cross-validated comparison and the Model 4
+  policies repeated on the 51 events (added in release 4.3);
+* a retrospective description of the SVB case with SVB's deposits at failure and
+  as assumed by its acquirer (data/SVB_Deposit_Stages.csv), which are outside the
+  information set and used nowhere else (added in release 4.4);
+* the bank-sector benchmark as a co-primary outcome (added in release 4.5; a
+  robustness check in the submitted paper): every analysis of the SPY outcome
+  repeated with the bank-sector labels, with the same design and seeds, together
+  with two-sided permutation p-values for both benchmarks and the influence of the
+  FBOP cluster on every core model under both.
 
 usage: python3 -I final_analysis.py <research_folder> <out_dir> [--quick]
 """
@@ -540,10 +555,32 @@ log("refitting bootstrap done")
 
 # ============================================================ Spider components (descriptive)
 o35 = b90[b90.in_primary_panel == 0].reset_index(drop=True)
+# Seven of the 35 share the listed parent and reaction day, and therefore the CAR, with a primary-panel transaction
+# (five FBOP subsidiaries bought by U.S. Bank, and the banks Wintrust and Ameris bought on the days they bought Wheatland
+# and Darby), so their outcomes are not new observations; the 28 others are the independent check. They are evaluated
+# after the 55 and the 35, so the permutation draws behind those two sets are unchanged.
+shared = np.isin(groups(o35), groups(p55))
+o28 = o35[~shared].reset_index(drop=True)
+assert sorted(o35.transaction_id[shared]) == ["PA-0225", "PA-0311", "PA-0382", "PA-0383", "PA-0384", "PA-0389", "PA-0390"]
+assert len(o28) == 28 and len(set(groups(o28))) == 27
+g55_of = pd.Series(p55.transaction_id.to_numpy(), index=groups(p55))
+name55 = p55.set_index("transaction_id").failed_bank_name
+car55 = p55.set_index("transaction_id").car_reaction_m1p1
+rows7 = []
+for r, gv in zip(o35[shared].itertuples(), groups(o35)[shared]):
+    ids = sorted(g55_of.loc[[gv]])
+    assert all(car55[i] == r.car_reaction_m1p1 for i in ids)  # the same CAR as the primary-panel transactions of that event
+    rows7.append({"transaction_id": r.transaction_id, "failed_bank_name": r.failed_bank_name, "acquirer_bank_name": r.acquirer_bank_name,
+                  "listed_parent_ticker": r.listed_parent_ticker, "first_reaction_date": r.first_reaction_date,
+                  "car_reaction_m1p1": r.car_reaction_m1p1, "y": int(r.y), "primary_panel_transactions_same_event": ";".join(ids),
+                  "primary_panel_banks_same_event": ";".join(name55.loc[ids])})
+pd.DataFrame(rows7).to_csv(OUT / "broader_only_shared_events.csv", index=False)
+SETS = (("primary 55", p55), ("35 broader-only (rules fitted on the 55)", o35),
+        ("28 broader-only with own event (rules fitted on the 55)", o28))
 sp55 = RevisedSpider().fit(p55)
 comp_rows = []
 rng = np.random.default_rng(11)
-for nm, d in (("primary 55", p55), ("35 broader-only (rules fitted on the 55)", o35)):
+for nm, d in SETS:
     f = sp55.transform(d)
     g = groups(d)
     u = pd.unique(g)
@@ -597,7 +634,7 @@ def cluster_perm_p(d, x, ycol, carcol, rng):
 
 rng = np.random.default_rng(12)
 rv_rows = []
-for pname, d in (("primary 55", p55), ("35 broader-only (rules fitted on the 55)", o35)):
+for pname, d in SETS:
     x = sp55.transform(d).R_score.to_numpy(float)
     for oname, ycol, carcol in RISK_OUTCOMES:
         a, pa, r, pr_ = cluster_perm_p(d, x, ycol, carcol, rng)
@@ -737,6 +774,411 @@ app = p55[["transaction_id", "failed_bank_name", "acquirer_bank_name", "listed_p
 app["fdic_release"] = app.transaction_id.map(lg.fdic_pr)
 app.sort_values("failed_assets_usd_bn", ascending=False).to_csv(OUT / "appendix_primary55.csv", index=False)
 
+# ============================================================ acquisition events (release 4.3)
+# BEGIN EVENT-LEVEL SECTION
+# The unit of decision is the acquisition event: every failed bank that one acquirer bought from the FDIC on one day.
+# build_event_inputs.py scores each of the 51 events of the primary panel on the consolidated call reports of every bank
+# its acquirer bought that day. (a) The multi-bank events, scored with the full-panel Spider fit of the SVB case:
+# each bank alone, the consolidated event, and the simple and asset-weighted means of the bank scores. (b) The
+# cross-validated comparison and the Model 4 policies repeated on the 51 events, with the same partition seeds.
+# This section runs last, so every earlier result is unchanged.
+ev51 = pd.read_csv(FW / "data/SNFF_Event_Inputs_Primary51.csv")
+evcons = pd.read_csv(FW / "data/SNFF_Event_Consolidations.csv")
+assert len(ev51) == 51 and int(ev51.y.sum()) == 34 and len(set(groups(ev51))) == 51 and int(ev51.n_banks.sum()) == 62
+
+
+def band(s):
+    return np.where(np.asarray(s, dtype=float) >= 0.70, "Pursue", np.where(np.asarray(s, dtype=float) >= 0.40, "Caution", "Avoid"))
+
+
+SPC = ["G_n", "N_n", "C_n", "E_n", "L_flag", "T_flag", "V_score", "P_score", "R_score", "B_score", "E_score", "S_raw",
+       "Q_rule", "U_rule", "Z_rule", "K_rule", "S_adj", "S_final"]
+INP = ["failed_assets_usd_bn", "G_deposits_usd_bn", "N_npl_pct", "L_deposit_change_pct", "T_npl_change_pp", "C_buyer_capital_pct",
+       "E_relative_size", "F_loss_share", "H_support_narrow", "car_reaction_m1p1", "y"]
+mrows = []
+b90e = b90.assign(event_id=groups(b90))
+for e in pd.unique(evcons.event_id):
+    banks = b90e[b90e.event_id == e].sort_values("failed_assets_usd_bn", ascending=False)
+    fbk = sp55.transform(banks)
+    for (_, r), (_, f) in zip(banks.iterrows(), fbk.iterrows()):
+        mrows.append({"event_id": e, "row": "bank", "scope": "", "transaction_id": r.transaction_id, "name": r.failed_bank_name,
+                      "in_primary_panel": int(r.in_primary_panel), "n_banks": 1, **{c: r[c] for c in INP}, **{c: f[c] for c in SPC}})
+    cons_e = evcons[evcons.event_id == e]
+    fcs = sp55.transform(cons_e)
+    for (_, r), (_, f) in zip(cons_e.iterrows(), fcs.iterrows()):
+        mrows.append({"event_id": e, "row": "consolidated event", "scope": r.scope, "transaction_id": r.member_transaction_ids,
+                      "name": r.failed_bank_name, "in_primary_panel": int(r.in_primary_panel), "n_banks": int(r.n_banks),
+                      **{c: r[c] for c in INP}, **{c: f[c] for c in SPC}})
+    s, w, pm = fbk.S_final.to_numpy(), banks.failed_assets_usd_bn.to_numpy(), banks.in_primary_panel.to_numpy() == 1
+    for scope, m in (("all banks bought that day", np.ones(len(s), dtype=bool)), ("banks in the primary panel", pm)):
+        if m.sum() < 2 or (scope == "banks in the primary panel" and m.all()):
+            continue
+        for lab, val in (("mean of the bank scores", s[m].mean()), ("asset-weighted mean of the bank scores", np.average(s[m], weights=w[m]))):
+            mrows.append({"event_id": e, "row": lab, "scope": scope, "n_banks": int(m.sum()), "S_final": val})
+MB = pd.DataFrame(mrows)
+MB["band"] = band(MB.S_final)
+MB.to_csv(OUT / "table_multibank_events.csv", index=False)
+
+y51 = ev51.y.to_numpy()
+ev_rows, evpol_rows = [], []
+for r in range(REPEATS):
+    folds = make_folds(ev51, y51, 5, SEED0 + r)
+    pred, pol, _ = outer_run(ev51, "y", folds, MODELS, SEED0 + r, policies=True, score=True)
+    for row in metrics(ev51, "y", pred, folds):
+        ev_rows.append({"repeat": r, **row})
+    pol["Pursue all"] = np.full(51, 2)
+    pol["Pursue none"] = np.zeros(51, dtype=int)
+    for nm, dec in pol.items():
+        pursue = dec == 2
+        tp, fp, u = utility(y51, pursue)
+        evpol_rows.append({"repeat": r, "policy": nm, "pursue": int(pursue.sum()), "caution": int((dec == 1).sum()), "TP": tp, "FP": fp,
+                           "FPR": fp / int((y51 == 0).sum()), "F1": f1_score(y51, pursue, zero_division=0), "utility_3to1": u})
+    if r % 10 == 9 or QUICK:
+        log(f"  event level: repeat {r + 1}/{REPEATS}")
+EV = pd.DataFrame(ev_rows)
+EV.to_csv(OUT / "event_level_by_repeat.csv", index=False)
+summarize(EV).to_csv(OUT / "table_event_level.csv", index=False)
+EP = pd.DataFrame(evpol_rows)
+EP.to_csv(OUT / "event_level_decision_policies_by_repeat.csv", index=False)
+EP.groupby("policy", sort=False).mean(numeric_only=True).drop(columns="repeat").reset_index().to_csv(
+    OUT / "table_event_level_decision_policies.csv", index=False)
+log("acquisition events done")
+# END EVENT-LEVEL SECTION
+
+# BEGIN SVB DEPOSIT STAGES SECTION (release 4.4)
+# A retrospective description of the SVB case, outside the information set: SVB's deposits (and assets) at its last
+# call report, at failure, and as assumed by First Citizens (data/SVB_Deposit_Stages.csv). Each later figure replaces
+# the call-report figure of the SVB case, every other input unchanged, and is scored with the full-panel Spider fit of
+# Table 6 and with a fit on the other 54 transactions (as cross-validation scores a held-out transaction). Variant
+# "deposits and assets": the deposit level (V) and the assets in the relative size (E); variant "... and deposit
+# change": also the deposit change, measured from the report two quarters before the call report to the stage date.
+# The figures are used nowhere else, and the panel keeps the call-report inputs. No random numbers are drawn.
+stages = pd.read_csv(FW / "data/SVB_Deposit_Stages.csv")
+assert list(stages.stage) == ["last call report", "at failure", "assumed by the acquirer"]
+assert list(stages.in_information_set) == [1, 0, 0]
+assert stages.as_of_date.iloc[0] == svb.failed_report_date.iloc[0]
+assert np.isclose(stages.deposits_usd_bn.iloc[0], svb.G_deposits_usd_bn.iloc[0], atol=1e-9)
+assert np.isclose(stages.assets_usd_bn.iloc[0], svb.failed_assets_usd_bn.iloc[0], atol=1e-9)
+assert np.isclose(stages.assets_usd_bn.iloc[0] / svb.buyer_assets_usd_bn_lag90.iloc[0], svb.E_relative_size.iloc[0], atol=1e-6)
+dep_base = float(svb.G_deposits_usd_bn.iloc[0] / (1 + svb.L_deposit_change_pct.iloc[0] / 100))  # deposits two quarters earlier
+not_svb = p55.transaction_id.to_numpy() != "PA-0006"
+sp54 = RevisedSpider().fit(p55[not_svb])
+other_s = f55.S_adj.to_numpy()[not_svb]
+FITS = (("all 55", sp55), ("other 54", sp54))
+VARIANTS = ("deposits and assets", "deposits, assets and deposit change")
+srows, brows = [], []
+for variant in VARIANTS:
+    for _, st in stages.iterrows():
+        d = svb.copy()
+        if st.in_information_set == 0:
+            d["G_deposits_usd_bn"] = st.deposits_usd_bn
+            d["E_relative_size"] = st.assets_usd_bn / svb.buyer_assets_usd_bn_lag90.iloc[0]
+            if variant != VARIANTS[0]:
+                d["L_deposit_change_pct"] = 100 * (st.deposits_usd_bn / dep_base - 1)
+        for bname, sp in FITS:
+            f = sp.transform(d).iloc[0]
+            pr_ = sp.params
+            srows.append({"variant": variant, "stage": st.stage, "as_of_date": st.as_of_date, "in_information_set": int(st.in_information_set),
+                          "bounds": bname, "deposits_usd_bn": float(d.G_deposits_usd_bn.iloc[0]), "assets_usd_bn": float(st.assets_usd_bn),
+                          "relative_size": float(d.E_relative_size.iloc[0]), "relative_size_cap": pr_["E_cap"],
+                          "L_deposit_change_pct": float(d.L_deposit_change_pct.iloc[0]),
+                          **{c: float(f[c]) for c in ["G_n", "L_flag", "V_score", "R_score", "E_n", "E_score", "U_rule", "S_adj"]},
+                          "rank_S_adj_of_55": int(1 + (other_s > f.S_adj + 1e-12).sum()),
+                          "S_final_unclipped": float((f.S_adj - pr_["S_min"]) / (pr_["S_max"] - pr_["S_min"] + 1e-12)),
+                          "S_final": float(f.S_final), "band": str(band(f.S_final))})
+    for bname, sp in FITS:
+        pr_ = sp.params
+        # deposits at which the substituted score reaches the Pursue threshold (0.70) on these bounds, with the other
+        # substituted inputs of the variant at their values for the deposits assumed (E stays at its cap throughout)
+        last = [r for r in srows if r["variant"] == variant and r["bounds"] == bname and r["stage"] == "assumed by the acquirer"][0]
+        s_pursue = pr_["S_min"] + 0.70 * (pr_["S_max"] - pr_["S_min"] + 1e-12)
+        v_need = last["V_score"] + (s_pursue - last["S_adj"]) / 0.30
+        brows.append({"variant": variant, "bounds": bname, "S_adj_at_pursue_threshold": s_pursue, "V_needed": v_need,
+                      "deposits_needed_usd_bn": pr_["G_min"] + v_need * (pr_["G_max"] - pr_["G_min"] + 1e-12)})
+sst = pd.DataFrame(srows)
+assert (sst.E_n > 1 - 1e-9).all() and (sst.relative_size > sst.relative_size_cap).all()  # the relative size stays above its cap
+assert (sst[sst.variant == VARIANTS[0]].L_flag == 0).all() and (sst[(sst.variant == VARIANTS[1]) & (sst.in_information_set == 0)].U_rule == 1).all()
+sst.to_csv(OUT / "table_svb_deposit_stages.csv", index=False)
+pd.DataFrame(brows).to_csv(OUT / "table_svb_deposit_breakeven.csv", index=False)
+log("SVB deposit stages done")
+# END SVB DEPOSIT STAGES SECTION
+
+# BEGIN BANK-BENCHMARK CO-PRIMARY SECTION (release 4.5)
+# The submitted paper used the SPY-adjusted CAR as its primary outcome and the bank-sector benchmark only as a robustness
+# check. In the revision the bank-sector outcome (data/Bank_Benchmark_CAR_90.csv, y_bank) is reported as a co-primary
+# specification: every analysis reported for the SPY outcome is repeated with the bank-sector labels, with the same
+# design and seeds. Partitions are grouped and stratified on the bank labels with the seeds of the SPY analysis, as in
+# the bank row of the robustness analysis, which the three core models therefore reproduce exactly (checked below).
+# This section runs last, so every earlier result is unchanged.
+YB = "y_bank"
+yb55 = p55[YB].astype(int).to_numpy()
+assert int(yb55.sum()) == 39 and int((yb55 != y55).sum()) == 10
+assert (pd.Series(yb55, index=g55).groupby(level=0).nunique() == 1).all()  # one bank-sector label per event cluster
+
+# (1) all eight models and the Spider score; Model 4 policies; cost-ratio sweep; out-of-fold predictions
+bmain, bpol, bsweep, boof, bfolds = [], [], [], [], []
+nneg_b = int((yb55 == 0).sum())
+for r in range(REPEATS):
+    folds = make_folds(p55, yb55, 5, SEED0 + r)
+    bfolds.append(folds)
+    pred, pol, _ = outer_run(p55, YB, folds, MODELS, SEED0 + r, policies=True, score=True)
+    for row in metrics(p55, YB, pred, folds):
+        bmain.append({"repeat": r, **row})
+    for nm, p in pred.items():
+        for i, tid in enumerate(p55.transaction_id):
+            boof.append({"repeat": r, "model": nm, "transaction_id": tid, "y": int(yb55[i]), "prediction": p[i]})
+    pol["Pursue all"] = np.full(55, 2)
+    pol["Pursue none"] = np.zeros(55, dtype=int)
+    for nm, dec in pol.items():
+        pursue = dec == 2
+        tp, fp, u = utility(yb55, pursue)
+        bpol.append({"repeat": r, "policy": nm, "pursue": int(pursue.sum()), "caution": int((dec == 1).sum()), "TP": tp, "FP": fp,
+                     "FPR": fp / nneg_b, "F1": f1_score(yb55, pursue, zero_division=0), "utility_3to1": u})
+    psnff = pred[SNFF]
+    for ratio in (1, 2, 3, 4, 5):
+        thr = ratio / (1 + ratio)
+        pursue = psnff >= thr
+        tp, fp, u_own = utility(yb55, pursue, ratio)
+        trivial = max(0.0, (int(yb55.sum()) - ratio * nneg_b) / 55)
+        bsweep.append({"repeat": r, "ratio": ratio, "threshold": thr, "pursue": int(pursue.sum()), "TP": tp, "FP": fp, "FPR": fp / nneg_b,
+                       "F1": f1_score(yb55, pursue, zero_division=0), "utility_own": u_own, "gain_vs_trivial": u_own - trivial,
+                       "utility_3to1": utility(yb55, pursue, 3)[2]})
+    if r % 10 == 9 or QUICK:
+        log(f"  bank benchmark: repeat {r + 1}/{REPEATS}")
+BM = pd.DataFrame(bmain)
+BM.to_csv(OUT / "bank_main_by_repeat.csv", index=False)
+summarize(BM).to_csv(OUT / "table_bank_main_comparison.csv", index=False)
+rob_bank = pd.read_csv(OUT / "robustness_by_repeat.csv")
+rob_bank = rob_bank[rob_bank.outcome == YB].set_index(["repeat", "model"]).AUC.sort_index()
+chk = BM[BM.model.isin(list(core) + [SCORE])].set_index(["repeat", "model"]).AUC.sort_index()
+assert chk.index.equals(rob_bank.index) and np.allclose(chk.to_numpy(), rob_bank.to_numpy(), atol=1e-12, rtol=0)
+BO = pd.DataFrame(boof)
+BO.to_csv(OUT / "bank_out_of_fold_predictions.csv", index=False)
+rkb = BO.assign(rank=BO.groupby(["repeat", "model"]).prediction.rank(pct=True))
+rkb["group"] = np.where(rkb.transaction_id.isin(FBOP), "FBOP subsidiaries (one event, y_bank=1)",
+                        np.where(rkb.y == 1, "other positive CAR", "other negative CAR"))
+rkb.groupby(["model", "group"])["rank"].mean().unstack().reset_index().to_csv(OUT / "table_bank_rank_by_group.csv", index=False)
+BP = pd.DataFrame(bpol)
+BP.to_csv(OUT / "bank_decision_policies_by_repeat.csv", index=False)
+BP.groupby("policy", sort=False).mean(numeric_only=True).drop(columns="repeat").reset_index().to_csv(
+    OUT / "table_bank_decision_policies.csv", index=False)
+BSW = pd.DataFrame(bsweep)
+BSW.to_csv(OUT / "bank_cost_ratio_sweep_by_repeat.csv", index=False)
+BSW.groupby("ratio").mean(numeric_only=True).drop(columns="repeat").reset_index().to_csv(OUT / "table_bank_cost_ratio_sweep.csv", index=False)
+cal_b = []
+for nm in (LR, RIDGE, SNFF):
+    x = BO[BO.model == nm]
+    bins = pd.qcut(x.prediction.rank(method="first"), 5, labels=False)
+    t = x.groupby(bins).agg(mean_pred=("prediction", "mean"), observed=("y", "mean"), n=("y", "size")).reset_index()
+    for _, rr in t.iterrows():
+        cal_b.append({"model": nm, "bin": int(rr.iloc[0]) + 1, "mean_prediction": rr.mean_pred, "observed_rate": rr.observed, "n": int(rr.n)})
+pd.DataFrame(cal_b).to_csv(OUT / "table_bank_calibration_bins.csv", index=False)
+log("bank benchmark: main comparison done")
+
+# (2) paired differences across the same partitions, and the conditional cluster bootstrap (same cluster draws as for SPY)
+pwb = BM.pivot_table(index="repeat", columns="model", values=["AUC", "AUC_event", "Brier"])
+paired_b = []
+for other in (LR, RIDGE, "Random forest", "LR + pairwise interactions", "XGBoost"):
+    for met in ("AUC", "AUC_event", "Brier"):
+        dlt = pwb[(met, SNFF)] - pwb[(met, other)]
+        better = (dlt < 0) if met == "Brier" else (dlt > 0)
+        paired_b.append({"comparison": f"SNFF minus {other}", "metric": met, "mean": dlt.mean(), "p05": dlt.quantile(0.05),
+                         "p95": dlt.quantile(0.95), "share_SNFF_better": better.mean()})
+pd.DataFrame(paired_b).to_csv(OUT / "table_bank_paired_differences.csv", index=False)
+avg_b = BO.groupby(["model", "transaction_id"]).prediction.mean().unstack(0).reindex(p55.transaction_id)
+rng = np.random.default_rng(20261029)
+boot_b = []
+for b in range(500 if QUICK else 4000):
+    take = np.concatenate([gi[j] for j in rng.integers(0, len(gi), len(gi))])
+    yb_ = yb55[take]
+    if len(set(yb_)) < 2:
+        continue
+    boot_b.append({nm: roc_auc_score(yb_, avg_b[nm].to_numpy()[take]) for nm in avg_b.columns})
+BB = pd.DataFrame(boot_b)
+bbrows = [{"quantity": f"AUC {nm}", "estimate": roc_auc_score(yb55, avg_b[nm]), "ci_low": BB[nm].quantile(0.025),
+           "ci_high": BB[nm].quantile(0.975)} for nm in avg_b.columns]
+for other in (LR, RIDGE, "LR + pairwise interactions", "Random forest"):
+    dd = BB[SNFF] - BB[other]
+    bbrows.append({"quantity": f"AUC difference SNFF minus {other}", "estimate": roc_auc_score(yb55, avg_b[SNFF]) - roc_auc_score(yb55, avg_b[other]),
+                   "ci_low": dd.quantile(0.025), "ci_high": dd.quantile(0.975)})
+pd.DataFrame(bbrows).to_csv(OUT / "table_bank_cluster_bootstrap.csv", index=False)
+
+# (3) permutation test with the complete nested procedure, as for SPY (same partitions and permutation seed), and the
+# co-primary summary: two-sided p-values (centred at 0.5) for both benchmarks, Holm-adjusted over the three fitted models
+# within each benchmark, and the permutation distribution of Model 3's differences from Models 2 and ridge
+obs_b = mean_auc(yb55)
+gy_b = pd.Series(yb55, index=g55).groupby(level=0).first().reindex(ug).to_numpy()
+rng = np.random.default_rng(7)
+null_b = []
+for i in range(NPERM):
+    null_b.append(mean_auc(rng.permutation(gy_b)[idx]))
+    if (i + 1) % 100 == 0 or QUICK and (i + 1) % 10 == 0:
+        log(f"  bank permutation {i + 1}/{NPERM}")
+NB = pd.DataFrame(null_b)
+NB.to_csv(OUT / "bank_permutation_null.csv", index=False)
+
+
+def holm(pvals: dict) -> dict:
+    out, run = {}, 0.0
+    for k, (nm, pv) in enumerate(sorted(pvals.items(), key=lambda t: t[1])):
+        run = max(run, min(1.0, (len(pvals) - k) * pv))
+        out[nm] = run
+    return out
+
+
+cp_rows = []
+for bench, ob, nl in (("SPY", obs, N), ("bank-sector index", obs_b, NB)):
+    two = {nm: (1 + (np.abs(nl[nm] - 0.5) >= abs(ob[nm] - 0.5)).sum()) / (1 + len(nl)) for nm in ob}
+    upper = {nm: (1 + (nl[nm] >= ob[nm]).sum()) / (1 + len(nl)) for nm in ob}
+    h_two = holm({nm: two[nm] for nm in (LR, RIDGE, SNFF)})
+    h_up = holm({nm: upper[nm] for nm in (LR, RIDGE, SNFF)})
+    for nm in ob:
+        cp_rows.append({"benchmark": bench, "model": nm, "observed_mean_AUC": ob[nm], "null_mean": nl[nm].mean(),
+                        "null_p025": nl[nm].quantile(0.025), "null_p975": nl[nm].quantile(0.975), "p_one_sided_upper": upper[nm],
+                        "p_holm_one_sided_upper": h_up.get(nm, np.nan), "p_two_sided": two[nm], "p_holm_two_sided": h_two.get(nm, np.nan)})
+    for other in (LR, RIDGE):
+        d_obs, d_null = ob[SNFF] - ob[other], nl[SNFF] - nl[other]
+        cp_rows.append({"benchmark": bench, "model": f"SNFF minus {other}", "observed_mean_AUC": d_obs, "null_mean": d_null.mean(),
+                        "null_p025": d_null.quantile(0.025), "null_p975": d_null.quantile(0.975),
+                        "p_two_sided": (1 + (np.abs(d_null) >= abs(d_obs)).sum()) / (1 + len(d_null))})
+pd.DataFrame(cp_rows).to_csv(OUT / "table_permutation_coprimary.csv", index=False)
+log("bank benchmark: permutation test done")
+
+# (4) refitting cluster bootstrap, as for SPY (same cluster draws and partition seeds)
+rng = np.random.default_rng(20261030)
+rbb_rows, bboot_skipped = [], 0
+for b in range(NBOOT):
+    take = np.concatenate([gi[j] for j in rng.integers(0, len(gi), len(gi))])
+    d_b = p55.iloc[take].reset_index(drop=True)
+    y_b = d_b[YB].astype(int).to_numpy()
+    try:
+        pred_b, _, _ = outer_run(d_b, YB, make_folds(d_b, y_b, 5, SEED0 + 3000 + b), boot_models, SEED0 + 3000 + b)
+    except (AssertionError, ValueError):
+        bboot_skipped += 1
+        continue
+    a = {nm: roc_auc_score(y_b, pv) for nm, pv in pred_b.items()}
+    rbb_rows.append({"replicate": b, **{f"AUC {nm}": v for nm, v in a.items()},
+                     f"diff SNFF minus {RIDGE}": a[SNFF] - a[RIDGE], f"diff SNFF minus {LR}": a[SNFF] - a[LR]})
+    if (b + 1) % 100 == 0 or QUICK and (b + 1) % 10 == 0:
+        log(f"  bank refitting bootstrap {b + 1}/{NBOOT}")
+RBB = pd.DataFrame(rbb_rows)
+RBB.to_csv(OUT / "bank_bootstrap_refit_by_replicate.csv", index=False)
+pd.DataFrame([{"quantity": c, "mean": RBB[c].mean(), "ci_low": RBB[c].quantile(0.025), "ci_high": RBB[c].quantile(0.975),
+               "share_below_zero": (RBB[c] < 0).mean() if c.startswith("diff") else np.nan, "replicates": len(RBB), "skipped": bboot_skipped}
+              for c in RBB.columns if c != "replicate"]).to_csv(OUT / "table_bank_bootstrap_refit.csv", index=False)
+
+# (5) the FBOP cluster under both benchmarks: the three core models and the Spider score without it (51 transactions,
+# 50 clusters; partitions re-drawn with the same seeds), and where each model ranks it (mean percentile rank)
+d51 = p55[~p55.transaction_id.isin(FBOP)].reset_index(drop=True)
+fb_rows = []
+for oc, full in (("y", M), (YB, BM)):
+    for _, row in full[full.model.isin(list(core) + [SCORE])].iterrows():
+        fb_rows.append({"outcome": oc, "sample": "all 55 transactions", "repeat": int(row["repeat"]), "model": row["model"], "AUC": row["AUC"]})
+    y51_ = d51[oc].astype(int).to_numpy()
+    for r in range(REPEATS):
+        pred, _, _ = outer_run(d51, oc, make_folds(d51, y51_, 5, SEED0 + r), core, SEED0 + r, score=True)
+        for nm, p in pred.items():
+            fb_rows.append({"outcome": oc, "sample": "without the FBOP cluster", "repeat": r, "model": nm, "AUC": roc_auc_score(y51_, p)})
+FBI = pd.DataFrame(fb_rows)
+FBI.to_csv(OUT / "fbop_influence_by_repeat.csv", index=False)
+fsum = FBI.groupby(["outcome", "sample", "model"], sort=False).AUC.agg(AUC_mean="mean", AUC_p05=lambda s: s.quantile(0.05),
+                                                                      AUC_p95=lambda s: s.quantile(0.95)).reset_index()
+rk_spy = rk[rk.transaction_id.isin(FBOP)].groupby("model")["rank"].mean()
+rk_bank = rkb[rkb.transaction_id.isin(FBOP)].groupby("model")["rank"].mean()
+fsum["fbop_mean_percentile_rank"] = [(rk_spy if o == "y" else rk_bank).get(m, np.nan) if s == "all 55 transactions" else np.nan
+                                     for o, s, m in zip(fsum.outcome, fsum["sample"], fsum.model)]
+fsum.to_csv(OUT / "table_fbop_influence.csv", index=False)
+log("bank benchmark: bootstrap and FBOP influence done")
+
+# (6) robustness variants, the ablation and the broader panel with the bank-sector labels
+rbk_rows = []
+for label, opts in (("Published call-report inputs only", {"public_only": True}), ("Broad support definition", {"h_col": "H_support_broad"}),
+                    ("U rule requires support (broad)", {"h_col": "H_support_broad", "u_requires_h": True}), ("Z rule removed", {"z_removed": True})):
+    for r in range(REPEATS):
+        pred, _, _ = outer_run(p55, YB, bfolds[r], core, SEED0 + r, opts=opts, score=True)
+        for row in metrics(p55, YB, pred, bfolds[r]):
+            rbk_rows.append({"variant": label, "outcome": YB, "positives": int(yb55.sum()), "repeat": r, **row})
+RBK = pd.DataFrame(rbk_rows)
+RBK.to_csv(OUT / "bank_robustness_by_repeat.csv", index=False)
+summarize(RBK, keys=("variant", "outcome", "positives", "model")).to_csv(OUT / "table_bank_robustness.csv", index=False)
+abl_b = []
+for r in range(REPEATS):
+    pred, _, _ = outer_run(p55, YB, bfolds[r], abl_models, SEED0 + r)
+    for row in metrics(p55, YB, pred, bfolds[r]):
+        abl_b.append({"repeat": r, **row})
+AB = pd.DataFrame(abl_b)
+AB.to_csv(OUT / "bank_ablation_by_repeat.csv", index=False)
+summarize(AB).to_csv(OUT / "table_bank_ablation.csv", index=False)
+yb90 = b90[YB].astype(int).to_numpy()
+br_b = []
+for r in range(REPEATS):
+    folds = make_folds(b90, yb90, 5, SEED0 + 100 + r)
+    pred, _, _ = outer_run(b90, YB, folds, MODELS, SEED0 + 100 + r, score=True)
+    for row in metrics(b90, YB, pred, folds):
+        br_b.append({"repeat": r, **row})
+BRB = pd.DataFrame(br_b)
+BRB.to_csv(OUT / "bank_broader90_by_repeat.csv", index=False)
+summarize(BRB).to_csv(OUT / "table_bank_broader90.csv", index=False)
+log("bank benchmark: robustness, ablation and broader panel done")
+
+# (7) acquisition events with the bank-sector labels (every bank of an event shares the event's return)
+bank_by_tid = pd.concat([p55, b90]).drop_duplicates("transaction_id").set_index("transaction_id")[YB].astype(int)
+evb = []
+for ids in ev51.member_transaction_ids:
+    labs = {int(bank_by_tid[t]) for t in str(ids).split(";") if t in bank_by_tid.index}
+    assert len(labs) == 1, ids
+    evb.append(labs.pop())
+ev51[YB] = evb
+yb51 = ev51[YB].to_numpy()
+evb_rows, evbpol_rows = [], []
+for r in range(REPEATS):
+    folds = make_folds(ev51, yb51, 5, SEED0 + r)
+    pred, pol, _ = outer_run(ev51, YB, folds, MODELS, SEED0 + r, policies=True, score=True)
+    for row in metrics(ev51, YB, pred, folds):
+        evb_rows.append({"repeat": r, **row})
+    pol["Pursue all"] = np.full(51, 2)
+    pol["Pursue none"] = np.zeros(51, dtype=int)
+    for nm, dec in pol.items():
+        pursue = dec == 2
+        tp, fp, u = utility(yb51, pursue)
+        evbpol_rows.append({"repeat": r, "policy": nm, "pursue": int(pursue.sum()), "caution": int((dec == 1).sum()), "TP": tp, "FP": fp,
+                            "FPR": fp / int((yb51 == 0).sum()), "F1": f1_score(yb51, pursue, zero_division=0), "utility_3to1": u})
+EVB = pd.DataFrame(evb_rows)
+EVB.to_csv(OUT / "bank_event_level_by_repeat.csv", index=False)
+summarize(EVB).to_csv(OUT / "table_bank_event_level.csv", index=False)
+EVBP = pd.DataFrame(evbpol_rows)
+EVBP.to_csv(OUT / "bank_event_level_decision_policies_by_repeat.csv", index=False)
+EVBP.groupby("policy", sort=False).mean(numeric_only=True).drop(columns="repeat").reset_index().to_csv(
+    OUT / "table_bank_event_level_decision_policies.csv", index=False)
+
+# (8) the Spider components against the bank-sector labels (55 and the 28); the Risk row takes the AUC and p-value of the
+# risk-direction validation for the same sample and outcome, so the two tables report one number
+rv_b = pd.DataFrame(rv_rows).set_index(["deals", "outcome"])
+BANK_OUTCOME = "Reaction-day CAR[-1,+1], bank-index benchmark"
+comp_b = []
+rng = np.random.default_rng(13)
+for nm, d in SETS:
+    if nm.startswith("35"):
+        continue
+    f = sp55.transform(d)
+    g = groups(d)
+    u = pd.unique(g)
+    gyy = pd.Series(d[YB].astype(int).to_numpy(), index=g).groupby(level=0).first().reindex(u).to_numpy()
+    ix = np.array([np.flatnonzero(u == x)[0] for x in g])
+    for c, sign in (("S_final", "+"), ("V_score", "+"), ("P_score", "+"), ("B_score", "+"), ("R_score", "-"), ("E_score", "-")):
+        x = f[c].to_numpy(float)
+        if c == "R_score":
+            a, pv = rv_b.loc[(nm, BANK_OUTCOME), "AUC_R"], rv_b.loc[(nm, BANK_OUTCOME), "p_AUC"]
+            assert abs(a - roc_auc_score(d[YB].astype(int), x)) < 1e-12
+        else:
+            a = roc_auc_score(d[YB].astype(int), x)
+            nul = np.array([roc_auc_score(rng.permutation(gyy)[ix], x) for _ in range(2000 if QUICK else 10000)])
+            pv = (1 + (np.abs(nul - 0.5) >= abs(a - 0.5)).sum()) / (1 + len(nul))
+        comp_b.append({"deals": nm, "component": c, "sign_in_S": sign, "AUC": a, "p_two_sided": pv})
+pd.DataFrame(comp_b).to_csv(OUT / "table_bank_spider_components.csv", index=False)
+log("bank benchmark: events and components done")
+# END BANK-BENCHMARK CO-PRIMARY SECTION
+
 # ============================================================ manifest
 def sha(p: Path) -> str:
     return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -749,9 +1191,13 @@ manifest = {
     "date": "2026-10-30", "quick": QUICK, "repeats": REPEATS, "outer_folds": 5, "inner_folds": 3, "permutations": NPERM,
     "permutation_repeats": PERM_REPEATS, "permutation_tuning": "complete nested procedure rerun on every permutation",
     "bootstrap_refit_replicates": NBOOT, "bootstrap_refit_skipped": boot_skipped, "seed_base": SEED0, "event_groups_primary": int(len(ug)), "event_groups_broader": int(len(set(groups(b90)))),
+    "acquisition_events_primary": {"events": int(len(ev51)), "banks": int(ev51.n_banks.sum()), "positive": int(ev51.y.sum()),
+                                   "multi_bank_events": int((ev51.n_banks > 1).sum())},
     "modal_tuned_C": {k: float(v) for k, v in modal.items()}, "sample": sample, "shap": shap_info,
     "inputs_sha256": {p.name: sha(p) for p in [FW / "data/SNFF_Revised_Inputs_Primary55.csv", FW / "data/SNFF_Revised_Inputs_Broader90.csv",
                                                FW / "data/Source_Verification_Ledger_90.csv", FW / "data/Event_Convention_Comparison_90.csv",
+                                               FW / "data/SNFF_Event_Inputs_Primary51.csv", FW / "data/SNFF_Event_Consolidations.csv",
+                                               FW / "data/SVB_Deposit_Stages.csv",
                                                FW / "code/snff_revised_features.py", BANK_CSV, Path(__file__).resolve()]},
     "versions": {"python": platform.python_version(), "numpy": np.__version__, "pandas": pd.__version__, "scikit-learn": sklearn.__version__,
                  "xgboost": xgboost.__version__, "scipy": __import__("scipy").__version__, "matplotlib": matplotlib.__version__,

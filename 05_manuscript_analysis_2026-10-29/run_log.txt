@@ -1,37 +1,63 @@
 [      0s] main comparison: 50 repeats, 55 deals, 51 event groups
-[     83s]   repeat 10/50
-[    167s]   repeat 20/50
-[    282s]   repeat 30/50
-[    401s]   repeat 40/50
-[    519s]   repeat 50/50
-[    597s] main comparison done
-[    847s] ablation done
-[    919s] robustness: Reaction-day CAR[-1,+1] (primary)
-[    993s] robustness: Release-date CAR[0,+1]
-[   1064s] robustness: Release-date CAR[-1,+1] (June window)
-[   1136s] robustness: Reaction-day CAR[-1,+1], market model
-[   1207s] robustness: Reaction-day CAR[-1,+1], bank-index benchmark
-[   1283s] robustness: Published call-report inputs only
-[   1356s] robustness: Broad support definition
-[   1430s] robustness: U rule requires support (broad)
-[   1502s] robustness: Z rule removed
-[   1582s]   broader panel repeat 10/50
-[   1666s]   broader panel repeat 20/50
-[   1747s]   broader panel repeat 30/50
-[   1830s]   broader panel repeat 40/50
-[   1911s]   broader panel repeat 50/50
-[   1911s] broader panel done
-[   1983s] grouping check done
-[   2399s]   permutation 100/400
-[   2820s]   permutation 200/400
-[   3241s]   permutation 300/400
-[   3668s]   permutation 400/400
-[   3668s] permutation test done
-[   3787s]   refitting bootstrap 100/500
-[   3908s]   refitting bootstrap 200/500
-[   4027s]   refitting bootstrap 300/500
-[   4147s]   refitting bootstrap 400/500
-[   4263s]   refitting bootstrap 500/500
-[   4263s] refitting bootstrap done
-[   4639s] risk-direction validation done
-[   4641s] DONE
+[     46s]   repeat 10/50
+[     91s]   repeat 20/50
+[    136s]   repeat 30/50
+[    180s]   repeat 40/50
+[    223s]   repeat 50/50
+[    260s] main comparison done
+[    423s] ablation done
+[    468s] robustness: Reaction-day CAR[-1,+1] (primary)
+[    514s] robustness: Release-date CAR[0,+1]
+[    560s] robustness: Release-date CAR[-1,+1] (June window)
+[    605s] robustness: Reaction-day CAR[-1,+1], market model
+[    649s] robustness: Reaction-day CAR[-1,+1], bank-index benchmark
+[    696s] robustness: Published call-report inputs only
+[    740s] robustness: Broad support definition
+[    785s] robustness: U rule requires support (broad)
+[    830s] robustness: Z rule removed
+[    874s]   broader panel repeat 10/50
+[    918s]   broader panel repeat 20/50
+[    963s]   broader panel repeat 30/50
+[   1010s]   broader panel repeat 40/50
+[   1055s]   broader panel repeat 50/50
+[   1055s] broader panel done
+[   1100s] grouping check done
+[   1366s]   permutation 100/400
+[   1641s]   permutation 200/400
+[   1906s]   permutation 300/400
+[   2161s]   permutation 400/400
+[   2161s] permutation test done
+[   2234s]   refitting bootstrap 100/500
+[   2308s]   refitting bootstrap 200/500
+[   2381s]   refitting bootstrap 300/500
+[   2454s]   refitting bootstrap 400/500
+[   2526s]   refitting bootstrap 500/500
+[   2526s] refitting bootstrap done
+[   2856s] risk-direction validation done
+[   2901s]   event level: repeat 10/50
+[   2947s]   event level: repeat 20/50
+[   2991s]   event level: repeat 30/50
+[   3035s]   event level: repeat 40/50
+[   3081s]   event level: repeat 50/50
+[   3081s] acquisition events done
+[   3081s] SVB deposit stages done
+[   3127s]   bank benchmark: repeat 10/50
+[   3170s]   bank benchmark: repeat 20/50
+[   3214s]   bank benchmark: repeat 30/50
+[   3261s]   bank benchmark: repeat 40/50
+[   3308s]   bank benchmark: repeat 50/50
+[   3308s] bank benchmark: main comparison done
+[   3603s]   bank permutation 100/400
+[   3861s]   bank permutation 200/400
+[   4118s]   bank permutation 300/400
+[   4377s]   bank permutation 400/400
+[   4377s] bank benchmark: permutation test done
+[   4452s]   bank refitting bootstrap 100/500
+[   4527s]   bank refitting bootstrap 200/500
+[   4600s]   bank refitting bootstrap 300/500
+[   4675s]   bank refitting bootstrap 400/500
+[   4748s]   bank refitting bootstrap 500/500
+[   4834s] bank benchmark: bootstrap and FBOP influence done
+[   5383s] bank benchmark: robustness, ablation and broader panel done
+[   5696s] bank benchmark: events and components done
+[   5696s] DONE

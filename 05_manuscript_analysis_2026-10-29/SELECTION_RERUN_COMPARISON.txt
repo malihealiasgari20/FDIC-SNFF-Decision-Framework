@@ -1,0 +1,13 @@
+Rerun comparison (release 4.8): the files of selection_comparison.py from two independent runs, each from its own copy
+of the package and on its own copy of the release 4.6 results (the 82 result files of 4.6 were byte-identical in both after the runs)
+
+identical selection_characteristics_94.csv  sha256 93082208d4077a9a
+identical selection_inclusion_weights.csv  sha256 2e4997839ff3179a
+identical table_selection_balance.csv  sha256 65ea4e28f01e1c05
+identical table_selection_comparison.csv  sha256 5df79c4e57d828ce
+identical table_selection_reweighted.csv  sha256 26449abae191fa0f
+identical table_selection_size_classes.csv  sha256 d7a515728d4018b6
+identical table_selection_weight_diagnostics.csv  sha256 c2f391eaaca2cfac
+
+All 7 result files reproduce exactly. The 5 files that release 4.7 released are byte-identical to those of 4.7;
+release 4.8 adds table_selection_balance.csv and table_selection_weight_diagnostics.csv.

@@ -12,6 +12,12 @@
   "seed_base": 5000,
   "event_groups_primary": 51,
   "event_groups_broader": 78,
+  "acquisition_events_primary": {
+    "events": 51,
+    "banks": 62,
+    "positive": 34,
+    "multi_bank_events": 4
+  },
   "modal_tuned_C": {
     "Ridge logistic": 0.1,
     "SNFF + LR (Model 3)": 0.1
@@ -34,16 +40,19 @@
     "shap_version": "0.54.1"
   },
   "inputs_sha256": {
-    "SNFF_Revised_Inputs_Primary55.csv": "90642ca00fb2831d3133e34c2bc59d55af4b895257abfdcae33910fbb40c8b84",
-    "SNFF_Revised_Inputs_Broader90.csv": "be9335f34cd0d2dcc3cba81fa7e994078d3dac70011725ed66944fed1137696a",
-    "Source_Verification_Ledger_90.csv": "64ba69e18b1d4527a439adae987109c208b866960287d6ef5a20c1994f3c1aca",
+    "SNFF_Revised_Inputs_Primary55.csv": "f93d500de579853bcc19fb8da1a1743b9b6ec17e9753ff68d99eef57be1ad1b0",
+    "SNFF_Revised_Inputs_Broader90.csv": "6877dd4158f3f8e75cd3bf6c8d00b6ff434f643d98365300f4a0e43ec2e25d08",
+    "Source_Verification_Ledger_90.csv": "5c6622e2c697b24f575c2726d04023b2cd5dc17fe3dd8eb151db4a730fbd09c9",
     "Event_Convention_Comparison_90.csv": "0bccf63a34c549e4d7df97509665dad1e98f03494d40b9435d5d6ab8f97bba84",
+    "SNFF_Event_Inputs_Primary51.csv": "2c123dc2f091ac8fd07f2abf6857d4a3d2a37bb72abe16c961cde6b033ee2b1f",
+    "SNFF_Event_Consolidations.csv": "c1fa85f7689139e04b6fc6ce4e14e4c32e42058b9803194a0973b38d8bd2dd07",
+    "SVB_Deposit_Stages.csv": "5cf2bdb345c302ce9e5918aec2d9f0e8e847825f6cc117ecf0cf097f5542c993",
     "snff_revised_features.py": "45d8d44195e04a5fb1ba29afd55eba8c237be398e0f49ed0043d10c4172424f5",
     "Bank_Benchmark_CAR_90.csv": "0af900a1df3fac26585d92a448d0945d861e93a15b4c83d7e2be75f07918aded",
-    "final_analysis.py": "98d2522a895989b1bef61a35820756ed46a5793023d827666f58ded13280a129"
+    "final_analysis.py": "a89353367e5acbcc3a4e28cae3235252afaf94db585aed60edb1fdbdaa635ae1"
   },
   "versions": {
-    "python": "3.13.17",
+    "python": "3.13.18",
     "numpy": "2.5.3",
     "pandas": "3.0.5",
     "scikit-learn": "1.9.1",
@@ -52,5 +61,5 @@
     "matplotlib": "3.11.2",
     "shap": "0.54.1"
   },
-  "runtime_seconds": 4641
+  "runtime_seconds": 5696
 }

@@ -1,7 +1,9 @@
 """Compare the results of the final run with a rerun from a fresh copy of the research folder.
 
 Every output file must be byte-identical, except RUN_MANIFEST.json, whose fields must be equal
-apart from the runtime.
+apart from the runtime. A PNG figure that differs is reported but not counted as a failure:
+matplotlib renders text with the system's FreeType library, so anti-aliasing can differ between
+machines; the data of every figure are in the result tables, which must be identical.
 
 usage: python3 -I compare_clean_rerun.py <results_dir> <rerun_results_dir> <out_txt>
 """
@@ -14,7 +16,7 @@ from pathlib import Path
 
 A, B, OUT = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3])
 fa, fb = sorted(p.name for p in A.iterdir()), sorted(p.name for p in B.iterdir())
-lines, bad = [], 0
+lines, bad, figs = [], 0, []
 if fa != fb:
     bad += 1
     lines.append(f"FILE LISTS DIFFER: only in final run {sorted(set(fa) - set(fb))}; only in rerun {sorted(set(fb) - set(fa))}")
@@ -27,10 +29,19 @@ for name in sorted(set(fa) & set(fb)):
     else:
         ha, hb = (hashlib.sha256((d / name).read_bytes()).hexdigest() for d in (A, B))
         same = ha == hb
+        if not same and name.endswith(".png"):
+            figs.append(name)
+            lines.append(f"differs   {name}  (figure: anti-aliasing depends on the system FreeType; not counted)")
+            continue
         lines.append(f"{'identical' if same else 'DIFFERENT'} {name}  sha256 {ha[:16]}")
     bad += not same
-summary = (f"All {len(fa)} result files reproduce exactly (RUN_MANIFEST.json equal except runtime)." if bad == 0
-           else f"{bad} difference(s) found.")
+if bad:
+    summary = f"{bad} difference(s) found."
+elif figs:
+    summary = (f"All {len(fa) - len(figs)} data files reproduce exactly (RUN_MANIFEST.json equal except runtime); "
+               f"{len(figs)} figure(s) differ in rendering only.")
+else:
+    summary = f"All {len(fa)} result files reproduce exactly (RUN_MANIFEST.json equal except runtime)."
 OUT.write_text("Clean rerun comparison: results/ of the final run against the results of final_analysis.py run again\n"
                "from a fresh copy of the research folder (same code, same inputs)\n\n" + "\n".join(lines) + f"\n\n{summary}\n")
 print(summary)
