@@ -161,3 +161,11 @@ Yousef Nejatbakhsh (Rutgers University), Malihe Aliasgari (Kean University, corr
 (Eindhoven University of Technology) and Sina Shokoohyar (Seton Hall University). See `AUTHORS.md`.
 
 Contact: Malihe Aliasgari, Department of Mathematical Sciences, Kean University.
+
+## Permanent Archive and DOI
+
+Release 4.17 of this replication package is permanently archived on Zenodo.
+
+**DOI:** [10.5281/zenodo.24558799](https://doi.org/10.5281/zenodo.24558799)
+
+Researchers using the datasets, software, or statistical results are encouraged to cite both the original article and the archived replication package.
