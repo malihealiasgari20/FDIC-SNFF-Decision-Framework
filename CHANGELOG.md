@@ -1,5 +1,51 @@
 # Changelog
 
+## Release 4.18 (2026-11-27)
+
+### Acquiring parents counted by holding company; manuscript checks for the final manuscript
+
+**Parent identifiers.** One acquiring holding company appears in the primary panel under two tickers: Hancock Holding
+Company acquired Peoples First Community Bank in 2009 as HBHC and, after it changed its name to Hancock Whitney
+Corporation and its ticker to HWC in 2018, First NBC Bank as HWC (both through the bank with FDIC certificate 12441).
+Release 4.17 counted the two tickers as two parents in the comparison of included and excluded transactions, whose
+permutation tests reassign inclusion across listed parents. Release 4.18 adds
+`03_revised_framework_2026-10-29/data/Parent_Crosswalk.csv`, which maps each of the 52 parent tickers among the 94
+transactions with a U.S.-listed parent to the holding company at the date of the transaction. The crosswalk finds no
+other alias, no acquiring bank under two holding companies and no holding company among both the included and the
+excluded transactions; later mergers (for example Umpqua with Columbia Banking System, IBERIABANK with First Horizon)
+leave the companies distinct at the time of their acquisitions and are recorded in `later_corporate_event`.
+
+`selection_comparison.py` now counts parents through the crosswalk (and asserts its consistency). The panel has 27
+parents, not 28, and inclusion is permuted across 51 parents (10,000 permutations, same seed). Changed results:
+
+| File | Change |
+|---|---|
+| `results/selection_characteristics_94.csv` | `parent` is the stable holding-company identifier; new column `parent_ticker` keeps the ticker as reported |
+| `results/table_selection_comparison.csv` | `n_parents_included` 27 (was 28); permutation p-values: failed in 2008-2010 0.0742 (0.0756), acquirer assets 0.0073 (0.0065), capital 0.0278 (0.0279), failed-bank assets 0.0335 (0.0326), deposits 0.0442 (0.0434), NPL ratio 0.2904 (0.2966), NPL change 0.8444 (0.8431), deposit change 0.9268 (0.9242), relative size 0.0438 (0.0416); smallest Holm-adjusted p-value 0.066 (0.058). The statistics (AUC for inclusion, medians, means) are unchanged |
+| `tables/tab_selection.tex` (Table 13) | Listed parents 27; p-values 0.07 (2008-2010), 0.29 (NPL ratio), 0.93 (deposit change); note: 27 parents |
+
+The other five result files of the comparison, every other result file and every other table are byte-identical to
+release 4.17. The event clusters used by every other analysis are defined by the parent ticker and the reaction day;
+the two Hancock transactions have different reaction days, so the clusters are unchanged, and their labels are kept so
+that the cross-validation partitions are unchanged. Two independent runs of `selection_comparison.py` agree byte for
+byte (`SELECTION_RERUN_COMPARISON.txt`).
+
+`bank_benchmark_cars.py` now asserts that no holding company enters the bank-sector peer portfolio twice or as the
+acquirer's own benchmark under another ticker. The assertions change no output; the script needs the price cache,
+which is not redistributed, and was not rerun.
+
+**Manuscript checks.** The manuscript was shortened and reworded after `number_check.py` was written. Its checks still
+compute every value from the results; for passages whose original wording no longer occurs,
+`05_manuscript_analysis_2026-10-29/code/manuscript_anchors.json` gives the current wording with each value as a slot
+filled at run time (106 checks), or requires each computed value to occur in the manuscript where the numbers now
+appear in tables or separate sentences (103 checks); 20 wording-only checks of passages the shortened manuscript no
+longer contains are reported as retired. The checks of the replication-package citation refer to Version 4.18; the
+DOI of Version 4.18 is reported as pending until it is added to `CITATION.cff`. With the final manuscript, 637 checks
+pass and one is pending.
+
+**Documentation.** README, CITATION.cff (version 4.18; the DOI of Version 4.17 is moved to the citation message),
+ENVIRONMENT.txt, `reproduce.sh` header and MANIFEST.sha256.
+
 ## Release 4.17 (2026-11-25)
 
 ### Publication release: licenses, quick verification, cleaned documentation; no analysis changes

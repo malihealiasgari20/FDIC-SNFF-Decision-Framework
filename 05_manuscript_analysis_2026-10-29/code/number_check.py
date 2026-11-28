@@ -51,21 +51,52 @@ sm = man["sample"]
 lines, fails = [], 0
 
 
+# Release 4.18: the manuscript was shortened and reworded after these checks were written. For a check whose
+# original wording no longer occurs, manuscript_anchors.json gives the passage of the current manuscript
+# that states the same values, with each value replaced by a slot; the slots are filled with the values
+# computed here from the results, so a changed result still fails. "values" anchors (passages whose
+# numbers now appear only in tables or in separate sentences) require every computed value to occur in
+# the manuscript; "retired" anchors mark wording that the shortened manuscript no longer contains.
+ANCH = json.loads((Path(__file__).resolve().parent / "manuscript_anchors.json").read_text())
+_NUM = re.compile(r"(?<![\w.])(?:\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?|(?:[Oo]ne|[Tt]wo|[Tt]hree|[Ff]our|[Ff]ive|[Ss]ix|[Ss]even|[Ee]ight|[Nn]ine|[Tt]en|"
+                  r"[Ee]leven|[Tt]welve|[Tt]wenty|[Tt]hirty|[Ff]orty|[Ff]ifty|[Ss]ixty|[Tt]wenty-[a-z]+|[Tt]hirty-[a-z]+|[Ff]orty-[a-z]+|"
+                  r"[Ff]ifty-[a-z]+))(?![\w])")
+retired = []
+
+
+def _anchored(label: str, values: list) -> tuple:
+    """Status of a check whose original wording is absent: (passed, how)."""
+    a = ANCH.get(label)
+    if a is None:
+        return False, ""
+    vals = list(dict.fromkeys(values))
+    if a["mode"] == "retired":
+        retired.append(label)
+        return True, "retired: " + a["reason"]
+    if a["mode"] == "values":
+        ok = bool(vals) and all(re.search(r"(?<![\w.])" + re.escape(v) + r"(?![\w])", tex, re.I if v.isalpha() else 0) for v in vals)
+        return ok, "values present in the manuscript: " + ", ".join(vals)
+    t = a["template"]
+    for i, v in enumerate(vals):
+        t = t.replace(f"\u27e6{i}\u27e7", v)
+    return ("\u27e6" not in t and t in tex), "current wording: " + repr(t)
+
+
 def check(label: str, computed: str, text_snippet: str):
     global fails
     snip = re.sub(r"\s+", " ", text_snippet.format(v=computed))
-    ok_val = snip in tex
+    ok_val, how = (True, "") if snip in tex else _anchored(label, [computed])
     fails += not ok_val
-    lines.append(f"[{'ok' if ok_val else 'FAIL'}] {label}: computed {computed!r}; text contains {snip!r}")
+    lines.append(f"[{'ok' if ok_val else 'FAIL'}] {label}: computed {computed!r}; text contains {snip!r}" + (f" ({how})" if how else ""))
 
 
 def check_text(label: str, snippet: str):
     """A prose snippet whose numbers were formatted from the results."""
     global fails
     snip = re.sub(r"\s+", " ", snippet)
-    ok_val = snip in tex
+    ok_val, how = (True, "") if snip in tex else _anchored(label, [m.group(0) for m in _NUM.finditer(snip)])
     fails += not ok_val
-    lines.append(f"[{'ok' if ok_val else 'FAIL'}] {label}: text contains {snip!r}")
+    lines.append(f"[{'ok' if ok_val else 'FAIL'}] {label}: text contains {snip!r}" + (f" ({how})" if how else ""))
 
 
 def check_true(label: str, cond: bool, detail: str):
@@ -396,7 +427,7 @@ check_text("release 4.5 described", "Version 4.5 added every analysis under the 
 check_text("release 4.6 described", "Version 4.6 added the sensitivity of the Spider score and Model~3 to the expert weights and interaction adjustments;")
 check_text("releases 4.7 to 4.17 described", "Version 4.7 added the comparison of the included and excluded transactions, with the call reports of the excluded transactions' acquirers and the later status of their parents; Version 4.8 added the balance and overlap diagnostics of its reweighting; Versions 4.9 to 4.16 extend the checks of the manuscript's numbers to the revised discussion of the FBOP cluster, of statistical power, of the decision problem, and of the cost scenario, to the note relating the two Spider-score AUCs, to the restructured title, abstract, introduction, and conclusion, to the shortened literature review, case study, discussion, and conclusion, and to the qualified statements on event-level discrimination, weight sensitivity, sample selection, significance thresholds, hypothetical payoffs, the information available to the bidder and to investors, and the recovery of missing prices, without changing any analysis; and Version 4.17 prepares the package for publication, adding its licenses, a quick verification mode, and revised documentation. Versions 4.1 to 4.5 each reran the complete analysis; Versions 4.6 to 4.8 run their analyses after it and leave every earlier result unchanged, and Versions 4.9 to 4.17 change no result")
 check_text("E1: licenses stated", "The code is released under the MIT License, and the data compiled by the authors, the results, and the documentation under the Creative Commons Attribution 4.0 International License; the third-party sources remain subject to their providers' terms.")
-check_true("E1: price series not redistributed", "The original historical stock-price series are not redistributed." in tex, "Data and Code Availability")
+check_true("E1: price series not redistributed", "The original historical stock-price series are not redistributed" in tex, "Data and Code Availability")
 check_text("Data and Code Availability lists the deposit stages", "SVB's deposits and assets at its last call report, at failure, and at its sale")
 
 # ------------------------------------------------------------ acquisition events (release 4.3)
@@ -534,7 +565,7 @@ check_text("Discussion (text)", "in each of the four multi-bank events of the pa
            "others, and the consolidated score can lie above or below every bank's score")
 seven = MB[(MB.row == "bank") & (MB.in_primary_panel == 0)]
 check_true("Limitations: the seven banks below the size cut have Value scores of zero", len(seven) == 7 and (seven.V_score == 0).all(), "")
-check_text("Limitations (text)", "The seven banks below the size cut enter only through their events")
+check_text("Limitations (text): the small banks", "The seven banks below the size cut enter only through their events")
 # release 4.13: 'Conclusion: event level' reworded; checked in the release 4.13 block below
 # ------------------------------------------------------------ SVB's deposits at three dates (release 4.4)
 STG = pd.read_csv(FW / "data/SVB_Deposit_Stages.csv").set_index("stage")
@@ -1002,8 +1033,8 @@ n_inc, n_exc = int(SXX.included.sum()), int((SXX.included == 0).sum())
 n_acq, n_lst = int((PST.parent_status == "acquired").sum()), int((PST.parent_status == "listed").sum())
 p_inc, p_exc = SXX[SXX.included == 1].parent.nunique(), SXX[SXX.included == 0].parent.nunique()
 p_acq, p_lst = PST[PST.parent_status == "acquired"].parent_ticker.nunique(), PST[PST.parent_status == "listed"].parent_ticker.nunique()
-check_true("VII-F: 94 = 55 + 39 transactions; 52 = 28 + 24 parents; 39 = 26 + 13 transactions of 17 + 7 parents",
-           (n_inc, n_exc, p_inc, p_exc, n_acq, n_lst, p_acq, p_lst) == (55, 39, 28, 24, 26, 13, 17, 7),
+check_true("VII-F: 94 = 55 + 39 transactions; 51 = 27 + 24 parents (by holding company); 39 = 26 + 13 transactions of 17 + 7 parents",
+           (n_inc, n_exc, p_inc, p_exc, n_acq, n_lst, p_acq, p_lst) == (55, 39, 27, 24, 26, 13, 17, 7),
            f"{n_inc}, {n_exc}, {p_inc}, {p_exc}, {n_acq}, {n_lst}, {p_acq}, {p_lst}")
 check_true("VII-F: the parents of the 39 in the status file are those of the characteristics file",
            set(PST.parent_ticker) == set(SXX[SXX.included == 0].parent), "holds")
@@ -1164,7 +1195,7 @@ check_true("documents agree with the ledger's FDIC financing coding",
             == led.set_index("transaction_id").fdic_buyer_financing.astype(str).reindex(fc.transaction_id)).all(), "all 90")
 # outcome wording
 vc = re.findall(r"value-creat\w*|value creation|value-destroy\w*|created value", tex)
-check_true("'value-creating' no longer describes the outcome (one use, in the sentence that rejects it)", len(vc) == 1 and "rather than as value-creating" in tex,
+check_true("'value-creating' no longer describes the outcome (one use, in the sentence that rejects it)", len(vc) == 1 and "received, not value-creating" in tex,
            f"{len(vc)} uses: {vc}")
 # ---- the FBOP cluster and benchmark dependence (release 4.9; Section VIII-A)
 g2, g3 = (lambda x: f"{x:.2f}"), (lambda x: f"{x:.3f}")
@@ -1253,7 +1284,7 @@ check_text("VIII-A: pointer from VII-D", "Section~\\ref{sec:fbop} discusses what
 for phrase in ("no predictive signal", "evidence of absence"):
     check_true(f"VIII-A: no claim of absent signal ('{phrase}')", phrase not in tex, "absent")
 check_true("no claim of absent signal ('no signal' only where the text says the results should not be read that way)",
-           tex.count("no signal") == tex.count("should not be read as showing that financial ratios carry no signal") + tex.count("not that the inputs carry no signal"), f"{tex.count('no signal')} use(s)")
+           tex.count("no signal") == tex.count("should not be read as showing that financial ratios carry no signal") + tex.count("not the same as saying the inputs carry no signal"), f"{tex.count('no signal')} use(s)")
 
 # ---- statistical power and nonsignificant results (release 4.9)
 PT = pd.read_csv(R / "table_permutation_test.csv").set_index("model")
@@ -1505,12 +1536,12 @@ for phrase in ("the cost-based threshold", "under symmetric costs", "common 3:1 
     check_true(f"A5: decision cost stated as fact gone ('{phrase}')", phrase not in tex, "absent")
 for phrase in ("the threshold derived from the hypothetical 3:1 payoffs", "under symmetric hypothetical payoffs", "the common hypothetical 3:1 ratio",
                "are only assumed to be asymmetric in the decision analysis", "the decision's payoffs, here assumed to be asymmetric",
-               "Under hypothetical payoffs in which a negatively received acquisition costs three times the gain from a well-received one"):
+               "If, hypothetically, a negatively received acquisition costs three times the gain from a well-received one"):
     check_text(f"A5: payoffs labeled hypothetical or assumed ('{phrase[:40]}')", phrase)
 
 check_true("A6: the abstract leads with the finding", abs_tex[len("\\begin{abstract}"):].replace("\\rev{", "").lstrip().startswith(
-    "The four interaction rules of the Spider Network Filtering Framework, which feed a logistic model and a Pursue/Caution/Avoid rule, did not "
-    "improve on logistic models with the same inputs"), abs_tex[17:90])
+    "The four interaction rules of the Spider Network Filtering Framework did not reliably improve on logistic models with the same inputs"),
+    abs_tex[17:90])
 check_text("A6 abstract: sample", "the winning bids in 55 acquisitions assisted by the Federal Deposit Insurance Corporation (2008--2024)")
 # release 4.13 (second pass): reworded; checked in the block below
 check_text("A6 abstract: power", f"find little evidence that any model beats chance but, with {man['event_groups_primary']} independent events, cannot rule "
@@ -1578,6 +1609,19 @@ check_text("D1 VIII-F: fourth limitation", "Outside investors generally learn th
 check_text("D1 V-D: the dates that support 'two weeks'", "announced on March~12 and~13, 2023~\\cite{jointstatement2023}, two weeks before its sale")
 for phrase in ("the market learns from the FDIC's announcement", "but not to that of outside investors before the announcement", "learns the terms only at the announcement"):
     check_true(f"D1: announcement-only claim gone ('{phrase[:40]}')", phrase not in tex, "absent")
+# Zenodo archive of the replication package (manuscript revision of 2026-11-26)
+check_text("F1: Reproducibility cites the replication package", "Version 4.18 of the replication package, which is permanently archived on Zenodo~\\cite{snff_replication2026}")
+check_text("F1: availability statement cites the replication package", "Version 4.18 of the replication package, which corresponds to release v4.18 of the repository, is permanently archived on Zenodo~\\cite{snff_replication2026}")
+check_true("F1: the earlier Version 4.17 keeps its DOI", "Version 4.17 remains archived under DOI \\href{https://doi.org/10.5281/zenodo.24558799}{10.5281/zenodo.24558799}" in tex, "Data and Code Availability")
+_ref = tex[tex.index("\\bibitem{snff_replication2026}"):tex.index("\\bibitem{fdic_failed_list}")]
+check_true("F1: reference gives version, archive and repository", all(x in _ref for x in ("Version 4.18, Zenodo", "github.com/malihealiasgari20/FDIC-SNFF-Decision-Framework")), "bibliography")
+# The DOI of Version 4.18 exists only once the version is published; it is then added to CITATION.cff, and the manuscript
+# must give it in the availability statement and in the reference. Until then the check is reported as pending.
+_doi = re.search(r"^doi:\s*\"?([^\s\"]+)", (ROOT / "CITATION.cff").read_text(), re.M)
+if _doi and _doi.group(1) != "10.5281/zenodo.24558799":
+    check_true("F1: DOI of Version 4.18 in the availability statement and the reference", _doi.group(1) in tex and _doi.group(1) in _ref, _doi.group(1))
+else:
+    lines.append("[pending] F1: DOI of Version 4.18 not yet in CITATION.cff; the manuscript marks it for confirmation")
 # references: every cited key listed, every listed key cited, numbered in order of first citation
 cited = []
 for mt in re.finditer(r"\\cite\{([^}]*)\}", tex):

@@ -1,4 +1,4 @@
-Release 4.17 (2026-11-25). Computational environment of the final runs.
+Release 4.18 (2026-11-27). Computational environment of the final runs.
 
 Python 3.13.18 on Linux (x86-64), single-threaded (release 4.0: Python 3.13.17).
 numpy 2.5.3
@@ -17,9 +17,10 @@ final_analysis.py and cluster_influence_check.py: last complete run 2026-11-23 (
   4.0, 77 minutes on another machine.
 weight_sensitivity.py (release 4.6), run after the final analysis on 2026-11-24: about 91 minutes (5,444 and 5,498 s,
   two runs concurrently), most of it refitting Model 3.
-selection_comparison.py (releases 4.7 and 4.8), run after the final analysis on 2026-11-24: about 1 second.
-Releases 4.9 to 4.17 rerun no analysis; release 4.17 was verified on 2026-11-25 with `reproduce.sh --quick` and the
-manuscript, from a fresh extraction of the release ZIP.
+selection_comparison.py (releases 4.7 and 4.8), run after the final analysis on 2026-11-24: about 1 second; rerun for
+  release 4.18 (parents counted by holding company) on 2026-11-27, twice, with byte-identical results: about 1 second.
+Releases 4.9 to 4.17 rerun no analysis; release 4.18 reruns only selection_comparison.py. Release 4.18 was verified on
+2026-11-27 with `reproduce.sh --quick` and the manuscript, from a fresh extraction of the release ZIP.
 
 The `date` field of RUN_MANIFEST.json (2026-10-30) is a fixed constant of final_analysis.py that identifies the analysis
 specification, not the execution date.

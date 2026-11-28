@@ -19,7 +19,8 @@ Outputs (results folder):
   selection_characteristics_94.csv     the characteristics of the 94 transactions
   table_selection_comparison.csv       included against excluded: medians, quartiles, means, AUC of the
                                        characteristic for inclusion and a two-sided permutation p-value
-                                       (inclusion permuted across listed parents, 10,000 permutations),
+                                       (inclusion permuted across listed parents, counted by holding company
+                                       with 03_.../data/Parent_Crosswalk.csv, 10,000 permutations),
                                        with the medians of the 26 excluded transactions whose parent was
                                        later acquired and the 13 whose parent is still listed
   table_selection_size_classes.csv     mean AUC over the 50 partitions of Model 2, ridge regression,
@@ -151,7 +152,14 @@ for r in X.itertuples(index=False):
 X["buyer_assets_usd_bn"] = np.array(bA) / 1e6
 X["C_buyer_capital_pct"] = bC
 X["E_relative_size"] = X._assets_k / np.array(bA)
-X["parent"] = par
+# stable parent identifiers: historical ticker aliases of one holding company map to one parent_id
+CW = pd.read_csv(FW / "Parent_Crosswalk.csv").set_index("parent_identifier")
+assert set(par) == set(CW.index), "parent identifier missing from the crosswalk"
+assert CW.parent_id.nunique() == 51 and len(CW) == 52, "52 tickers of 51 holding companies"
+_cert_parent = pd.Series(CW.loc[par, "parent_id"].to_numpy()).groupby(X.acquirer_cert.to_numpy()).nunique()
+assert _cert_parent.max() == 1, "an acquiring bank under two holding companies"
+X["parent_ticker"] = par
+X["parent"] = CW.loc[par, "parent_id"].to_numpy()
 for c, cr in (("N_npl_pct", "N_npl_pct"), ("G_deposits_usd_bn", "G_deposits_usd_bn"), ("L_deposit_change_pct", "L_deposit_change_pct"),
               ("T_npl_change_pp", "T_npl_change_pp"), ("E_relative_size", "E_relative_size"), ("C_buyer_capital_pct", "C_buyer_capital_pct")):
     i = X.included == 1

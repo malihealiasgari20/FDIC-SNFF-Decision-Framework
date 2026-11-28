@@ -1,10 +1,10 @@
-# FDIC-SNFF-Decision-Framework: replication package, release 4.17
+# FDIC-SNFF-Decision-Framework: replication package, release 4.18
 
 Replication package for Y. Nejatbakhsh, M. Aliasgari, P. Safaee, and S. Shokoohyar, "Do Interaction Rules Improve
 Decisions on FDIC-Assisted Bank Acquisitions? A Leakage-Controlled Evaluation of the Spider Network Filtering
 Framework," revised manuscript for *IEEE Access* (Access-2026-56349).
 
-Release 4.17, 2026-11-25. It contains the final datasets, the source-verification ledgers of FDIC press releases and
+Release 4.18, 2026-11-27. It contains the final datasets, the source-verification ledgers of FDIC press releases and
 winning bids, the analysis code, every result of the final analysis (89 files), the 14 LaTeX tables and the
 figures of the manuscript, the software versions, the reproduction script and SHA-256 checksums of every file
 (`MANIFEST.sha256`). Historical stock prices are not redistributed (see [Data sources](#data-sources-and-redistribution)).
@@ -31,7 +31,7 @@ part of this package.
 | 3 | Requires every result file to be byte-identical to `05_manuscript_analysis_2026-10-29/results/` (`RUN_MANIFEST.json` equal in every field except the runtime) | same |
 | 4 | Regenerates the LaTeX tables and the calibration figure and requires the tables to be identical | same |
 | 5 | Checks the coding of FDIC financing of the buyer against the winning-bid record (`check_fdic_financing.py`) | same |
-| 6 | With the manuscript: `table_check.py` (every table equals the generated table) and `number_check.py` (633 checks of the prose numbers and statements) | same |
+| 6 | With the manuscript: `table_check.py` (every table equals the generated table) and `number_check.py` (637 checks of the prose numbers and statements, computed from the results; `manuscript_anchors.json` gives the current wording of passages reworded after the checks were written) | same |
 
 The PNG figures can differ in anti-aliasing between machines, because matplotlib renders text with the system's
 FreeType library; they are reported but not counted, and their data are in the result tables. With library versions
@@ -48,6 +48,7 @@ other than those in `requirements.txt`, small differences in late decimals are p
 | `03_revised_framework_2026-10-29/data/Multi_Bank_Event_Call_Reports.csv` | Call-report amounts (FDIC BankFind API) of the 15 banks in the four multi-bank acquisition events, with the query URL of each bank |
 | `03_revised_framework_2026-10-29/data/SNFF_Event_Inputs_Primary51.csv` | The 51 acquisition events of the primary panel, each scored on the consolidated inputs of every bank its acquirer bought that day (`SNFF_Event_Consolidations.csv`, `Event_Inputs_Report.txt`) |
 | `03_revised_framework_2026-10-29/data/Excluded39_Buyer_Call_Reports.csv`, `Excluded39_Parent_Status.csv` | The acquiring banks' call reports and the later status of the listed parents of the 39 eligible transactions whose prices were not collected (26 transactions of 17 parents later acquired and delisted; 13 of 7 parents still trading) |
+| `03_revised_framework_2026-10-29/data/Parent_Crosswalk.csv` | Crosswalk of the 52 acquiring-parent tickers among the 94 transactions with a U.S.-listed parent to 51 holding companies at the date of each transaction (Hancock Holding Company appears as HBHC in 2009 and HWC in 2017), with the acquiring banks, their FDIC certificates and later corporate events (release 4.18) |
 | `03_revised_framework_2026-10-29/data/SVB_Deposit_Stages.csv` | SVB's deposits and assets at its last call report, at failure and as assumed by First Citizens, with the source of each; only the first is in the information set |
 | `03_revised_framework_2026-10-29/data/Event_Convention_Comparison_90.csv` | Daily abnormal returns around each announcement and the CARs under the primary window, two announcement-date windows and a market model |
 | `03_revised_framework_2026-10-29/data/*.txt` | Validation reports for the variables, the event-time convention and the event inputs |
@@ -118,14 +119,16 @@ the authors. Every analysis reported in the manuscript runs from the included fi
 |---|---|---|---|
 | `final_analysis.py` and `cluster_influence_check.py` (last complete run, release 4.5) | 2026-11-23 | 95 minutes | byte-identical, 73 files (`CLEAN_RERUN_COMPARISON.txt`) |
 | `weight_sensitivity.py` (release 4.6) | 2026-11-24 | about 91 minutes | byte-identical, 9 files (`WEIGHT_SENSITIVITY_RERUN_COMPARISON.txt`) |
-| `selection_comparison.py` (release 4.8) | 2026-11-24 | about 1 second | byte-identical, 7 files (`SELECTION_RERUN_COMPARISON.txt`) |
-| Verification of release 4.17 (`reproduce.sh --quick` on a fresh extraction, with the manuscript) | 2026-11-25 | 15 seconds | - |
+| `selection_comparison.py` (release 4.18, parents counted by holding company) | 2026-11-27 | about 1 second | byte-identical, 7 files (`SELECTION_RERUN_COMPARISON.txt`) |
+| Verification of release 4.18 (`reproduce.sh --quick` on a fresh extraction, with the manuscript) | 2026-11-27 | 16 seconds | - |
 
 Python 3.13.18 on Linux (x86-64), single-threaded; seed base 5000; 50 repeats of grouped, stratified 5-fold
 cross-validation with 3-fold inner tuning; 400 permutations; 500 bootstrap refits (`RUN_MANIFEST.json`). The `date`
 field of `RUN_MANIFEST.json` (2026-10-30) is a fixed constant of `final_analysis.py` that identifies the analysis
-specification; it is not the execution date and is identical in every rerun. No result has changed since release
-4.8; releases 4.9 to 4.17 change only the manuscript checks and the documentation (`CHANGELOG.md`).
+specification; it is not the execution date and is identical in every rerun. Releases 4.9 to 4.17 change only the
+manuscript checks and the documentation. Release 4.18 counts acquiring parents by holding company in the comparison of
+included and excluded transactions, which changes two of its result files and Table 13; no other result has changed
+since release 4.8 (`CHANGELOG.md`).
 
 ## Key checksums (SHA-256, as recorded in `RUN_MANIFEST.json`)
 
@@ -145,8 +148,9 @@ specification; it is not the execution date and is identical in every rerun. No 
 ## Releases
 
 Release 4.0 (2026-10-30), which accompanied the submitted manuscript, remains available in the repository history
-(tag `v4.0`). Release 4.17 supersedes it and contains every change of releases 4.1 to 4.16, which were prepared during the
-revision; see `CHANGELOG.md`.
+(tag `v4.0`). Release 4.18 supersedes it and contains every change of releases 4.1 to 4.17, which were prepared during the
+revision; see `CHANGELOG.md`. Release 4.17 remains available (tag `v4.17`; Zenodo DOI
+[10.5281/zenodo.24558799](https://doi.org/10.5281/zenodo.24558799)).
 
 ## Citation and license
 
@@ -164,8 +168,7 @@ Contact: Malihe Aliasgari, Department of Mathematical Sciences, Kean University.
 
 ## Permanent Archive and DOI
 
-Release 4.17 of this replication package is permanently archived on Zenodo.
-
-**DOI:** [10.5281/zenodo.24558799](https://doi.org/10.5281/zenodo.24558799)
+Release 4.18 will be archived on Zenodo as a new version of the record, under its own DOI, which will be added here.
+Release 4.17 is permanently archived under DOI [10.5281/zenodo.24558799](https://doi.org/10.5281/zenodo.24558799).
 
 Researchers using the datasets, software, or statistical results are encouraged to cite both the original article and the archived replication package.

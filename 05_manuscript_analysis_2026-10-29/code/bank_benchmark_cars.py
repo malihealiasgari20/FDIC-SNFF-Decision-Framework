@@ -57,6 +57,11 @@ spy = series("SPY")
 constituents = sorted(k for k, v in cache.items() if v and "|" not in k and k != "SPY" and k not in FOREIGN | NOT_BANKS)
 prices = {k: series(k) for k in constituents}
 reaction_days = [(t, pd.Timestamp(d)) for t, d in zip(ev.ticker, ev.day_r_first_reaction)]
+# Release 4.18: one holding company may appear under several tickers (Hancock: HBHC, later HWC). No holding company
+# may enter the peer portfolio twice, nor under another ticker of the acquirer; these checks change no output.
+CW = pd.read_csv(ROOT / "03_revised_framework_2026-10-29/data/Parent_Crosswalk.csv").set_index("parent_identifier").parent_id
+holdco = lambda t: CW.get(t, t)
+assert len({holdco(k) for k in constituents}) == len(constituents), "two tickers of one holding company among the constituents"
 
 rows = []
 for r in ev.itertuples():
@@ -68,6 +73,7 @@ for r in ev.itertuples():
     ret_s, ret_m = a.stock.pct_change(), a.market.pct_change()
     excluded = {r.ticker} | {t for t, d in reaction_days if abs((d - day_r).days) <= 4}
     use = [k for k in constituents if k not in excluded]
+    assert not any(holdco(k) == holdco(r.ticker) for k in use), f"the acquirer of {r.transaction_id} is in its own benchmark"
     panel = pd.DataFrame({k: prices[k].reindex(a.index) for k in use})
     ret_b = panel.pct_change(fill_method=None).mean(axis=1, skipna=True)
     n_b = panel.pct_change(fill_method=None).iloc[rr - 1:rr + 2].notna().sum(axis=1).min()

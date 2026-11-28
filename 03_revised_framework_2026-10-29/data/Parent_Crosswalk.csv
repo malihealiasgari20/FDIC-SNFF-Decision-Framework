@@ -1,0 +1,53 @@
+parent_identifier,parent_id,holding_company,group,n_transactions,first_transaction,last_transaction,acquiring_banks,alias_of,later_corporate_event,evidence
+ABCB,ABCB,Ameris Bancorp,included,1,2010-11-12,2010-11-12,AMERIS BANK,,,acquiring-bank FDIC certificate(s) 20504
+BBT,BBT,BB&T Corporation,included,2,2008-12-12,2009-08-14,BB&T; BRANCH BANKING AND TRUST COMPANY,,,acquiring-bank FDIC certificate(s) 9846
+BPOP,BPOP,"Popular, Inc.",included,2,2010-04-30,2015-02-27,BANCO POPULAR DE PUERTO RICO,,,acquiring-bank FDIC certificate(s) 34968
+COLB,COLB,"Columbia Banking System, Inc.",included,2,2010-01-22,2011-08-05,COLUMBIA STATE BANK,,,acquiring-bank FDIC certificate(s) 33826
+CVBF,CVBF,CVB Financial Corp.,included,1,2009-10-16,2009-10-16,CITIZENS BUSINESS BANK,,,acquiring-bank FDIC certificate(s) 21716
+EFSC,EFSC,Enterprise Financial Services Corp,included,1,2011-08-12,2011-08-12,ENTERPRISE BANK & TRUST,,,acquiring-bank FDIC certificate(s) 27237
+EWBC,EWBC,"East West Bancorp, Inc.",included,2,2009-11-06,2010-06-11,EAST WEST BANK,,,acquiring-bank FDIC certificate(s) 31628
+FCNCA,FCNCA,"First Citizens BancShares, Inc.",included,8,2009-07-17,2023-03-10,FIRST-CITIZENS BANK; FIRST-CITIZENS BANK & TRUST COMPANY; FIRST-CITIZENS BANK AND TRUST COMPANY,,,acquiring-bank FDIC certificate(s) 11063
+FHN,FHN,First Horizon National Corporation,included,1,2013-06-07,2013-06-07,"FIRST TENNESSEE BANK, NATIONAL ASSOCIATION",,,acquiring-bank FDIC certificate(s) 4977
+FULT,FULT,Fulton Financial Corporation,included,1,2024-04-26,2024-04-26,"FULTON BANK, NATIONAL ASSOCIATION",,,acquiring-bank FDIC certificate(s) 7551
+GSBC,GSBC,"Great Southern Bancorp, Inc.",included,5,2009-03-20,2014-06-20,GREAT SOUTHERN BANK,,,acquiring-bank FDIC certificate(s) 29546
+HBAN,HBAN,Huntington Bancshares Incorporated,included,2,2009-10-02,2012-03-30,THE HUNTINGTON NATIONAL BANK,,,acquiring-bank FDIC certificate(s) 6560
+HBHC,HWC,Hancock Holding Company (Hancock Whitney Corporation from 2018),included,1,2009-12-18,2009-12-18,HANCOCK BANK,HWC,,acquiring-bank FDIC certificate(s) 12441; same certificate 12441 under HBHC (2009) and HWC (2017); Stage 1 ticker candidates HBHC|HWC; Hancock Holding Company changed its name to Hancock Whitney Corporation and its ticker from HBHC to HWC in 2018
+HWC,HWC,Hancock Whitney Corporation (formerly Hancock Holding Company),included,1,2017-04-28,2017-04-28,WHITNEY BANK,,,acquiring-bank FDIC certificate(s) 12441; same certificate 12441 under HBHC (2009) and HWC (2017); Stage 1 ticker candidates HBHC|HWC; Hancock Holding Company changed its name to Hancock Whitney Corporation and its ticker from HBHC to HWC in 2018
+JPM,JPM,JPMorgan Chase & Co.,included,2,2008-09-25,2023-05-01,"JPMORGAN CHASE BANK, N.A.; JPMORGAN CHASE BANK, NA",,,acquiring-bank FDIC certificate(s) 628
+MTB,MTB,M&T Bank Corporation,included,2,2009-08-28,2010-11-05,MANUFACTURERS AND TRADERS TRUST COMPANY,,,acquiring-bank FDIC certificate(s) 588
+OFG,OFG,Oriental Financial Group Inc. (OFG Bancorp),included,1,2010-04-30,2010-04-30,ORIENTAL BANK AND TRUST,,,acquiring-bank FDIC certificate(s) 31469
+ONB,ONB,Old National Bancorp,included,1,2011-07-29,2011-07-29,OLD NATIONAL BANK,,,acquiring-bank FDIC certificate(s) 3832
+PB,PB,"Prosperity Bancshares, Inc.",included,1,2008-11-07,2008-11-07,PROSPERITY BANK,,,acquiring-bank FDIC certificate(s) 16835
+RF,RF,Regions Financial Corporation,included,1,2008-08-29,2008-08-29,REGIONS BANK,,,acquiring-bank FDIC certificate(s) 12368
+RNST,RNST,Renasant Corporation,included,1,2010-07-23,2010-07-23,RENASANT BANK,,,acquiring-bank FDIC certificate(s) 12437
+SFNC,SFNC,Simmons First National Corporation,included,1,2010-10-15,2010-10-15,SIMMONS FIRST NATIONAL BANK,,,acquiring-bank FDIC certificate(s) 3890
+USB,USB,U.S. Bancorp,included,8,2008-11-21,2011-01-28,"U.S. BANK, NA; U.S. BANK, NATIONAL ASSOCIATION",,,acquiring-bank FDIC certificate(s) 6548
+VLY,VLY,Valley National Bancorp,included,1,2010-03-12,2010-03-12,VALLEY NATIONAL BANK,,,acquiring-bank FDIC certificate(s) 9396
+WABC,WABC,Westamerica Bancorporation,included,1,2009-02-06,2009-02-06,WESTAMERICA BANK,,,acquiring-bank FDIC certificate(s) 3430
+WAFD,WAFD,"Washington Federal, Inc.",included,1,2010-01-08,2010-01-08,WASHINGTON FEDERAL SAVINGS AND LOAN ASSOCIATION,,,acquiring-bank FDIC certificate(s) 28088
+WTFC,WTFC,Wintrust Financial Corporation,included,2,2010-04-23,2011-07-08,NORTHBROOK BANK AND TRUST COMPANY; WHEATON BANK & TRUST,,,"acquiring-bank FDIC certificate(s) 33803,57082"
+ZION,ZION,Zions Bancorporation,included,2,2009-02-06,2009-07-17,CALIFORNIA BANK & TRUST; CALIFORNIA BANK AND TRUST,,,acquiring-bank FDIC certificate(s) 20852
+BNCN,BNCN,BNC Bancorp,excluded,1,2010-04-09,2010-04-09,BANK OF NORTH CAROLINA,,acquired by Pinnacle Financial Partners,acquiring-bank FDIC certificate(s) 33527
+CSBC,CSBC,Citizens South Banking Corporation,excluded,1,2010-03-19,2010-03-19,CITIZENS SOUTH BANK,,acquired by Park Sterling,acquiring-bank FDIC certificate(s) 28833
+CSFL,CSFL,"CenterState Banks, Inc.",excluded,1,2012-01-27,2012-01-27,"CENTERSTATE BANK OF FLORIDA, NATIONAL ASSOCIATION",,merged into South State Corporation,acquiring-bank FDIC certificate(s) 33555
+CYN,CYN,City National Corporation,excluded,2,2009-12-18,2010-05-28,CITY NATIONAL BANK,,acquired by Royal Bank of Canada,acquiring-bank FDIC certificate(s) 17281
+ESXB,ESXB,Community Bankers Trust Corporation,excluded,1,2008-11-21,2008-11-21,BANK OF ESSEX,,acquired by United Bankshares,acquiring-bank FDIC certificate(s) 8675
+FFBC,FFBC,First Financial Bancorp.,excluded,3,2009-07-31,2009-09-18,"FIRST FINANCIAL BANK, N.A.; FIRST FINANCIAL BANK, NATIONAL ASSOCIATION",,listed,acquiring-bank FDIC certificate(s) 4382
+FFCH,FFCH,"First Financial Holdings, Inc.",excluded,1,2009-04-10,2009-04-10,FIRST FEDERAL SAVINGS AND LOAN ASSOCIATION OF CHARLESTON,,merged into SCBT Financial,acquiring-bank FDIC certificate(s) 28994
+FMBI,FMBI,"First Midwest Bancorp, Inc.",excluded,1,2010-08-13,2010-08-13,FIRST MIDWEST BANK,,merged into Old National Bancorp,acquiring-bank FDIC certificate(s) 3709
+FMER,FMER,FirstMerit Corporation,excluded,2,2010-02-19,2010-05-14,"FIRSTMERIT BANK, NATIONAL ASSOCIATION",,acquired by Huntington Bancshares,acquiring-bank FDIC certificate(s) 13675
+HFWA,HFWA,Heritage Financial Corporation,excluded,1,2010-07-30,2010-07-30,HERITAGE BANK,,listed,acquiring-bank FDIC certificate(s) 29012
+HOMB,HOMB,"Home BancShares, Inc.",excluded,2,2010-07-30,2010-10-01,CENTENNIAL BANK,,listed,acquiring-bank FDIC certificate(s) 11241
+HOME,HOME,"Home Federal Bancorp, Inc.",excluded,1,2010-07-30,2010-07-30,HOME FEDERAL BANK,,acquired by Cascade Bancorp,acquiring-bank FDIC certificate(s) 28258
+HTH,HTH,Hilltop Holdings Inc.,excluded,1,2013-09-13,2013-09-13,PLAINSCAPITAL BANK,,listed,acquiring-bank FDIC certificate(s) 17491
+HTLF,HTLF,"Heartland Financial USA, Inc.",excluded,1,2012-11-02,2012-11-02,HEARTLAND BANK AND TRUST COMPANY,,acquired by UMB Financial,acquiring-bank FDIC certificate(s) 20369
+IBKC,IBKC,IBERIABANK Corporation,excluded,4,2009-08-21,2010-07-23,IBERIABANK,,merged into First Horizon,acquiring-bank FDIC certificate(s) 28100
+MBFI,MBFI,"MB Financial, Inc.",excluded,3,2009-09-11,2010-04-23,"MB FINANCIAL BANK, NATIONAL ASSOCIATION; MB FINANCIAL, N.A.",,acquired by Fifth Third Bancorp,acquiring-bank FDIC certificate(s) 3628
+NYCB,NYCB,"New York Community Bancorp, Inc.",excluded,3,2009-12-04,2023-03-12,"FLAGSTAR BANK, N.A.; NEW YORK COMMUNITY BANK",,"renamed Flagstar Financial (FLG), October 2024; price history moved to FLG","acquiring-bank FDIC certificate(s) 16022,32541"
+PVTB,PVTB,"PrivateBancorp, Inc.",excluded,1,2009-07-02,2009-07-02,THE PRIVATEBANK AND TRUST COMPANY,,acquired by CIBC,acquiring-bank FDIC certificate(s) 33306
+RBCAA,RBCAA,"Republic Bancorp, Inc.",excluded,1,2012-01-27,2012-01-27,REPUBLIC BANK & TRUST COMPANY,,listed,acquiring-bank FDIC certificate(s) 23627
+SCBT,SCBT,SCBT Financial Corporation,excluded,2,2010-01-29,2011-02-18,"SCBT NATIONAL ASSOCIATION; SCBT, NATIONAL ASSOCIATION",,"renamed First Financial Holdings (2013), then South State Corporation (SSB)",acquiring-bank FDIC certificate(s) 13425
+TIBB,TIBB,TIB Financial Corp.,excluded,1,2009-02-13,2009-02-13,TIB BANK,,merged into Capital Bank Financial,acquiring-bank FDIC certificate(s) 21435
+UMPQ,UMPQ,Umpqua Holdings Corporation,excluded,3,2010-01-22,2010-06-18,UMPQUA BANK,,combined with Columbia Banking System,acquiring-bank FDIC certificate(s) 17266
+WBCO,WBCO,Washington Banking Company,excluded,1,2010-04-16,2010-04-16,WHIDBEY ISLAND BANK,,merged into Heritage Financial,acquiring-bank FDIC certificate(s) 18412
+WIBC,WIBC,"Wilshire Bancorp, Inc.",excluded,1,2009-06-26,2009-06-26,WILSHIRE STATE BANK,,merged into BBCN Bancorp (Hope Bancorp),acquiring-bank FDIC certificate(s) 23301

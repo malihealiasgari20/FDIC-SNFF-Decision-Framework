@@ -1,13 +1,16 @@
-Rerun comparison (release 4.8): the files of selection_comparison.py from two independent runs, each from its own copy
-of the package and on its own copy of the release 4.6 results (the 82 result files of 4.6 were byte-identical in both after the runs)
+Rerun comparison (release 4.18): the files of selection_comparison.py from two independent runs, each from its own copy
+of the package and on its own copy of the released results, after acquiring parents were counted by holding company
+(03_revised_framework_2026-10-29/data/Parent_Crosswalk.csv)
 
-identical selection_characteristics_94.csv  sha256 93082208d4077a9a
+identical selection_characteristics_94.csv  sha256 be8f8ced6cccbbb9
 identical selection_inclusion_weights.csv  sha256 2e4997839ff3179a
 identical table_selection_balance.csv  sha256 65ea4e28f01e1c05
-identical table_selection_comparison.csv  sha256 5df79c4e57d828ce
+identical table_selection_comparison.csv  sha256 d51d941b926125cc
 identical table_selection_reweighted.csv  sha256 26449abae191fa0f
 identical table_selection_size_classes.csv  sha256 d7a515728d4018b6
 identical table_selection_weight_diagnostics.csv  sha256 c2f391eaaca2cfac
 
-All 7 result files reproduce exactly. The 5 files that release 4.7 released are byte-identical to those of 4.7;
-release 4.8 adds table_selection_balance.csv and table_selection_weight_diagnostics.csv.
+All 7 result files reproduce exactly. Release 4.18 changes selection_characteristics_94.csv (stable parent
+identifier, with the ticker as reported in parent_ticker) and table_selection_comparison.csv (27 included parents; the
+permutation p-values, since inclusion is now permuted across 51 parents); the other five files are byte-identical to
+those of release 4.17.

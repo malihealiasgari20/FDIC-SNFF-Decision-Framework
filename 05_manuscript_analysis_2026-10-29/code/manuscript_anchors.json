@@ -1,0 +1,1044 @@
+{
+ "complete call reports": {
+  "mode": "context",
+  "template": "Of 502 purchase-and-assumption failures, ⟦0⟧ have complete call reports for the failed",
+  "was": "469 have complete call-report data"
+ },
+ "U.S.-listed parents in top 150": {
+  "mode": "context",
+  "template": "of the included transactions from all ⟦0⟧}} \\\\ \\textbf{Characteristic} &",
+  "was": "In 94 of the 150 transactions"
+ },
+ "private acquirers": {
+  "mode": "context",
+  "template": "parent was listed on a U.S. exchange; ⟦0⟧ acquirers were private, nine foreign-owned,",
+  "was": "44 acquirers were privately held"
+ },
+ "foreign-owned": {
+  "mode": "context",
+  "template": "a U.S. exchange; 44 acquirers were private, ⟦0⟧ foreign-owned, and three traded only over",
+  "was": "nine were owned by a foreign bank"
+ },
+ "OTC parents": {
+  "mode": "context",
+  "template": "were private, nine foreign-owned, and ⟦0⟧ traded only over the counter. Daily prices",
+  "was": "and three parents traded only over the counter"
+ },
+ "loss share count": {
+  "mode": "context",
+  "template": "are consideration paid to it, not support. ⟦0⟧ of the 55 transactions include a loss-share",
+  "was": "Forty of the 55 primary transactions include an FDIC loss-share agreement"
+ },
+ "after-close count": {
+  "mode": "context",
+  "template": "checked in each FDIC press release. ⟦0⟧ of the 55 were released after the close (52",
+  "was": "Fifty-three of the 55 were released after the market close"
+ },
+ "labels primary": {
+  "mode": "context",
+  "template": "small, so the sign depends on the window: ⟦0⟧ of the 55 are positive under the primary",
+  "was": "35 of the 55 transactions have a positive CAR under the primary window"
+ },
+ "labels [0,+1]": {
+  "mode": "context",
+  "template": "55 are positive under the primary window, ⟦0⟧ and 41 under the two alternatives, which",
+  "was": "window, 39 under $[0,+1]$"
+ },
+ "labels June": {
+  "mode": "context",
+  "template": "positive under the primary window, 39 and ⟦0⟧ under the two alternatives, which change 14",
+  "was": "and 41 under $[-1,+1]$ around it"
+ },
+ "label changes": {
+  "mode": "context",
+  "template": "41 under the two alternatives, which change ⟦0⟧ labels. The abnormal return is",
+  "was": "which changes 14 labels"
+ },
+ "market-model labels": {
+  "mode": "context",
+  "template": "$-130$ to $-11$, used as a check, labels ⟦0⟧ of the 55 positive). Because the S\\&P~500",
+  "was": "labels 31 of the 55 transactions positive"
+ },
+ "bank-benchmark positives": {
+  "mode": "context",
+  "template": "announcement within four days; it labels ⟦0⟧ of the 55 positive. These banks still",
+  "was": "it labels 39 of the 55 transactions positive"
+ },
+ "bank-benchmark label changes (robustness)": {
+  "mode": "values",
+  "was": "Ten labels change under the bank-sector benchmark"
+ },
+ "bank-benchmark label changes (limitations)": {
+  "mode": "context",
+  "template": "bank-sector index); $p$ is two-sided, from ⟦0⟧,000 permutations of outcomes across event",
+  "was": "and 10 change when a bank-sector index replaces"
+ },
+ "ablation A: measured inputs": {
+  "mode": "context",
+  "template": "is 0.594, against 0.615 for logistic and ⟦0⟧ for ridge regression. Against a co-primary",
+  "was": "against 0.632 for stage~A"
+ },
+ "ablation D: full SNFF (Model 3)": {
+  "mode": "values",
+  "was": "inherits this loss (0.594)"
+ },
+ "ablation E: D without protection inputs": {
+  "mode": "values",
+  "was": "recovers part of the loss (0.615)"
+ },
+ "ablation F: D without buyer capital": {
+  "mode": "context",
+  "template": "benchmark} \\\\ \\quad All 55 & 35 & 0.615 & ⟦0⟧ & 0.594 & 0.423 \\\\ \\quad Acquiring bank",
+  "was": "recovers all of it (0.632)"
+ },
+ "lowest third": {
+  "mode": "context",
+  "template": "28. In the lowest third of the Risk score, ⟦0⟧ transactions are positive (median CAR",
+  "was": "7 of 19 have a positive CAR"
+ },
+ "other thirds": {
+  "mode": "context",
+  "template": "are positive (median CAR $-0.9\\%$), against ⟦0⟧ in each other third (medians $+2.6\\%$ and",
+  "was": "14 of 18 in each of the other two thirds"
+ },
+ "pursue-all F1": {
+  "mode": "values",
+  "was": "policy (0.778)"
+ },
+ "[0,+1] window": {
+  "mode": "context",
+  "template": "$[0,+1]$ around the announcement date (⟦0⟧ positive) puts every model near ⟦1⟧ half (⟦2⟧ for Model~⟦3⟧, ⟦4⟧ for ridge regression, ⟦5⟧ for Model~⟦6⟧); $[-1,+1]$ (41 positive) gives slightly lower",
+  "was": "which labels 39 transactions positive, every model's mean AUC is close to one half (0.441 for Model~2, 0.508 for ridge regression, and 0.507 for Model~3)"
+ },
+ "[-1,+1] window": {
+  "mode": "context",
+  "template": "regression, 0.507 for Model~3); $[-1,+1]$ (⟦0⟧ positive) gives slightly lower AUCs than the main specification (⟦1⟧, ⟦2⟧, ⟦3⟧); and under the market model (31 positive)",
+  "was": "announcement date (41 positive), the AUCs are slightly lower than in the main specification (0.572, 0.601, and 0.591)"
+ },
+ "market model": {
+  "mode": "context",
+  "template": "0.601, 0.591); and under the market model (⟦0⟧ positive) the ⟦1⟧ perform alike (⟦2⟧ to ⟦3⟧). Under these alternatives Model~3 ranks",
+  "was": "market-model outcome (31 positive) the three models perform alike (0.642 to 0.648)"
+ },
+ "Brier relative to ridge": {
+  "mode": "context",
+  "template": "under the market model (31 positive) the ⟦1⟧ perform alike (0.642 to 0.648). Under these alternatives Model~3 ranks above Model~2, by 0.005 to 0.065, and level with or slightly below ridge regression, by ⟦2⟧ to 0.010. Relative to ridge regression, the Spider features raise the Brier score by ⟦0⟧ in the main specification and lower it by ⟦2⟧ to ⟦3⟧ elsewhere, small changes of inconsistent",
+  "was": "raise the Brier score in the main specification (by 0.008) and lower it under these three alternatives and against the bank-sector benchmark (by 0.001 to 0.006)"
+ },
+ "broad support numbers": {
+  "mode": "values",
+  "was": "lowers the mean AUC of all three logistic models (to 0.583 for Model~2, 0.611 for ridge regression, and 0.577 for Model~3)"
+ },
+ "U requires broad support numbers": {
+  "mode": "values",
+  "was": "Model~3 reaches 0.590, above Model~2 (0.583) but below ridge regression (0.611)"
+ },
+ "H1 paragraph: U requires broad support": {
+  "mode": "values",
+  "was": "it ranks above Model~2 (0.590 against 0.583) but below ridge regression (0.611)"
+ },
+ "broader panel leaders": {
+  "mode": "context",
+  "template": "(0.632), with the pairwise model (⟦0⟧) and random forest (⟦1⟧) highest, and Model~3 is also below both",
+  "was": "pairwise-interaction model (0.676) and the random forest (0.660) rank highest"
+ },
+ "Spider score range across the variants of Panel A": {
+  "mode": "context",
+  "template": "below one half in every variant of Panel~A (⟦0⟧ to ⟦1⟧). Against the bank-sector benchmark",
+  "was": "in every variant of Panel~A (0.400 to 0.473), and in the broader panel"
+ },
+ "Spider score in the broader panel": {
+  "mode": "values",
+  "was": "and in the broader panel (0.459)"
+ },
+ "calibration Model 2 extremes": {
+  "mode": "context",
+  "template": "lowest and highest quintiles average ⟦0⟧ and ⟦1⟧, while the observed shares are ⟦2⟧ and ⟦3⟧, and Model~3's top quintile (mean 0.835)",
+  "was": "average 0.280 and 0.910, while the observed shares in them are 0.464 and 0.733"
+ },
+ "calibration Model 3 top quintiles": {
+  "mode": "context",
+  "template": "and 0.733, and Model~3's top quintile (mean ⟦0⟧) has fewer positive outcomes (⟦1⟧) than its fourth (⟦2⟧). Against the bank-sector benchmark",
+  "was": "with a mean prediction of 0.835, contains a lower share of positive outcomes (0.655) than its fourth quintile (0.798)"
+ },
+ "the seven (text)": {
+  "mode": "values",
+  "was": "Seven of these 35, however, share an acquirer and an announcement return with a transaction in the primary panel: the five FBOP subsidiaries that U.S. Bank bought together with the four in the primary panel, Lincoln Park Savings Bank, which Wintrust bought on the day it bought Wheatland Bank, and Tifton Banking Company, which Ameris bought on the day it bought Darby Bank \\& Trust."
+ },
+ "the 28 and their event clusters": {
+  "mode": "values",
+  "was": "the other 28, which form 27 event clusters"
+ },
+ "Risk component, primary panel": {
+  "mode": "context",
+  "template": "shows the strongest association (AUC ⟦0⟧, $p = ⟦1⟧$; 0.724, $p = 0.042$, in all 35 outside",
+  "was": "(AUC 0.699, $p = 0.038$)"
+ },
+ "Risk component, the 35 and the 28": {
+  "mode": "values",
+  "was": "its AUC is 0.724 ($p = 0.042$); without the seven, it is 0.694 ($p = 0.113$) in the other 28"
+ },
+ "Buyer Strength, the 35, the 28 and the 55": {
+  "mode": "values",
+  "was": "Buyer Strength has an AUC of 0.714 ($p = 0.058$) in the 35, in the direction the framework assumes, but 0.650 ($p = 0.233$) in the 28 and 0.537 in the primary panel"
+ },
+ "the 28 under the five outcomes (text)": {
+  "mode": "context",
+  "template": "= 0.90$) against the bank-sector benchmark, ⟦2⟧ under the market model, and below one half under the two announcement-date windows (0.423 and 0.343). In the 28 outside transactions it is above one half under every outcome (⟦0⟧ to ⟦1⟧) but never distinguishable from chance ($p",
+  "was": "from 0.567 under the market model to 0.694 against SPY, and is 0.644 against the bank-sector index"
+ },
+ "Discussion: the 28": {
+  "mode": "values",
+  "was": "in the 28 transactions outside it that have their own announcement return"
+ },
+ "Data and Code Availability cites release 4.17": {
+  "mode": "values",
+  "was": "constitute the Version 4.17 research replication package"
+ },
+ "release 4.2 described": {
+  "mode": "values",
+  "was": "Version 4.2 added the evaluation of the Spider components on the 28 transactions outside the primary panel that share no announcement return with it"
+ },
+ "release 4.3 described": {
+  "mode": "values",
+  "was": "Version 4.3 added the scoring and evaluation of acquisition events, with each multi-bank purchase consolidated"
+ },
+ "release 4.4 described": {
+  "mode": "retired",
+  "reason": "the version history is no longer written out in the Data and Code Availability statement",
+  "was": "Version 4.4 added the retrospective scoring of SVB on its deposits at failure and on those First Citizens assumed"
+ },
+ "release 4.5 described": {
+  "mode": "retired",
+  "reason": "the version history is no longer written out in the Data and Code Availability statement",
+  "was": "Version 4.5 added every analysis under the bank-sector benchmark, reported as the second co-primary specification"
+ },
+ "release 4.6 described": {
+  "mode": "values",
+  "was": "Version 4.6 added the sensitivity of the Spider score and Model~3 to the expert weights and interaction adjustments;"
+ },
+ "releases 4.7 to 4.17 described": {
+  "mode": "retired",
+  "reason": "the version history is no longer written out in the Data and Code Availability statement",
+  "was": "Version 4.7 added the comparison of the included and excluded transactions, with the call reports of the excluded transactions' acquirers and the later status of their parents; Version 4.8 added the balance and overlap diagnostics of its reweighting; Versions 4.9 to 4.16 extend the checks of the manuscript's numbers to the revised discussion of the FBOP cluster, of statistical power, of the decision problem, and of the cost scenario, to the note relating the two Spider-score AUCs, to the restructured title, abstract, introduction, and conclusion, to the shortened literature review, case study, discussion, and conclusion, and to the qualified statements on event-level discrimination, weight sensitivity, sample selection, significance thresholds, hypothetical payoffs, the information available to the bidder and to investors, and the recovery of missing prices, without changing any analysis; and Version 4.17 prepares the package for publication, adding its licenses, a quick verification mode, and revised documentation. Versions 4.1 to 4.5 each reran the complete analysis; Versions 4.6 to 4.8 run their analyses after it and leave every earlier result unchanged, and Versions 4.9 to 4.17 change no result"
+ },
+ "Data and Code Availability lists the deposit stages": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "SVB's deposits and assets at its last call report, at failure, and at its sale"
+ },
+ "FBOP purchase (IV-F)": {
+  "mode": "values",
+  "was": "U.S.~Bank bought nine FBOP subsidiaries in one transaction~\\cite{fdic_pr195_2009}, four of them in the primary panel and five below its size cut, and its winning bids for the four are marked as linked bids in the FDIC's bid summaries"
+ },
+ "multi-bank events (IV-F)": {
+  "mode": "context",
+  "template": "and the acquirer's capital entered once. ⟦0⟧ of the ⟦1⟧ events contain more than ⟦2⟧ bank: the FBOP purchase; Downey and PFF;",
+  "was": "Four of the 51 events of the primary panel contain more than one bank"
+ },
+ "event-level AUC range of the eight models (VII-A)": {
+  "mode": "context",
+  "template": "each event on its consolidated inputs (⟦0⟧ to ⟦1⟧, Section~\\ref{sec:events}). Much of the",
+  "was": "scoring each event on the consolidated inputs of its banks (0.472 to 0.566"
+ },
+ "event level in VII-D": {
+  "mode": "context",
+  "template": "Model~⟦0⟧ (0.601) again ranks below Model~⟦2⟧ (0.616) and ridge regression (0.632), with the pairwise model (0.676) and random forest (0.660) highest, and Model~⟦0⟧ is also below both among the 51 events (⟦1⟧, against ⟦3⟧ and ⟦4⟧). The Spider score is below one half in",
+  "was": "Model~3 (0.509) again ranks below Model~2 (0.541) and ridge regression (0.561)"
+ },
+ "event level Spider score (VII-D)": {
+  "mode": "context",
+  "template": "for ridge regression, 0.509 for Model~3 and ⟦0⟧ for the Spider score (0.472 to 0.566 across",
+  "was": "and among the acquisition events (0.445)"
+ },
+ "event-level policies (VII-H)": {
+  "mode": "values",
+  "was": "Configuration~4A pursues about three of the 51 events per partition for a small positive utility (0.036), 4C and 4B realize $-0.073$ and $-0.313$, and pursuing every event $-0.333$"
+ },
+ "FBOP panel banks alone": {
+  "mode": "context",
+  "template": "Table~\\ref{tab:events} scores the ⟦0⟧ multi-bank events bank by bank and as one consolidated target, with full-panel bounds as for SVB. Alone, the ⟦0⟧ FBOP subsidiaries in the panel score ⟦1⟧ to ⟦2⟧, all Caution; the nine-bank purchase scores",
+  "was": "the four FBOP subsidiaries in the panel lie between 0.506 and 0.511, all in the Caution band"
+ },
+ "Lemont": {
+  "mode": "values",
+  "was": "Community Bank of Lemont, with an NPL ratio of 50.6\\% and a deposit outflow, falls in the Avoid band (0.289)"
+ },
+ "FBOP consolidated": {
+  "mode": "context",
+  "template": "score 0.506 to 0.511, all Caution; the ⟦0⟧-bank purchase scores ⟦1⟧, still Caution but above every bank,",
+  "was": "The consolidated purchase of all nine banks scores 0.527: Caution"
+ },
+ "FBOP Value and Execution": {
+  "mode": "values",
+  "was": "combined deposit base of \\$14.2 billion gives a Value score of 0.074, against at most 0.028 for one bank, and the combined assets, 7.0\\% of U.S.~Bank's, give an Execution score of 0.085, against at most 0.031"
+ },
+ "FBOP consolidated risk inputs": {
+  "mode": "values",
+  "was": "consolidated NPL ratio (4.2\\%), deposit change ($+19.4\\%$), and NPL change ($+2.1$ percentage points)"
+ },
+ "FBOP means": {
+  "mode": "context",
+  "template": "score 0.506 to 0.511, all Caution; the ⟦0⟧-bank purchase scores 0.527, still Caution but above every bank, because the summed deposits and assets raise Value (0.074, against at most 0.028 for one bank) and Execution. No weighted average of the bank scores can reproduce it (simple mean ⟦1⟧, asset-weighted ⟦2⟧). In the other three events the banks",
+  "was": "the simple mean of the nine is 0.480, pulled down by the smallest bank, and the asset-weighted mean is 0.508"
+ },
+ "FBOP four in the panel": {
+  "mode": "values",
+  "was": "Restricted to the four banks in the panel, the consolidated score is also 0.527, because the other five hold 5\\% of the assets"
+ },
+ "Downey and PFF": {
+  "mode": "values",
+  "was": "Downey (Caution) and PFF (Avoid, after a 25\\% deposit outflow and an NPL rise of 7.8 points set off $L$, $T$, and $Q$) consolidate to Caution (0.473)"
+ },
+ "Downey and PFF consolidated changes": {
+  "mode": "values",
+  "was": "combined deposit change ($-10.6\\%$) and NPL change ($+3.3$ points)"
+ },
+ "Wheatland and Lincoln Park": {
+  "mode": "context",
+  "template": "and Lincoln Park (Caution) to Avoid (⟦0⟧), where the simple mean (⟦1⟧) would say Caution, and Darby (Caution) and",
+  "was": "Wheatland (Avoid) and Lincoln Park (Caution) consolidate to Avoid (0.312), whereas the simple mean of their scores (0.404) would recommend Caution"
+ },
+ "Darby and Tifton": {
+  "mode": "context",
+  "template": "(Caution) and Tifton (Pursue) to Caution (⟦0⟧), below both. For a bidder, the event's",
+  "was": "Darby (Caution) and Tifton (Pursue, through rules $Q$ and $U$) consolidate to Caution (0.517), below both banks"
+ },
+ "Ameris combined NPL ratio and the 75th percentile": {
+  "mode": "values",
+  "was": "the combined ratio (14.8\\%) is below the panel's 75th percentile (17.2\\%)"
+ },
+ "outside the range (text)": {
+  "mode": "values",
+  "was": "In two of the four events the consolidated score lies outside the range of the bank scores, and in one the simple mean of the scores would change the recommendation"
+ },
+ "event-level evaluation (text)": {
+  "mode": "values",
+  "was": "the mean AUCs over 50 partitions of the 51 events (34 with a positive CAR) are 0.541 for Model~2, 0.561 for ridge regression, 0.509 for Model~3, and 0.445 for the Spider score"
+ },
+ "event-level range and averaged-prediction range": {
+  "mode": "values",
+  "was": "across the eight models they range from 0.472 to 0.566, close to the transaction-level AUCs with each event's predictions averaged (0.479 to 0.575)"
+ },
+ "Brier of the training-fold share (text)": {
+  "mode": "context",
+  "template": "is worse than the training-fold share (⟦0⟧ and 0.208), and Model~3 ranks above Model~2",
+  "was": "predicting the training-fold share of positive events (0.223)"
+ },
+ "Model 3 above Model 2 and ridge (share of partitions)": {
+  "mode": "values",
+  "was": "Model~3 ranks above Model~2 in 16\\% of the partitions and above ridge regression in 8\\%"
+ },
+ "H1 at the event level": {
+  "mode": "context",
+  "template": "and Model~3 is also below both among the ⟦0⟧ events (0.509, against 0.541 and 0.561).",
+  "was": "and in the broader panel it again ranks below both, as it does among the 51 acquisition events"
+ },
+ "Discussion (text)": {
+  "mode": "context",
+  "template": "⟦0⟧ multi-bank events bank by bank and as ⟦1⟧ consolidated target, with full-panel bounds as for SVB. Alone, the ⟦0⟧ FBOP subsidiaries in the panel score 0.506",
+  "was": "in each of the four multi-bank events of the panel at least one bank, scored alone, falls in a different band from the others, and the consolidated score can lie above or below every bank's score"
+ },
+ "VI-B: assets taken on and relative size": {
+  "mode": "context",
+  "template": "size stays above its cap even with the \\$⟦0⟧ billion of assets First Citizens took on, ⟦1⟧ times its own. With the assumed deposits,",
+  "was": "the relative size stays above its cap even with the \\$106.6 billion of assets that First Citizens took on~\\cite{firstcitizens2023}, 0.98 times its own assets"
+ },
+ "VI-B: V and S*": {
+  "mode": "context",
+  "template": "With the assumed deposits, $V$ falls from ⟦0⟧ to ⟦1⟧ and $S^*$ from ⟦2⟧ to ⟦3⟧, from first in the panel to fourth. On the",
+  "was": "$V$ falls from 0.931 to 0.296 and $S^*$ from 0.443 to 0.252, from the highest score in the panel to the fourth"
+ },
+ "VI-B: rescaled score on the full-panel bounds": {
+  "mode": "context",
+  "template": "itself sets, the rescaled score falls to ⟦0⟧, in the Caution zone, and stays in Pursue",
+  "was": "on those bounds the rescaled score falls to 0.641, in the Caution zone"
+ },
+ "VI-B: break-even deposits on the full-panel bounds": {
+  "mode": "context",
+  "template": "stays in Pursue only with deposits above \\$⟦0⟧ billion, a level the deposits at failure",
+  "was": "only with deposits above \\$75.6 billion, a level that the deposits at failure exceed"
+ },
+ "VI-B: bounds without SVB": {
+  "mode": "context",
+  "template": "would score it, the threshold is \\$⟦0⟧ billion and the score ⟦1⟧, in the Pursue zone. Letting the run also",
+  "was": "the threshold is \\$40.9 billion and the score is 0.753, in the Pursue zone"
+ },
+ "VI-B: contributions of protection and of the deposits assumed": {
+  "mode": "context",
+  "template": "the Pursue boundary, and its protection (⟦0⟧ of $S^*$) outweighs its franchise (⟦1⟧). A bidder sees current deposits during due",
+  "was": "its protection, which contributes 0.200 to $S^*$, outweighs its deposit franchise, which contributes 0.089"
+ },
+ "III-B (text)": {
+  "mode": "context",
+  "template": "cannot include the acquired bank. SVB is ⟦0⟧ of the 55; Section~\\ref{sec:svb} uses it",
+  "was": "Section~\\ref{sec:svb} shows how large the difference was for SVB, the one bridge-bank sale in the panel"
+ },
+ "Conclusion (text)": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "the deposits First Citizens assumed, less than a third as large, the transaction ranks fourth and lies near the Pursue boundary"
+ },
+ "VII-A bank: AUCs": {
+  "mode": "context",
+  "template": "every fitted model has a mean AUC below ⟦0⟧ half: ⟦1⟧ for Model~⟦2⟧, ⟦3⟧ for ridge regression, ⟦4⟧ for Model~⟦5⟧, and at most ⟦6⟧, for LASSO. Counting each event once gives",
+  "was": "one half: 0.277 for Model~2 and 0.280 for ridge regression, 0.413 for Model~3, and at most 0.461, for the LASSO model"
+ },
+ "VII-A bank: Brier of the training-fold share": {
+  "mode": "values",
+  "was": "of positive outcomes (0.207), with a Brier skill from $-$4.9\\% for the LASSO model to $-$57.6\\% for the decision tree"
+ },
+ "VII-A bank: Spider score": {
+  "mode": "context",
+  "template": "(0.207), and the Spider score's AUC is ⟦0⟧. The FBOP event matters again, in the other",
+  "was": "The Spider score has a mean AUC of 0.505."
+ },
+ "VII-B bank: differences with Model 2 and ridge": {
+  "mode": "values",
+  "was": "Model~3's AUC is higher than Model~2's by 0.136 and than ridge regression's by 0.133, in every one of the 50 partitions"
+ },
+ "VII-B bank: differences with RF, XGBoost, pairwise": {
+  "mode": "values",
+  "was": "by 0.076, 0.062, and 0.018 on average"
+ },
+ "VII-B bank: Brier lower than Model 2's": {
+  "mode": "values",
+  "was": "its Brier score is lower than Model~2's by 0.041 and close to ridge regression's"
+ },
+ "VII-B bank: refitting bootstrap differences": {
+  "mode": "context",
+  "template": "each AUC, all containing one half, and [$-$⟦0⟧, $+$⟦1⟧] and [$-$⟦2⟧, $+$⟦3⟧] for the two differences. Since all three AUCs are below one half, Model~⟦4⟧'s advantage means it misorders fewer pairs, not",
+  "was": "and [$-$0.143, $+$0.232] and [$-$0.111, $+$0.245] for Model~3's differences"
+ },
+ "VII-B bank: share of resamples with a negative difference": {
+  "mode": "values",
+  "was": "negative in only 32\\% and 29\\% of the resamples"
+ },
+ "VII-B bank: observed AUCs": {
+  "mode": "values",
+  "was": "observed AUCs of Model~2 (0.350), ridge regression (0.353), and Model~3 (0.427) lie below the permutation mean (0.48)"
+ },
+ "VII-B bank: two-sided p": {
+  "mode": "context",
+  "template": "21\\%, 22\\% and 52\\% of the permuted runs (⟦0⟧-sided $p = ⟦1⟧$, ⟦2⟧, ⟦3⟧; ⟦4⟧ each after Holm), and the Spider score is",
+  "was": "(two-sided $p = 0.21$, 0.22, and 0.52; 0.64 for each after a Holm adjustment)"
+ },
+ "VII-B bank: share of permuted runs": {
+  "mode": "context",
+  "template": "AUCs at least as far from one half occur in ⟦0⟧\\%, ⟦1⟧\\% and ⟦2⟧\\% of the permuted runs (two-sided $p =",
+  "was": "occur in 21\\%, 22\\%, and 52\\% of the permuted runs"
+ },
+ "VII-B: Model 3's differences under the S&P 500": {
+  "mode": "context",
+  "template": "chance. Model~3's differences from Model~⟦1⟧ and ridge regression have ⟦4⟧-sided $p$-values of ⟦5⟧ and ⟦6⟧ against the S\\&P~⟦0⟧ ($-$⟦2⟧, $-$⟦3⟧) and ⟦6⟧ and 0.17 against the bank-sector",
+  "was": "Against the S\\&P~500, its differences with Model~2 ($-$0.035) and ridge regression ($-$0.068) have two-sided $p$-values of 0.51 and 0.18"
+ },
+ "VII-B: Model 3's differences under the bank-sector benchmark": {
+  "mode": "context",
+  "template": "the S\\&P~500 ($-$0.035, $-$0.068) and ⟦2⟧ and ⟦3⟧ against the bank-sector benchmark ($+$⟦0⟧, $+$⟦1⟧): under neither benchmark does its ranking",
+  "was": "against the bank-sector benchmark ($+$0.077 and $+$0.074), of 0.18 and 0.17"
+ },
+ "VII-D: FBOP under the S&P 500": {
+  "mode": "values",
+  "was": "this lowers the mean AUC of Model~2 from 0.615 to 0.498, of ridge regression from 0.632 to 0.516, and of Model~3 from 0.594 to 0.456, and raises the Spider score's from 0.423 to 0.460"
+ },
+ "VII-D: FBOP under the bank-sector benchmark": {
+  "mode": "values",
+  "was": "it raises the three models' AUCs from 0.277 to 0.418, from 0.280 to 0.417, and from 0.413 to 0.472, and lowers the Spider score's from 0.505 to 0.475"
+ },
+ "VII-D: gap between the benchmarks": {
+  "mode": "values",
+  "was": "shrinks from 0.337 to 0.080 for Model~2 and from 0.352 to 0.099 for ridge regression, and for Model~3 it changes sign ($-$0.016)"
+ },
+ "V-E: label changes and their clusters": {
+  "mode": "context",
+  "template": "(0.977), but ⟦0⟧ labels differ, in ⟦1⟧ event clusters, and ⟦2⟧ of the ⟦0⟧ have an SPY-adjusted CAR within ⟦3⟧ percentage point of zero. Four are the FBOP",
+  "was": "but ten labels differ, in six event clusters, and eight of these ten transactions have an SPY-adjusted CAR within one percentage point of zero"
+ },
+ "V-E: the FBOP CARs": {
+  "mode": "context",
+  "template": "zero. Four are the FBOP subsidiaries, at $-⟦0⟧\\%$ against SPY and $+⟦1⟧\\%$ against the bank-sector benchmark.",
+  "was": "whose CAR is $-0.9\\%$ against SPY and $+1.3\\%$ against the bank-sector benchmark"
+ },
+ "VII-C bank: stages": {
+  "mode": "values",
+  "was": "stage~A ranks below one half (0.280), and the same additions move the AUC the other way. Adding the Spider score leaves it essentially unchanged (0.278), whereas adding the interaction rules raises it to 0.419, above stage~A in every partition, and the full specification to 0.413; removing the protection inputs leaves it at 0.411, and removing buyer capital raises it to 0.452"
+ },
+ "VII-D Panel B: ranges": {
+  "mode": "values",
+  "was": "from 0.256 to 0.418 for the two logistic baselines and from 0.334 to 0.472 for Model~3, which ranks above both in every row; the Spider score lies between 0.464 and 0.562"
+ },
+ "VII-D Panel B: published inputs and events": {
+  "mode": "values",
+  "was": "Without the deal terms the three models reach 0.305, 0.312, and 0.411, and among the 51 acquisition events, of which 36 have a positive CAR, 0.394, 0.400, and 0.430"
+ },
+ "VII-D Panel B: broader panel": {
+  "mode": "values",
+  "was": "In the broader panel, where they reach 0.335, 0.323, and 0.392, XGBoost (0.574), the random forest (0.526), the decision tree and the pairwise model (0.522 each), and the Spider score (0.562) rank above one half"
+ },
+ "VII-E bank: overall share": {
+  "mode": "values",
+  "was": "(mean predictions of 0.68 to 0.70 against an observed share of 0.71)"
+ },
+ "VII-E bank: Model 2's extreme quintiles": {
+  "mode": "values",
+  "was": "which average 0.452 and 0.868, the observed shares are 0.956 and 0.524"
+ },
+ "VII-E bank: ridge": {
+  "mode": "context",
+  "template": "highest quintiles (means 0.452 and 0.868), ⟦0⟧ and ⟦1⟧ for ridge regression, and 0.813, 0.578 and",
+  "was": "ridge regression shows the same reversal (0.951 and 0.502)"
+ },
+ "VII-E bank: Model 3": {
+  "mode": "context",
+  "template": "0.951 and 0.502 for ridge regression, and ⟦0⟧, ⟦1⟧ and ⟦2⟧ in Model~3's lowest, fourth and highest.",
+  "was": "with 0.813 in its lowest quintile, 0.578 in its fourth, and 0.702 in its highest"
+ },
+ "VII-F bank: the primary panel": {
+  "mode": "values",
+  "was": "the AUCs lie between 0.494 and 0.577, every $p$-value is at least 0.41, and the Spider score's AUC is 0.516 ($p = 0.87$)"
+ },
+ "VII-F bank: the 28": {
+  "mode": "values",
+  "was": "Buyer Strength has an AUC of 0.731 ($p = 0.088$), in the direction the framework assumes, and Risk 0.644 ($p = 0.30$)"
+ },
+ "VII-H bank: pursue all": {
+  "mode": "values",
+  "was": "39 of the 55 transactions have a positive CAR, so pursuing every transaction loses less ($-0.164$) and again attains the highest F1 score (0.830)"
+ },
+ "VII-H bank: 4B": {
+  "mode": "values",
+  "was": "Configuration~4B recommends Pursue on 50.2 of 55 transactions on average, approves 97.4\\% of the 16 acquisitions with a negative CAR, and realizes $-0.221$, less than pursuing every transaction"
+ },
+ "VII-H bank: 4C and 4A": {
+  "mode": "values",
+  "was": "Configuration~4C pursues 16.1 of the 55 transactions with a false-positive rate of 30.9\\% and realizes $-0.066$; and Configuration~4A pursues about three of the 55 transactions per partition for a small positive utility (0.030)"
+ },
+ "VII-H bank sweep: gains at 1:1 and 2:1": {
+  "mode": "values",
+  "was": "to pursuing every transaction at 1:1 and 2:1, by 0.036 and 0.127"
+ },
+ "VII-H bank events (Panel D)": {
+  "mode": "values",
+  "was": "Configuration~4A pursues about three of the 51 events per partition for a small positive utility (0.035), 4C and 4B realize $-0.015$ and $-0.234$, and pursuing every event $-0.176$"
+ },
+ "VIII-B: text": {
+  "mode": "values",
+  "was": "the fixed-threshold rule's gain rests on SVB and First Republic, the two transactions it pursues in every partition"
+ },
+ "VII-I bank: events": {
+  "mode": "values",
+  "was": "Against the bank-sector benchmark, 36 of the 51 events have a positive CAR, and the mean AUCs are 0.394 for Model~2, 0.400 for ridge regression, 0.430 for Model~3, and 0.472 for the Spider score; across the eight models they range from 0.375 to 0.470"
+ },
+ "VII-I bank: transaction-level comparison": {
+  "mode": "context",
+  "template": "for LASSO. Counting each event once gives ⟦0⟧ to ⟦1⟧. Every Brier score is worse than the",
+  "was": "(0.291 to 0.465 with each event counted once)"
+ },
+ "VII-I bank: Brier and shares": {
+  "mode": "values",
+  "was": "Every Brier score is again higher than that of the training-fold share (0.208), and Model~3 ranks above Model~2 in 82\\% of the partitions and above ridge regression in 80\\%"
+ },
+ "VII-J bank: Model 3 against Model 2": {
+  "mode": "context",
+  "template": "Against the bank-sector benchmark, Model~⟦0⟧ ranks above Model~⟦1⟧ in every partition (⟦2⟧ against ⟦3⟧) with a lower Brier score (⟦4⟧ against ⟦5⟧), but its AUC is below one half, its Brier",
+  "was": "Model~3 ranks above Model~2 in every partition (AUC 0.413 against 0.277) and has a lower Brier score (0.232 against 0.273)"
+ },
+ "VII-J bank: Brier against ridge and the base rate": {
+  "mode": "context",
+  "template": "against 0.277) with a lower Brier score (⟦0⟧ against 0.273), but its AUC is below one half, its Brier score matches ridge regression's (⟦1⟧) and is worse than the training-fold share (⟦2⟧), and the permutation test does not",
+  "was": "its Brier score is about the same as ridge regression's (0.232 against 0.234) and worse than that of predicting the training-fold share (0.207)"
+ },
+ "VII-J bank: permutation p of the differences": {
+  "mode": "values",
+  "was": "outcomes carry no information ($p = 0.18$ and 0.17)"
+ },
+ "VIII: labels that change with the benchmark": {
+  "mode": "context",
+  "template": "of the 55 labels change with the window and ⟦0⟧ with the benchmark; and much of an assisted",
+  "was": "and 10 with the choice of benchmark"
+ },
+ "VII-E design: draws and Model 3 refits": {
+  "mode": "context",
+  "template": "removed; equal weights and no adjustments; ⟦0⟧ random draws within $\\pm$50\\% of every constant; and ⟦0⟧ draws over all nonnegative weights summing to ⟦1⟧, keeping only the framework's signs. The best",
+  "was": "In 1,000 random draws, every constant varies independently between half and one and a half times its value; in 1,000 further draws"
+ },
+ "VII-E design: Model 3 refits": {
+  "mode": "values",
+  "was": "and the first 100 draws of each random set"
+ },
+ "VII-E SPY: one constant": {
+  "mode": "values",
+  "was": "Changing one constant moves its mean AUC between 0.398, without the adjustment of rule~$U$, and 0.462, with the weight of Risk halved"
+ },
+ "VII-E SPY: structural": {
+  "mode": "context",
+  "template": "weights, no adjustments and both give ⟦0⟧, ⟦1⟧ and ⟦2⟧; median 0.425 within $\\pm$50\\%, where 3 of",
+  "was": "equal weights, no adjustments, and both lower it to 0.396, 0.390, and 0.355"
+ },
+ "VII-E SPY: +/-50% draws": {
+  "mode": "values",
+  "was": "its median is 0.425 (5th to 95th percentile 0.386 to 0.469), and 3 of the 1,000 exceed one half, the highest at 0.507"
+ },
+ "VII-E SPY: sign-preserving draws": {
+  "mode": "values",
+  "was": "do more sets rank above one half, 124 of the 1,000, at most 0.607, still below Model~2 (0.615) and ridge regression (0.632)"
+ },
+ "VII-E bank: one constant and structural": {
+  "mode": "values",
+  "was": "between 0.463 and 0.545 for one constant changed, between 0.472 and 0.504 for the structural alternatives"
+ },
+ "VII-E bank: random sets": {
+  "mode": "values",
+  "was": "with medians of 0.503 (0.473 to 0.536) and 0.485 (0.430 to 0.551) for the two random sets"
+ },
+ "VII-E: weights chosen in the training folds": {
+  "mode": "values",
+  "was": "on average the chosen sets give 0.37 to Value, 0.46 to Buyer Strength, and 0.02 each to Protection and Risk"
+ },
+ "VII-E: training and held-out AUC (sign-preserving, SPY)": {
+  "mode": "context",
+  "template": "to Value and Buyer Strength; they reach ⟦0⟧ on the training folds but ⟦1⟧ held out, below both logistic baselines and",
+  "was": "Their mean AUC is 0.627 on the training folds but 0.541 on the held-out folds"
+ },
+ "VII-E: permutation of the choice": {
+  "mode": "values",
+  "was": "(0.528 on its three partitions; one-sided $p = 0.38$, two-sided $p = 0.78$)"
+ },
+ "VII-E: the other three choices": {
+  "mode": "values",
+  "was": "the constants reach 0.462, and against the bank-sector benchmark the two choices reach 0.483 and 0.471, below the expert constants"
+ },
+ "VII-E: their permutation p": {
+  "mode": "context",
+  "template": "from chance (0.528 on its three partitions; ⟦0⟧-sided $p = 0.78$), and against the bank-sector benchmark 0.483 and 0.471 ($p \\geq ⟦1⟧$). Model~3 depends far less on the",
+  "was": "(two-sided $p \\geq 0.81$)"
+ },
+ "VII-E Model 3 SPY: ranges": {
+  "mode": "values",
+  "was": "its mean AUC lies between 0.589 and 0.604 for the 25 one-at-a-time and structural alternatives and between 0.586 and 0.634 for the 200 random draws refitted"
+ },
+ "VII-E Model 3 SPY: against the baselines": {
+  "mode": "context",
+  "template": "draws refitted, below ridge regression in ⟦0⟧ of ⟦1⟧ sets, above it in ⟦2⟧ by at most ⟦3⟧, and below Model~⟦4⟧ in ⟦5⟧; against the bank-sector benchmark it lies",
+  "was": "it ranks below ridge regression in 222 of the 226 constant sets, and above it in the other four by at most 0.002, and below Model~2 in 206"
+ },
+ "VII-E Model 3 bank": {
+  "mode": "values",
+  "was": "it lies between 0.408 and 0.435 in every set, below one half and above both logistic baselines"
+ },
+ "VII-E: 4A": {
+  "mode": "context",
+  "template": "in every set; 4A's small positive utility (⟦0⟧) survives in ⟦1⟧\\% of the draws within $\\pm$⟦2⟧\\%, but not with equal weights, under which the rescaled score reaches ⟦3⟧ for ⟦4⟧ transactions on average ($-⟦5⟧$), or in most sign-preserving draws (median $-⟦6⟧$). Within the alternatives examined, then,",
+  "was": "its small positive utility (0.041) persists in 73\\% of the draws within $\\pm$50\\%, but not with equal weights, under which the rescaled score reaches 0.70 for twelve transactions on average and the utility falls to $-0.203$, nor in most sign-preserving draws (median $-0.125$)"
+ },
+ "VII-F: opening": {
+  "mode": "context",
+  "template": "puts the size cut at \\$351.5 million. In ⟦0⟧ of the 150, the acquiring bank's parent was listed on a U.S. exchange; 44 acquirers were private, nine foreign-owned, and three traded only over the counter. Daily prices around the announcement are in the price data collected for this study for 55 of the ⟦0⟧; those data do not cover the other ⟦1⟧. These ⟦1⟧ transactions have 24 listed",
+  "was": "Of the 94 transactions in which the acquiring bank had a U.S.-listed parent, 39 are not in the panel"
+ },
+ "VII-F: parents": {
+  "mode": "values",
+  "was": "These 39 transactions have 24 listed parents, and the 55 in the panel have 27. Seventeen of the 24 parents, with 26 of the excluded transactions, were later acquired by other banks and delisted; the other 7, with 13 transactions, still trade"
+ },
+ "VII-F: parents permuted": {
+  "mode": "context",
+  "template": "test reassigns inclusion across the ⟦0⟧ parents. Parents are counted by holding",
+  "was": "reassigns inclusion across the 51 listed parents, not across transactions"
+ },
+ "VII-F: acquirer size and capital": {
+  "mode": "values",
+  "was": "The median acquiring bank held \\$4.04 billion of assets, against \\$15.82 billion in the panel (AUC 0.766, $p < 0.01$), and it was better capitalized (12.19\\% against 9.35\\%, $p = 0.03$)."
+ },
+ "VII-F: failed-bank size and relative size": {
+  "mode": "values",
+  "was": "The failed banks were smaller (median assets \\$0.60 billion against \\$1.11 billion, $p = 0.03$) and, relative to the acquirer, larger (0.23 against 0.13, $p = 0.04$)."
+ },
+ "VII-F: period": {
+  "mode": "values",
+  "was": "fell in 2008--2010 (85\\% against 67\\%, $p = 0.07$), the difference coming from the 26 transactions whose parents were later acquired (92\\%, against 69\\% for the 13 whose parents still trade)."
+ },
+ "VII-F: distress, no detectable difference": {
+  "mode": "values",
+  "was": "No statistically detectable difference in target distress was found: the excluded targets' median NPL ratio was 15.10\\%, against 13.96\\% ($p = 0.29$), and neither the change in the NPL ratio nor the change in deposits differs detectably ($p = 0.84$ and 0.93). With 24 and 27 parents, these tests cannot rule out moderate differences, so they do not show that the targets were equally distressed."
+ },
+ "VII-F: Holm": {
+  "mode": "values",
+  "was": "after a Holm adjustment across the nine characteristics, the smallest, for acquirer size, is 0.07."
+ },
+ "VII-F: size cut": {
+  "mode": "values",
+  "was": "Panel~B divides the 55 at the median acquiring bank of all 94 (\\$9.2 billion), at or below which lie 29 of the 39 excluded transactions."
+ },
+ "VII-F: SPY by size": {
+  "mode": "context",
+  "template": "ridge regression and Model~3 rank the ⟦0⟧ transactions with larger acquirers well above chance against the S\\&P~500 (⟦1⟧, ⟦2⟧, ⟦3⟧) and the ⟦4⟧ with smaller ones below it (⟦5⟧, ⟦6⟧, ⟦7⟧); 29 of the 39 excluded transactions have",
+  "was": "rank the 36 transactions with larger acquirers well above chance (mean AUC 0.744, 0.755, and 0.717) and the 19 with smaller acquirers below it (0.321, 0.358, and 0.319)."
+ },
+ "VII-F: Spider score by size": {
+  "mode": "values",
+  "was": "The Spider score is below one half in both groups (0.419 and 0.478), and among the smaller acquirers its AUC is higher than those of the three models."
+ },
+ "VII-F: bank by size": {
+  "mode": "values",
+  "was": "Against the bank-sector benchmark, the three models rank both groups below one half, and the Spider score ranks the smaller acquirers' transactions above it (0.569)."
+ },
+ "VII-F: parents decide inclusion": {
+  "mode": "context",
+  "template": "model treats the 94 as independent although ⟦0⟧ parents decide inclusion. The diagnostics",
+  "was": "although inclusion is decided by their 51 parents."
+ },
+ "VII-F: overlap and weight concentration": {
+  "mode": "values",
+  "was": "Three excluded transactions have an estimated probability of inclusion below the lowest among the included (0.072), and the weights are concentrated: the effective sample is 27 of 55, and one transaction carries 13\\% of the total weight."
+ },
+ "VII-F: balance threshold": {
+  "mode": "values",
+  "was": "for which an absolute value below 0.1 is conventionally taken to indicate balance~\\cite{austin2015}. Before weighting, seven of the nine characteristics exceed that threshold, acquirer size the most (0.38)."
+ },
+ "VII-F: balance, untruncated": {
+  "mode": "values",
+  "was": "The untruncated weights overcorrect: they reverse the sign of the difference in each of the inclusion model's four characteristics, leave five of the nine at or above 0.1 in absolute value, raise the difference in the NPL ratio from $-0.14$ to 0.25, and create one of 0.56 in its change, where there was almost none (0.02)."
+ },
+ "VII-F: balance, truncated": {
+  "mode": "values",
+  "was": "Truncated at their 95th percentile, the weights bring every characteristic of the inclusion model within 0.03 standard deviations of all 94 and every other within 0.05 except the change in the NPL ratio (0.16), with an effective sample of 43."
+ },
+ "VII-F: reweighted AUCs": {
+  "mode": "values",
+  "was": "With the untruncated weights, the three models' mean AUC against the S\\&P~500 falls to 0.389, 0.405, and 0.386; with the truncated weights, which balance better, to 0.505, 0.526, and 0.497."
+ },
+ "VII-F: Spider reweighted": {
+  "mode": "values",
+  "was": "The Spider score's AUC is 0.490 and 0.449, and under both weightings Model~3 remains below ridge regression against the S\\&P~500 and above it against the bank-sector benchmark."
+ },
+ "VII-F: two weightings": {
+  "mode": "values",
+  "was": "Because the AUCs under the two weightings differ by more than 0.1 and rest on few transactions"
+ },
+ "VII-F: direction": {
+  "mode": "values",
+  "was": "a panel that contained them would show weaker discrimination by the three models against the S\\&P~500, and their advantage over the Spider score would shrink or reverse; Model~3's position relative to ridge regression, by contrast, holds in both size groups and under both weightings."
+ },
+ "VII-F: not resolved": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "The analyses therefore indicate the direction in which the observed selection could bias the evaluation, under an assumption that cannot be tested, and leave the selection concern unresolved."
+ },
+ "VII-F: IPW assumptions": {
+  "mode": "context",
+  "template": "ratio; no model refitted) represents all ⟦0⟧ only under ⟦1⟧ assumptions~\\cite{seaman2013}: inclusion",
+  "was": "The weighted AUC represents all 94 only under three assumptions~\\cite{seaman2013}"
+ },
+ "VIII: selection pointer to VII-F and the limitations": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "(Sections~\\ref{sec:selection} and~\\ref{sec:limitations})"
+ },
+ "VIII-E: reweighting": {
+  "mode": "values",
+  "was": "the overlap between the two groups is incomplete, and the weights leave an effective sample of 27 to 43 transactions. No analysis here addresses selection on unobserved characteristics, so the selection concern is not resolved."
+ },
+ "winning bids read in an FDIC bid summary": {
+  "mode": "context",
+  "template": "its terms: the FDIC's bid summary for ⟦0⟧ of them and, for the other ten, all in the",
+  "was": "the FDIC's bid summary, which we found for 80 of the 90 transactions"
+ },
+ "transactions without a bid summary: count, panel, period": {
+  "mode": "context",
+  "template": "summary for 80 of them and, for the other ⟦0⟧, all in the primary panel and closed between August ⟦1⟧ and April ⟦2⟧, the purchase and assumption agreement, the",
+  "was": "for the other ten, all in the primary panel and all closed between August 2008 and April 2009"
+ },
+ "winning bids with FDIC financing of the buyer (text)": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "Only the winning bids for SVB, First Republic, Westernbank Puerto Rico, and Eurobank include FDIC financing of the buyer"
+ },
+ "VIII-A: opposite movements": {
+  "mode": "context",
+  "template": "four times. Removing them lowers Model~⟦0⟧'s AUC from ⟦1⟧ to ⟦2⟧ against the S\\&P~⟦3⟧ and raises it from ⟦4⟧ to ⟦5⟧ against the bank-sector benchmark, and both",
+  "was": "Removing the cluster lowers Model~2's mean AUC from 0.615 to 0.498 against the S\\&P~500 and raises it from 0.277 to 0.418 against the bank-sector benchmark"
+ },
+ "VIII-A: labels the benchmarks share": {
+  "mode": "context",
+  "template": "always come from models fitted on the other ⟦0⟧, of which ⟦1⟧ have the same label under both benchmarks.",
+  "was": "their predictions always come from models fitted on the other 51 transactions, 45 of which have the same label under both benchmarks."
+ },
+ "VIII-A: FBOP percentile ranks": {
+  "mode": "context",
+  "template": "the four near the bottom either way (Model~⟦0⟧'s mean percentile rank ⟦1⟧ and ⟦3⟧). What changes is their label. Over the window the S\\&P~⟦2⟧ fell 1.8\\% and the bank-sector benchmark",
+  "was": "Model~2's mean percentile rank for them is 0.07 against the S\\&P~500 and 0.12 against the bank-sector benchmark."
+ },
+ "VIII-A: window returns and CARs": {
+  "mode": "values",
+  "was": "Over the outcome's three-day window the S\\&P~500 fell 1.8\\% and the bank-sector benchmark 4.1\\%, and U.S.~Bancorp's shares fell by more than the market but by less than the other banks, so the CAR is $-0.9\\%$ against the S\\&P~500 and $+1.3\\%$ against the bank-sector benchmark"
+ },
+ "VIII-A: pairs": {
+  "mode": "values",
+  "was": "Against the S\\&P~500 the four transactions are 4 of the 20 negatives and enter 140 of the 700 positive--negative pairs on which the AUC is computed (20\\%); against the bank-sector benchmark they are 4 of the 39 positives and enter 64 of the 624 pairs (10\\%)."
+ },
+ "VIII-A: other transactions, SPY": {
+  "mode": "values",
+  "was": "Model~2 gives the other transactions with a positive and with a negative CAR almost the same mean percentile rank against the S\\&P~500 (0.55 and 0.53), so nearly all of its above-chance discrimination comes from the four FBOP transactions; refitted without them, its mean AUC on the remaining 51 is 0.498."
+ },
+ "VIII-A: other transactions, bank": {
+  "mode": "values",
+  "was": "it ranks the other negative transactions above the other positive ones (0.67 and 0.48), so the cluster accounts for only part of the AUC below one half, and refitted without it Model~2's mean AUC is still 0.418."
+ },
+ "VIII-A: ridge regression": {
+  "mode": "values",
+  "was": "Ridge regression behaves in the same way (from 0.632 to 0.516, and from 0.280 to 0.417)."
+ },
+ "VIII-A: permutation": {
+  "mode": "context",
+  "template": "outcome: the permutation test places Model~⟦0⟧ within the range of uninformative outcomes (⟦1⟧-sided $p = ⟦2⟧$). Nor do the results show the inputs are",
+  "was": "the permutation test places Model~2's AUC within the range that uninformative outcomes produce (two-sided $p = 0.21$; Table~\\ref{tab:perm})"
+ },
+ "VIII-A: a fifth of the pairs": {
+  "mode": "context",
+  "template": "together with an influence analysis: here ⟦1⟧ event of ⟦0⟧ supplies a fifth of the pairs and nearly all",
+  "was": "With 51 events, one of which supplies a fifth of the pairs under one benchmark"
+ },
+ "VIII-A: refitting bootstrap intervals": {
+  "mode": "values",
+  "was": "the refitting bootstrap's intervals for Model~2's AUC, from about 0.25 to 0.82 against the S\\&P~500 and from 0.14 to 0.67 against the bank-sector benchmark"
+ },
+ "VIII-A: eight AUCs": {
+  "mode": "context",
+  "template": "to 0.099 for ridge regression, and all ⟦1⟧ AUCs lie between ⟦2⟧ and ⟦3⟧. Most of the difference between the co-primary specifications thus comes from the sign of ⟦0⟧ event's return, and without it neither shows",
+  "was": "without the event, every one of the eight AUCs lies between 0.41 and 0.52"
+ },
+ "VIII-A: event-level shares and AUCs": {
+  "mode": "values",
+  "was": "makes FBOP one of 51 events and reduces its share of the positive--negative pairs to 6\\% against the S\\&P~500 and 3\\% against the bank-sector benchmark; Model~2's mean AUC becomes 0.541 and 0.394, and the gap between the benchmarks narrows from 0.337 to 0.147."
+ },
+ "VIII-A: Model 3 against the baselines with and without the cluster": {
+  "mode": "context",
+  "template": "less on the cluster: without it, Model~⟦0⟧ is still below Model~⟦1⟧ and ridge regression against the S\\&P~⟦2⟧, by ⟦3⟧ and ⟦4⟧ (against ⟦5⟧ and ⟦6⟧ with it), and above both against the bank-sector benchmark, by ⟦7⟧ and ⟦8⟧ (against ⟦9⟧ and ⟦10⟧), and in the full panel neither test",
+  "was": "Without it, Model~3 still ranks below Model~2 and ridge regression against the S\\&P~500, by 0.042 and 0.060 against 0.020 and 0.038 with it, and above both against the bank-sector benchmark, by 0.054 and 0.055 against 0.136 and 0.133"
+ },
+ "VIII-A: Caution": {
+  "mode": "context",
+  "template": "the acquisition: U.S.~Bank's linked bid was ⟦0⟧ decision, Caution on the consolidated inputs (⟦1⟧), and counting it four times gives it four",
+  "was": "U.S.~Bank's linked bid was one decision, which the consolidated inputs place in the Caution band (0.527;"
+ },
+ "VIII-A: pointer from VII-D": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "Section~\\ref{sec:fbop} discusses what this concentration implies."
+ },
+ "C5 VII-C: bank reading": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "The bank-sector results therefore do not establish a ranking ability in either direction, and in particular not a ranking worse than chance."
+ },
+ "C5 VII-C: Model 3's advantage under the bank benchmark": {
+  "mode": "values",
+  "was": "Model~3's higher AUC means that it misorders fewer pairs than the logistic baselines, not that it ranks better than chance, and the permutation test does not distinguish its advantage from what uninformative outcomes produce"
+ },
+ "C5 VIII: summary sentence": {
+  "mode": "values",
+  "was": "These are failures to reject the null hypothesis, not evidence that the models have no predictive value: with 51 independent events, the tests cannot rule out moderate predictive effects (Section~\\ref{sec:limitations})."
+ },
+ "C5 IX: conclusion": {
+  "mode": "context",
+  "template": "the rules themselves were not varied. With ⟦0⟧ distinct acquisition-event clusters and a smallest Holm-adjusted $p$-value of ⟦1⟧, the tests can establish neither",
+  "was": "With 51 independent events and a smallest Holm-adjusted $p$-value of 0.13, the permutation tests and the refitting bootstrap can establish neither discrimination above chance nor its absence: H1 is not supported, but moderate predictive effects cannot be ruled out"
+ },
+ "C6 V-D: Protection score and rule Q depend on the terms": {
+  "mode": "context",
+  "template": "terms; because the Protection score ($P_i = ⟦0⟧.60F_i + ⟦0⟧.40H_i$) and rule~$Q_i$, which requires $F_i = ⟦1⟧$, depend on the terms, as does the variant",
+  "was": "Because the Protection score ($P_i = 0.60F_i + 0.40H_i$) and rule~$Q_i$, which requires $F_i = 1$, depend on the specified terms, as does the variant of rule~$U_i$ that requires support, each structure receives its own score."
+ },
+ "C6 V-D: published inputs": {
+  "mode": "values",
+  "was": "Against the S\\&P~500 they rank the transactions about as well as the full models (mean AUC 0.635, 0.646, and 0.615 for Model~2, ridge regression, and Model~3, against 0.615, 0.632, and 0.594), and against the bank-sector benchmark about as poorly (0.305, 0.312, and 0.411, against 0.277, 0.280, and 0.413; Table~\\ref{tab:robustness})."
+ },
+ "C6 V-D: what the analysis evaluates": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "It evaluates realized winning bids: each transaction is scored with the terms its winning bid specified, and the criterion is the market's reaction to the announcement"
+ },
+ "C6 V-D: not validated": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "it does not validate the framework as a tool for screening prospective acquisitions or for choosing among bid structures."
+ },
+ "C6 VIII-F: fourth limitation": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "The panel contains only realized winning bids, with the terms they specified, and no losing bids or alternative structures for the same target"
+ },
+ "C6 IX": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "The evaluation therefore concerns realized winning bids, scored with the terms those bids specified."
+ },
+ "C7 IV-D: assumed payoffs": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "To show how the choice of threshold interacts with asymmetric payoffs, we assume that in distressed M\\&A a false positive"
+ },
+ "C7 IV-D: hypothetical ratio and sweep": {
+  "mode": "context",
+  "template": "of 0.75 for 4C at $L{:}B = ⟦0⟧{:}⟦1⟧$. The ⟦0⟧:⟦1⟧ ratio is a hypothetical scenario, not an industry parameter, so Table~\\ref{tab:sensitivity} sweeps it from ⟦1⟧:⟦1⟧ to ⟦2⟧:⟦1⟧; each ratio in the sweep is an",
+  "was": "The 3:1 ratio is a hypothetical scenario rather than an externally documented industry parameter, so Table~\\ref{tab:sensitivity} sweeps it from 1:1 to 5:1; each ratio in the sweep is an alternative hypothetical scenario, not an estimate."
+ },
+ "C7 IV-D: what utility is not": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "It is a payoff under these assumptions, not a measure of what an acquisition cost or earned."
+ },
+ "C7 VII-J": {
+  "mode": "context",
+  "template": "on assumed payoffs, not measured costs. The ⟦1⟧:⟦0⟧ ratio and the alternatives from ⟦0⟧:⟦0⟧ to 5:⟦0⟧ are hypothetical scenarios, and a",
+  "was": "The utilities are computed on the actual outcomes with the assumed payoffs ($B = 1$, $L = 3$)"
+ },
+ "C7 VIII-C": {
+  "mode": "values",
+  "was": "The 3:1 ratio assumes that pursuing an acquisition that the market receives negatively costs three times what pursuing one that it receives positively gains. It is a hypothetical scenario"
+ },
+ "C7 VIII-C: sweep": {
+  "mode": "context",
+  "template": "Table~\\ref{tab:sensitivity} sweeps it from ⟦0⟧:⟦0⟧ to ⟦1⟧:⟦0⟧; each ratio in the sweep is an",
+  "was": "the ratios from 1:1 to 5:1 in Table~\\ref{tab:sensitivity} are alternative scenarios of the same kind"
+ },
+ "C7 VIII-F: third limitation": {
+  "mode": "context",
+  "template": "on assumed payoffs, not measured costs. The ⟦0⟧:⟦1⟧ ratio and the alternatives from ⟦1⟧:⟦1⟧ to ⟦2⟧:⟦1⟧ are hypothetical scenarios, and a",
+  "was": "its 3:1 loss-to-benefit ratio and the alternatives from 1:1 to 5:1 are hypothetical scenarios"
+ },
+ "C8 VII-A": {
+  "mode": "context",
+  "template": "score has a mean out-of-sample AUC of ⟦0⟧ (⟦1⟧ on the full panel with bounds fitted once;",
+  "was": "The Spider score itself has a mean out-of-sample AUC of 0.423 (0.414 on the full panel with bounds fitted once; Table~\\ref{tab:components})"
+ },
+ "C8 VII-H": {
+  "mode": "values",
+  "was": "With bounds and thresholds fitted once on all 55 transactions, the Spider score's AUC is 0.414 against the S\\&P~500; Table~\\ref{tab:main_results} reports 0.423, the mean over the 50 partitions of the repeated grouped cross-validation"
+ },
+ "C1 abstract: main result": {
+  "mode": "context",
+  "template": "Spider-enhanced model reached a mean AUC of ⟦0⟧ against the S\\&P~500, against ⟦1⟧ for logistic and ⟦2⟧ for ridge regression; against the",
+  "was": "the Spider-enhanced model's mean area under the receiver operating characteristic curve is 0.594, against 0.615 for logistic and 0.632 for ridge regression; an ablation traces the shortfall to the interaction rules, not the component scores."
+ },
+ "C1 introduction: first contribution": {
+  "mode": "context",
+  "template": "leaves the mean AUC nearly unchanged (⟦3⟧ against ⟦2⟧), while adding the ⟦4⟧ interaction indicators explicitly (stage~C) lowers it to ⟦5⟧, below stage~A in 92\\% of the partitions, and the full specification (stage~D, Model~3) gives ⟦0⟧. Dropping the protection inputs and rule~$Q$ (stage~E) gives ⟦1⟧, and dropping buyer capital with rules $Z$ and $K$ (stage~F) gives ⟦2⟧; each of these stages removes an input",
+  "was": "(mean area under the receiver operating characteristic curve, AUC, 0.594 against 0.615) and ridge regression (0.632), and an ablation locates the shortfall in the interaction rules rather than in the component scores: adding the Spider score to the measured inputs leaves the mean AUC essentially unchanged (0.630 against 0.632), whereas adding the four rules lowers it to 0.598."
+ },
+ "C1 introduction: power": {
+  "mode": "context",
+  "template": "without resolving that concern. With ⟦0⟧ distinct acquisition-event clusters and a smallest Holm-adjusted $p$-value of ⟦1⟧, the evidence that any model beats chance",
+  "was": "With 51 independent events and a smallest Holm-adjusted $p$-value of 0.13, the evidence that any model ranks better than chance is weak, but the tests cannot rule out moderate predictive effects either"
+ },
+ "C1 introduction: decision analysis": {
+  "mode": "context",
+  "template": "cost or earned. Against the S\\&P~⟦1⟧, pursuing every transaction has the highest F1 (0.778), only because 35 of 55 are positive, and the lowest utility ($-0.455$). Configuration~4B, tuned for F1, pursues 40.2 of 55 transactions, approves ⟦0⟧\\% of the negatively received acquisitions,",
+  "was": "A threshold tuned for the F1 score (the harmonic mean of precision and recall) approves most of the acquisitions that the market received negatively (62.9\\% against the S\\&P~500)"
+ },
+ "C1 VIII: lead": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "The central result of this evaluation is that the Spider interaction features did not reliably improve on logistic models that use the same inputs"
+ },
+ "C1 IX: lead": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "The main finding of this paper is a rigorously validated non-improvement"
+ },
+ "C1 IX: ablation": {
+  "mode": "context",
+  "template": "leaves the mean AUC nearly unchanged (⟦1⟧ against ⟦2⟧), whereas adding the ⟦3⟧ interaction indicators explicitly moves it toward chance under both benchmarks (to ⟦4⟧ against the S\\&P~⟦0⟧, and from 0.280 to 0.419 against the",
+  "was": "left the mean AUC against the S\\&P~500 unchanged (0.630 against 0.632), whereas adding the four rules lowered it to 0.598"
+ },
+ "C9 VII-J: 4C relative to n": {
+  "mode": "context",
+  "template": "from the hypothetical 3:1 payoffs, pursues ⟦0⟧ of ⟦1⟧ with a false-positive rate of 19.6\\% and",
+  "was": "pursues 11.8 of the 55 transactions with a"
+ },
+ "C9 VII-J: 4B relative to n": {
+  "mode": "values",
+  "was": "recommends Pursue on 40.2 of 55 transactions on average"
+ },
+ "A1 VII-K: S&P 500 fall attributed to counting each event once": {
+  "mode": "context",
+  "template": "model's AUC is lower against the S\\&P~⟦0⟧, mostly because the FBOP purchase counts",
+  "was": "every fitted model's AUC is lower against the S\\&P~500, mostly because each multi-bank event, above all the FBOP purchase, counts once"
+ },
+ "A2 VII-E: closing, qualified": {
+  "mode": "context",
+  "template": "hinge on the constants: against the S\\&P~⟦0⟧, no constant set lets the score or Model~⟦1⟧ rank the transactions better than ridge regression by more than ⟦2⟧, and constants fitted inside the training",
+  "was": "Within the alternatives examined, the unfavorable comparison with the logistic baselines therefore does not depend on the particular constants: against the S\\&P~500, no constant set lets the score or Model~3 rank the transactions better than ridge regression by more than 0.002"
+ },
+ "A2 VII-E: the score's position depends on the constants": {
+  "mode": "context",
+  "template": "$\\pm$50\\%, where 3 of ⟦1⟧ draws exceed ⟦2⟧ half); over the sign-preserving range ⟦0⟧ of ⟦1⟧ do, at most 0.607, still below Model~2 and",
+  "was": "124 of the 1,000 sign-preserving sets place it above one half"
+ },
+ "A2 VII-E: not varied": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "no alternative varies the weights inside the Protection and Risk components, the rule thresholds, or the rules themselves"
+ },
+ "A2 VIII: Discussion": {
+  "mode": "retired",
+  "reason": "wording-only check; the shortened manuscript words this passage differently",
+  "was": "or, within the alternatives examined, on the expert weights and adjustments (Section~\\ref{sec:weights})"
+ },
+ "A3 I: introduction": {
+  "mode": "context",
+  "template": "We also compare the panel with the ⟦0⟧ eligible transactions whose prices were not",
+  "was": "an analysis of the 39 eligible transactions whose prices were not collected shows how sample selection could bias the evaluation, without resolving that concern."
+ },
+ "A3 VIII: Discussion": {
+  "mode": "values",
+  "was": "the 39 eligible transactions whose prices were not collected had smaller acquirers, and within the panel the three models' AUCs among transactions with smaller acquirers are below one half against the S\\&P~500"
+ },
+ "A4 VII-B: variability of the AUC": {
+  "mode": "context",
+  "template": "intervals for each model's AUC, from about ⟦0⟧ to ⟦1⟧ against the S\\&P~500, include values that",
+  "was": "(from about 0.25 to 0.82 in the refitting bootstrap above)"
+ },
+ "A4 VIII-F: first limitation": {
+  "mode": "values",
+  "was": "The smallest Holm-adjusted $p$-value, 0.13, means that the evidence is insufficient to establish discrimination above chance, not that the models have no predictive value: an observed cross-validated AUC must exceed about 0.65, the 95th percentile of the permutation distribution, to be significant at the 5\\% level (Table~\\ref{tab:perm}), a critical value rather than a measure of power, which was not estimated; and the refitting bootstrap's intervals for each model's AUC, from about 0.25 to 0.82 against the S\\&P~500, include values that would indicate moderate discrimination."
+ },
+ "A6 abstract: power": {
+  "mode": "context",
+  "template": "that any model beats chance but, with ⟦0⟧ distinct acquisition-event clusters, cannot",
+  "was": "find little evidence that any model beats chance but, with 51 independent events, cannot rule out moderate effects."
+ },
+ "B1 abstract": {
+  "mode": "values",
+  "was": "One four-bank purchase supplies most of the models' discrimination against the S\\&P~500, where none of 225 alternative weightings lifts the refitted Spider-enhanced model more than 0.002 above ridge regression."
+ },
+ "B1 conclusion": {
+  "mode": "values",
+  "was": "across 2,025 alternative Spider-score specifications and 225 alternative refitted specifications of the Spider-enhanced model, the largest improvement over ridge regression against the S\\&P~500 is about 0.002 AUC, and against the bank-sector benchmark the refitted model ranks above ridge regression in every tested specification (by 0.128 to 0.155) but below one half throughout (at most 0.435). These are descriptive sensitivity results, not validated optimal models"
+ },
+ "B1 VII-E: refitted subset": {
+  "mode": "context",
+  "template": "half does depend on the constants. Model~⟦0⟧ was refitted for ⟦1⟧ of the ⟦2⟧ constant sets (the reference and ⟦3⟧ alternatives), not all of them, and no",
+  "was": "Model~3 was refitted for 226 of the 2,026 constant sets (the reference and 225 alternatives), not for all of them"
+ },
+ "B3 V-D: the two deal terms": {
+  "mode": "context",
+  "template": "that the conclusions do not depend on the ⟦0⟧ deal terms, we drop $F$ and $H$, recompute",
+  "was": "To show that the conclusions do not depend on the two deal terms, Section"
+ },
+ "B3 VII-D: the two deal terms": {
+  "mode": "context",
+  "template": "that the conclusions do not depend on the ⟦0⟧ deal terms, we drop $F$ and $H$, recompute",
+  "was": "so none of the conclusions depends on the two deal terms."
+ },
+ "B3 V-D: SVB's support public before its sale": {
+  "mode": "context",
+  "template": "have a support indicator that applies to ⟦0⟧ transaction. Fifth, the weights and",
+  "was": "The narrow support indicator is an exception: it equals one only for SVB"
+ },
+ "Limitations (text): the small banks": {
+  "mode": "values",
+  "was": "The seven banks below the size cut enter only through their events"
+ }
+}

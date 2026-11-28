@@ -1,5 +1,5 @@
 #!/bin/bash
-# Verify and reproduce release 4.17 of the SNFF replication package.
+# Verify and reproduce release 4.18 of the SNFF replication package.
 #
 # usage: bash reproduce.sh [--quick] [manuscript.tex]
 #
